@@ -12,24 +12,6 @@
     tools:context="com.example.hulk.mtindo.Login"
     tools:showIn="@layout/activity_login">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="8dp">
 
-        <com.rey.material.widget.Spinner
-            android:id="@+id/spinner_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minWidth="128dp"
-            android:padding="8dp"
-            app:spn_label="Spinner with arrow"/>
-
-
-
-
-    </LinearLayout>
 
 </RelativeLayout>
