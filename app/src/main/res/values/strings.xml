@@ -12,4 +12,10 @@
     <string name="Test">Test</string>
     <string name="Cancel">Cancel</string>
     <string name="Post">Post</string>
+    <string name="invalidName" />
+    <string name="invalidSurname" />
+    <string name="invalidNumber" />
+    <string name="invalidNumberZero" />
+    <string name="hintPhone">phone</string>
+    <string name="hintSurname">surname</string>
 </resources>
