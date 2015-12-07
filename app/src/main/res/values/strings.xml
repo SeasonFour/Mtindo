@@ -8,4 +8,8 @@
     <string name="Name">Name</string>
     <string name="Description">Description</string>
     <string name="Tag">Tag</string>
+    <string name="btnConfirm">btnconfirm</string>
+    <string name="Test">Test</string>
+    <string name="Cancel">Cancel</string>
+    <string name="Post">Post</string>
 </resources>
