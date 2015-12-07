@@ -18,4 +18,5 @@
     <string name="invalidNumberZero" />
     <string name="hintPhone">phone</string>
     <string name="hintSurname">surname</string>
+    <string name="Price">Price</string>
 </resources>

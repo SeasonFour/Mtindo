@@ -30,5 +30,8 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:23.0.+'
     compile 'com.google.android.gms:play-services-auth:8.3.0'
     compile 'com.rengwuxian.materialedittext:library:2.1.4'
+    compile ('com.github.ganfra:material-spinner:1.1.1'){
+       exclude group: 'com.android.support', module: 'appcompat-v7'
+    }
 
 }

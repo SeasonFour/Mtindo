@@ -1,18 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#cef464"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.hulk.mtindo.Post_update"
-    tools:showIn="@layout/activity_post_update">
+    tools:showIn="@layout/activity_post_update"
+    android:background="#ffffff"
+    android:paddingTop="100dp"
+    android:paddingLeft="20dp">
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:id="@+id/imageButton"
-        android:src="@drawable/image"
-        android:layout_centerHorizontal="true" />
+
+
+    <!--Name-->
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/Name"
+        app:met_floatingLabel="highlight"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/view3" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#888888"
+            android:textSize="14sp"
+            android:id="@+id/textView" />
+    <!--Spinner for category-->
+
+    <fr.ganfra.materialspinner.MaterialSpinner
+        android:id="@+id/spinner1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:ms_arrowColor="#0000FF"
+        app:ms_arrowSize="16dp"
+        app:ms_floatingLabelColor="#00FF00"
+        app:ms_floatingLabelText="floating label"
+        app:ms_hint="Category"
+        app:ms_multiline="true"
+        android:layout_below="@+id/view3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
+    <!--DEscription-->
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/Description"
+        app:met_floatingLabel="highlight"
+        android:id="@+id/view"
+        android:layout_below="@+id/spinner1"
+        android:layout_toRightOf="@+id/textView"
+        android:layout_toEndOf="@+id/textView" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#888888"
+            android:textSize="14sp" />
+    <!--Price-->
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/Price"
+        app:met_floatingLabel="highlight"
+        android:id="@+id/view2"
+        android:layout_below="@+id/view"
+        android:layout_toRightOf="@+id/textView"
+        android:layout_toEndOf="@+id/textView" />
+
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#888888"
+            android:textSize="14sp" />
+    <!--Tag/Mention-->
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/Tag"
+        app:met_floatingLabel="highlight"
+        android:layout_marginTop="81dp"
+        android:layout_below="@+id/view"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#888888"
+            android:textSize="14sp" />
+
+
+
+
+
+
+
+
 </RelativeLayout>
+
+
+
+
+
+
+
+
