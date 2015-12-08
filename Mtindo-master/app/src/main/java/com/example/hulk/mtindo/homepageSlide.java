@@ -3,10 +3,6 @@ package com.example.hulk.mtindo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
@@ -62,16 +58,16 @@ public class homepageSlide extends AppCompatActivity implements BaseSliderView.O
         mDemoSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
         mDemoSlider.setCustomAnimation(new DescriptionAnimation());
         mDemoSlider.setDuration(4000);
-        mDemoSlider.addOnPageChangeListener(this);
-        ListView l = (ListView)findViewById(R.id.transformers);
-        l.setAdapter(new TransformerAdapter(this));
-        l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                mDemoSlider.setPresetTransformer(((TextView) view).getText().toString());
-                Toast.makeText(homepageSlide.this, ((TextView) view).getText().toString(), Toast.LENGTH_SHORT).show();
-            }
-        });
+//        mDemoSlider.addOnPageChangeListener(this);
+//        ListView l = (ListView)findViewById(R.id.transformers);
+//        l.setAdapter(new TransformerAdapter(this));
+//        l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                mDemoSlider.setPresetTransformer(((TextView) view).getText().toString());
+//                Toast.makeText(homepageSlide.this, ((TextView) view).getText().toString(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
 
     }
