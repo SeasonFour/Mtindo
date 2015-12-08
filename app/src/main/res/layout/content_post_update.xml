@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,7 +11,6 @@
     android:paddingLeft="20dp">
 
 
-
     <!--Name-->
     <com.rengwuxian.materialedittext.MaterialEditText
         android:layout_width="300dp"
@@ -20,12 +19,12 @@
         app:met_floatingLabel="highlight"
         android:layout_gravity="center_vertical"
         android:id="@+id/view3" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#888888"
-            android:textSize="14sp"
-            android:id="@+id/textView" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#888888"
+        android:textSize="14sp"
+        android:id="@+id/textView" />
     <!--Spinner for category-->
 
     <fr.ganfra.materialspinner.MaterialSpinner
@@ -52,11 +51,11 @@
         android:layout_toRightOf="@+id/textView"
         android:layout_toEndOf="@+id/textView" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#888888"
-            android:textSize="14sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#888888"
+        android:textSize="14sp" />
     <!--Price-->
     <com.rengwuxian.materialedittext.MaterialEditText
         android:layout_width="300dp"
@@ -70,10 +69,10 @@
 
 
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#888888"
-            android:textSize="14sp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#888888"
+        android:textSize="14sp" />
     <!--Tag/Mention-->
     <com.rengwuxian.materialedittext.MaterialEditText
         android:layout_width="300dp"
@@ -83,21 +82,37 @@
         android:layout_marginTop="81dp"
         android:layout_below="@+id/view"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#888888"
-            android:textSize="14sp" />
-
-
-
-
-
-
-
-
-</RelativeLayout>
+        android:layout_alignParentStart="true"
+        android:id="@+id/view4" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#888888"
+        android:textSize="14sp" />
+    <com.rey.material.widget.Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#C41411"
+        android:onClick="onClick"
+        android:text="@string/Cancel"
+        android:textColor="white"
+        android:layout_alignTop="@+id/view5"
+        android:layout_toRightOf="@+id/textView"
+        android:layout_toEndOf="@+id/textView"
+        android:layout_marginLeft="37dp"
+        android:layout_marginStart="37dp">
+    </com.rey.material.widget.Button>
+    <com.rey.material.widget.Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:background="#1ABC9C"
+        android:text="Post"
+        android:textColor="white"
+        android:layout_below="@+id/view4"
+        android:layout_alignRight="@+id/view4"
+        android:layout_alignEnd="@+id/view4"
+        android:id="@+id/view5"></com.rey.material.widget.Button>
+</ScrollView>
 
 
 
