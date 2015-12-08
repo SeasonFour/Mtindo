@@ -1,0 +1,51 @@
+{
+  "project_info": {
+    "project_id": "mtindo-e5b31",
+    "project_number": "375999783779",
+    "name": "Mtindo"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:375999783779:android:8da09bb8ddd520f5",
+        "client_id": "android:com.example.hulk.mtindo",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "com.example.hulk.mtindo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "375999783779-5211kpn49ifrkoe6c1npkn7jpumea1cc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hulk.mtindo",
+            "certificate_hash": "CBE164738F4F74BF4A3D4300013E672D4383A0A9"
+          }
+        }
+      ],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "cloud_messaging_service": {
+          "status": 2,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 2
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "client_info": [],
+  "ARTIFACT_VERSION": "1"
+}
