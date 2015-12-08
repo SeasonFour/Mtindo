@@ -9,38 +9,64 @@
     android:background="#ffffff"
     android:paddingTop="100dp"
     android:paddingLeft="20dp">
-
-
-    <!--Name-->
-    <com.rengwuxian.materialedittext.MaterialEditText
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/Name"
-        app:met_floatingLabel="highlight"
-        android:layout_gravity="center_vertical"
-        android:id="@+id/view3" />
-    <TextView
+    <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#888888"
-        android:textSize="14sp"
-        android:id="@+id/textView" />
-    <!--Spinner for category-->
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <!--Name-->
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/Name"
+                app:met_floatingLabel="highlight"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/view3" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#888888"
+                android:textSize="14sp"
+                android:id="@+id/textView" />
+            <!--Spinner for category-->
+
+            <!--DEscription-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#888888"
+                android:textSize="14sp" />
+            <!--Price-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#888888"
+                android:textSize="14sp" />
+            <!--Tag/Mention-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#888888"
+                android:textSize="14sp" />
 
     <fr.ganfra.materialspinner.MaterialSpinner
         android:id="@+id/spinner1"
-        android:layout_width="fill_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         app:ms_arrowColor="#0000FF"
         app:ms_arrowSize="16dp"
         app:ms_floatingLabelColor="#00FF00"
-        app:ms_floatingLabelText="floating label"
+        app:ms_floatingLabelText="Pick"
         app:ms_hint="Category"
         app:ms_multiline="true"
-        android:layout_below="@+id/view3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp" />
-    <!--DEscription-->
+        android:layout_marginTop="103dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
     <com.rengwuxian.materialedittext.MaterialEditText
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -48,15 +74,9 @@
         app:met_floatingLabel="highlight"
         android:id="@+id/view"
         android:layout_below="@+id/spinner1"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#888888"
-        android:textSize="14sp" />
-    <!--Price-->
     <com.rengwuxian.materialedittext.MaterialEditText
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -64,31 +84,19 @@
         app:met_floatingLabel="highlight"
         android:id="@+id/view2"
         android:layout_below="@+id/view"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#888888"
-        android:textSize="14sp" />
-    <!--Tag/Mention-->
     <com.rengwuxian.materialedittext.MaterialEditText
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="@string/Tag"
         app:met_floatingLabel="highlight"
-        android:layout_marginTop="81dp"
-        android:layout_below="@+id/view"
+        android:id="@+id/view4"
+        android:layout_below="@+id/view2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/view4" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#888888"
-        android:textSize="14sp" />
+        android:layout_alignParentStart="true" />
+
     <com.rey.material.widget.Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -96,30 +104,29 @@
         android:onClick="onClick"
         android:text="@string/Cancel"
         android:textColor="#FCE4EC"
-        android:layout_alignTop="@+id/view5"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView"
-        android:layout_marginLeft="37dp"
-        android:layout_marginStart="37dp">
+        android:layout_below="@+id/view4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/view6">
     </com.rey.material.widget.Button>
+
     <com.rey.material.widget.Button
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:background="#1ABC9C"
         android:text="Post"
         android:textColor="#FCE4EC"
-        android:layout_below="@+id/view4"
+        android:id="@+id/view5"
+        android:layout_alignTop="@+id/view6"
         android:layout_alignRight="@+id/view4"
         android:layout_alignEnd="@+id/view4"
-        android:id="@+id/view5"></com.rey.material.widget.Button>
+        android:layout_marginRight="33dp"
+        android:layout_marginEnd="33dp"></com.rey.material.widget.Button>
 
-
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>
-
-
-
-
 
 
 
