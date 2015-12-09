@@ -105,6 +105,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
             updateUI(false);
         }
     }
+
     private void updateUI(boolean b) {
 
     }
