@@ -2,14 +2,13 @@ package com.example.hulk.mtindo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.widget.ArrayAdapter;
 
 import fr.ganfra.materialspinner.MaterialSpinner;
 
 public class Post_update extends AppCompatActivity {
     private static final String ERROR_MSG = "No";
-    private static final String[] ITEMS = {"Hair", "Beauty", "Make up"};
+    private static final String[] ITEMS = {"Home", "Beauty", "Make up"};
 
     private ArrayAdapter<String> adapter;
 
@@ -20,8 +19,8 @@ public class Post_update extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_update);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
 //        For the Spinner
 

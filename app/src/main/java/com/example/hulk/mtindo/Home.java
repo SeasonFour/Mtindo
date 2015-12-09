@@ -1,20 +1,15 @@
 package com.example.hulk.mtindo;
 
-/**
- * Created by maureen on 12/9/15.
- */
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
-public class MainActivity extends AppCompatActivity implements OneFragmentDrawer.FragmentDrawerListener {
+public class Home extends AppCompatActivity {
+
 
     private Toolbar mToolbar;
-    private OneFragmentDrawer drawerFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +20,6 @@ public class MainActivity extends AppCompatActivity implements OneFragmentDrawer
 
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-        drawerFragment = (OneFragmentDrawer)
-                getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
-        drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
-        drawerFragment.setDrawerListener(this);
     }
 
 
@@ -48,15 +38,10 @@ public class MainActivity extends AppCompatActivity implements OneFragmentDrawer
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-      /*  if (id == R.id.action_settings) {
+       /* if (id == R.id.action_settings) {
             return true;
-        }
-*/
+        }*/
+
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onDrawerItemSelected(View view, int position) {
-
     }
 }
