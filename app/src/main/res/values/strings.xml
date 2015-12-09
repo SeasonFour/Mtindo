@@ -10,4 +10,11 @@
     <string name="Description">Description</string>
     <string name="Price">Price</string>
     <string name="Tag">Tag</string>
+    <string name="Cancel">Cancel</string>
+    <string name="sigsned_in_fmt" />
+    <string name="err_msg_name" />
+    <string name="err_msg_storename" />
+    <string name="err_msg_description" />
+    <string name="err_msg_telephone" />
+    <string name="signed_in_fmt" />
 </resources>
