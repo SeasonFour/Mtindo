@@ -14,11 +14,12 @@ import android.widget.Button;
 
 
 public class TwoFragment extends Fragment /*implements View.OnClickListener*/{
-
+    View rootView;
     public TwoFragment() {
         // Required empty public constructor
     }
-    View view;
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,21 +35,22 @@ public class TwoFragment extends Fragment /*implements View.OnClickListener*/{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         //Intent onclick button form join community to create store
-      Button  createButton = (Button) inflater.inflate(R.layout.fragment_two, container, false).findViewById(R.id.button1);
+
+        rootView=inflater.inflate(R.layout.fragment_two, container, false);
+        Button  createButton = (Button)rootView .findViewById(R.id.button1);
         createButton.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getActivity(),Createstore.class);
-                ((Maint) getActivity()).startActivity(i);
+                getActivity().startActivity(i);
 
             }
         });
 
-        return inflater.inflate(R.layout.fragment_two, container, false);
+        return rootView;
 
     }
-
-
 
 }
 
