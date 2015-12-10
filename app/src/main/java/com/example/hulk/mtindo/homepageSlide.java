@@ -139,7 +139,7 @@ public class homepageSlide extends AppCompatActivity implements BaseSliderView.O
     public void onPageScrollStateChanged(int state) {}
     private List<ContactInfo> createList(int size) {
 
-        List<ContactInfo> result = new ArrayList<ContactInfo>();
+        List<ContactInfo> result = new ArrayList<>();
         for (int i=1; i <= size; i++) {
             ContactInfo ci = new ContactInfo();
             ci.name = ContactInfo.NAME_PREFIX + i;
