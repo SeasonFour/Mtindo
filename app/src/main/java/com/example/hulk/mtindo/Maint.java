@@ -39,8 +39,8 @@ public class Maint extends AppCompatActivity implements OneFragmentDrawer.Fragme
         super.onCreate(savedInstanceState);
         setContentView(R.layout.maint);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
