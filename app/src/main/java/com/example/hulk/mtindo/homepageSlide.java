@@ -13,9 +13,7 @@ import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 /**
  * Created by moses on 12/8/15.
@@ -24,20 +22,24 @@ public class homepageSlide extends AppCompatActivity implements BaseSliderView.O
 
     private SliderLayout mDemoSlider;
 
+    RecyclerView mRecyclerView;
+    RecyclerView.LayoutManager mLayoutManager;
+    RecyclerView.Adapter mAdapter;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homepageslide);
 
+        mRecyclerView = (RecyclerView)findViewById(R.id.cardList);
+        mRecyclerView.setHasFixedSize(true);
 
-        RecyclerView recList = (RecyclerView) findViewById(R.id.cardList);
-        recList.setHasFixedSize(true);
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        recList.setLayoutManager(llm);
+        mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
 
-        ContactAdapter ca = new ContactAdapter(createList(30));
-        recList.setAdapter(ca);
+        mAdapter = new ContactAdapter();
+        mRecyclerView.setAdapter(mAdapter);
 
 
         mDemoSlider = (SliderLayout)findViewById(R.id.slider);
@@ -99,34 +101,6 @@ public class homepageSlide extends AppCompatActivity implements BaseSliderView.O
         Toast.makeText(this, slider.getBundle().get("extra") + "", Toast.LENGTH_SHORT).show();
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater menuInflater = getMenuInflater();
-//        menuInflater.inflate(R.menu.main, menu);
-//        return super.onCreateOptionsMenu(menu);
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()){
-//            case R.id.action_custom_indicator:
-//                mDemoSlider.setCustomIndicator((PagerIndicator) findViewById(R.id.custom_indicator));
-//                break;
-//            case R.id.action_custom_child_animation:
-//                mDemoSlider.setCustomAnimation(new ChildAnimationExample());
-//                break;
-//            case R.id.action_restore_default:
-//                mDemoSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
-//                mDemoSlider.setCustomAnimation(new DescriptionAnimation());
-//                break;
-//            case R.id.action_github:
-//                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/daimajia/AndroidImageSlider"));
-//                startActivity(browserIntent);
-//                break;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
-
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
 
@@ -137,19 +111,19 @@ public class homepageSlide extends AppCompatActivity implements BaseSliderView.O
 
     @Override
     public void onPageScrollStateChanged(int state) {}
-    private List<ContactInfo> createList(int size) {
-
-        List<ContactInfo> result = new ArrayList<>();
-        for (int i=1; i <= size; i++) {
-            ContactInfo ci = new ContactInfo();
-            ci.name = ContactInfo.NAME_PREFIX + i;
-            ci.surname = ContactInfo.SURNAME_PREFIX + i;
-            ci.email = ContactInfo.EMAIL_PREFIX + i + "@test.com";
-
-            result.add(ci);
-
-        }
-
-        return result;
-    }
+//    private List<ContactInfo> createList(int size) {
+//
+//        List<ContactInfo> result = new ArrayList<>();
+//        for (int i=1; i <= size; i++) {
+//            ContactInfo ci = new ContactInfo();
+//            ci.name = ContactInfo.NAME_PREFIX + i;
+//            ci.surname = ContactInfo.SURNAME_PREFIX + i;
+//            ci.email = ContactInfo.EMAIL_PREFIX + i + "@test.com";
+//
+//            result.add(ci);
+//
+//        }
+//
+//        return result;
+//    }
 }
