@@ -155,7 +155,16 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
+
         </com.andexert.library.RippleView>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="add_contact"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/addnew"
+            android:padding="@dimen/fab_margin"/>
 
 
     </LinearLayout>
