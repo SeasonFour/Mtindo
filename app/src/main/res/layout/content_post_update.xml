@@ -11,7 +11,8 @@
     android:paddingLeft="20dp">
     <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView">
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -22,7 +23,7 @@
                 android:hint="@string/Name"
                 app:met_floatingLabel="highlight"
                 android:layout_gravity="center_vertical"
-                android:id="@+id/view3" />
+                android:id="@+id/Name" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -52,28 +53,15 @@
                 android:textColor="#888888"
                 android:textSize="14sp" />
 
-    <fr.ganfra.materialspinner.MaterialSpinner
-        android:id="@+id/spinner1"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        app:ms_arrowColor="#0000FF"
-        app:ms_arrowSize="16dp"
-        app:ms_floatingLabelColor="#00FF00"
-        app:ms_floatingLabelText="Pick"
-        app:ms_hint="Category"
-        app:ms_multiline="true"
-        android:layout_marginTop="103dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="@string/Description"
         app:met_floatingLabel="highlight"
-        android:id="@+id/view"
-        android:layout_below="@+id/spinner1"
+        android:id="@+id/Description"
+        android:layout_below="@+id/Name"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -82,8 +70,8 @@
         android:layout_height="wrap_content"
         android:hint="@string/Price"
         app:met_floatingLabel="highlight"
-        android:id="@+id/view2"
-        android:layout_below="@+id/view"
+        android:id="@+id/Price"
+        android:layout_below="@+id/Description"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -92,10 +80,20 @@
         android:layout_height="wrap_content"
         android:hint="@string/Tag"
         app:met_floatingLabel="highlight"
-        android:id="@+id/view4"
-        android:layout_below="@+id/view2"
+        android:id="@+id/Tag"
+        android:layout_below="@+id/Price"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+            <com.rey.material.widget.TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/context">
+
+            </com.rey.material.widget.TextView>
+
+        </RelativeLayout>
+    </ScrollView>
 
     <com.rey.material.widget.Button
         android:layout_width="wrap_content"
@@ -104,27 +102,25 @@
         android:onClick="onClick"
         android:text="@string/Cancel"
         android:textColor="#FCE4EC"
-        android:layout_below="@+id/view4"
+        android:id="@+id/view6"
+        android:layout_below="@+id/scrollView"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/view6">
+        android:layout_alignParentStart="true">
     </com.rey.material.widget.Button>
 
     <com.rey.material.widget.Button
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:background="#1ABC9C"
-        android:text="Post"
-        android:textColor="#FCE4EC"
-        android:id="@+id/view5"
+android:layout_height="wrap_content"
+android:layout_width="wrap_content"
+android:background="#1ABC9C"
+android:text="Post"
+android:onClick="onClick"
+android:textColor="#FCE4EC"
+android:id="@+id/Post_btn"
         android:layout_alignTop="@+id/view6"
-        android:layout_alignRight="@+id/view4"
-        android:layout_alignEnd="@+id/view4"
-        android:layout_marginRight="33dp"
-        android:layout_marginEnd="33dp"></com.rey.material.widget.Button>
-
-        </RelativeLayout>
-    </ScrollView>
+        android:layout_toRightOf="@+id/view6"
+        android:layout_toEndOf="@+id/view6"
+        android:layout_marginLeft="91dp"
+        android:layout_marginStart="91dp"></com.rey.material.widget.Button>
 
 </RelativeLayout>
 
