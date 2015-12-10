@@ -3,6 +3,7 @@ package com.example.hulk.mtindo;
 /**
  * Created by maureen on 12/10/15.
  */
+
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -27,6 +28,11 @@ public class Maint extends AppCompatActivity implements OneFragmentDrawer.Fragme
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private OneFragmentDrawer drawerFragment;
+    private int[] tabIcons = {
+            R.drawable.image,
+            R.drawable.image,
+            R.drawable.image,
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +49,7 @@ public class Maint extends AppCompatActivity implements OneFragmentDrawer.Fragme
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+        /*setupTabIcons();*/
 
         //navigation drawer
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -53,11 +60,33 @@ public class Maint extends AppCompatActivity implements OneFragmentDrawer.Fragme
         drawerFragment.setDrawerListener(this);
     }
 
+    //Tab layout with text and icons
+   /* private void setupTabIcons() {
+
+        TextView tabOne = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
+        tabOne.setText("ONE");
+        tabOne.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.image, 0, 0);
+        tabLayout.getTabAt(0).setCustomView(tabOne);
+
+        TextView tabTwo = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
+        tabTwo.setText("TWO");
+        tabTwo.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.image, 0, 0);
+        tabLayout.getTabAt(1).setCustomView(tabTwo);
+
+        TextView tabThree = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
+        tabThree.setText("THREE");
+        tabThree.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.image, 0, 0);
+        tabLayout.getTabAt(2).setCustomView(tabThree);
+    }*/
+
+
+
+
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new OneFragment(), "ONE");
-        adapter.addFragment(new TwoFragment(), "TWO");
-        adapter.addFragment(new ThreeFragment(), "THREE");
+        adapter.addFragment(new OneFragment(), "Categories");
+        adapter.addFragment(new TwoFragment(), "Join community");
+        adapter.addFragment(new ThreeFragment(), "Offers");
         viewPager.setAdapter(adapter);
     }
 
@@ -90,7 +119,7 @@ public class Maint extends AppCompatActivity implements OneFragmentDrawer.Fragme
         }
 
 
-        //navigation drawer
+        //navigation drawer action bar items
 
 
     }
@@ -121,4 +150,8 @@ public class Maint extends AppCompatActivity implements OneFragmentDrawer.Fragme
     public void onDrawerItemSelected(View view, int position) {
 
     }
+
+
+
+
 }

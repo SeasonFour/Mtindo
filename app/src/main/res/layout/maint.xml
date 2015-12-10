@@ -61,10 +61,12 @@
                 app:layout_scrollFlags="scroll|enterAlways"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
+
+
             <android.support.design.widget.TabLayout
                 android:id="@+id/tabs"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/custom_tab_layout_height"
                 app:tabMode="fixed"
                 app:tabGravity="fill"/>
         </android.support.design.widget.AppBarLayout>
