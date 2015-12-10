@@ -100,7 +100,7 @@
         android:layout_height="wrap_content"
         android:background="#C41411"
         android:onClick="onClick"
-        android:text="@string/Cancel"
+        android:text="Cancel"
         android:textColor="#FCE4EC"
         android:id="@+id/view6"
         android:layout_below="@+id/scrollView"
