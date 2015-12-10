@@ -49,7 +49,6 @@ public class TwoFragment extends Fragment /*implements View.OnClickListener*/{
         });
 
         return rootView;
-
     }
 
 }
