@@ -18,6 +18,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE-FIREBASE.txt'
+        exclude 'META-INF/NOTICE'
+    }
 }
 
 
@@ -42,5 +49,11 @@ dependencies {
 
     //Dependancy for navigation drawer
     compile 'com.android.support:recyclerview-v7:23.1.1'
+
+    //material library
     compile 'com.github.rey5137:material:1.2.2'
+
+
+    //firebase dependancy
+    compile 'com.firebase:firebase-client-android:2.4.1+'
 }
