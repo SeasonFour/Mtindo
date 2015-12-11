@@ -9,8 +9,7 @@ package com.example.hulk.mtindo;
 public class NavDrawerItem {
     private boolean showNotify;
     private String title;
-
-
+    //Constructor
     public NavDrawerItem() {
 
     }

@@ -300,7 +300,7 @@ public class Createstore extends AppCompatActivity {
             getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
         }
     }
-    //TextWatcher
+    //Text
 
     private class MyTextWatcher implements TextWatcher {
 

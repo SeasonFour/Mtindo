@@ -18,14 +18,15 @@
     <string name="err_msg_telephone" />
     <string name="signed_in_fmt" />
 
-    <!-- Getting started with material design-->
+
+    <!--Navigation Drawer material design-->
     <string name="action_search">Search</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
 
-    <string name="nav_item_home">Home</string>
-    <string name="nav_item_friends">Friends</string>
-    <string name="nav_item_notifications">Messages</string>
+    <string name="nav_item_home">Hair</string>
+    <string name="nav_item_friends">Beauty</string>
+    <string name="nav_item_notifications">Make-Up</string>
 
     <!-- navigation drawer item labels  -->
     <string-array name="nav_drawer_labels">
@@ -34,8 +35,8 @@
         <item>@string/nav_item_notifications</item>
     </string-array>
 
-    <string name="title_messages">Messages</string>
-    <string name="title_friends">Friends</string>
-    <string name="title_home">Home</string>
+    <string name="title_messages">Make-up</string>
+    <string name="title_friends">Beauty</string>
+    <string name="title_home">Hair</string>
     <string name="title_activity_homepage">Homepage</string>
 </resources>

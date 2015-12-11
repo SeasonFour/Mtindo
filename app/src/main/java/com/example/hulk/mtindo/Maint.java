@@ -9,11 +9,11 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -38,18 +38,17 @@ public class Maint extends AppCompatActivity implements OneFragmentDrawer.Fragme
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.maint);
-
+        // toolbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        //veiwpager
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
-
+        //tabs
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
-        /*setupTabIcons();*/
+        /*setupTabIcons(); put here*/
 
         //navigation drawer
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -78,8 +77,6 @@ public class Maint extends AppCompatActivity implements OneFragmentDrawer.Fragme
         tabThree.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.image, 0, 0);
         tabLayout.getTabAt(2).setCustomView(tabThree);
     }*/
-
-
 
 
     private void setupViewPager(ViewPager viewPager) {
@@ -124,12 +121,12 @@ public class Maint extends AppCompatActivity implements OneFragmentDrawer.Fragme
 
     }
 
-    @Override
+  /*  @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
-    }
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -146,12 +143,41 @@ public class Maint extends AppCompatActivity implements OneFragmentDrawer.Fragme
         return super.onOptionsItemSelected(item);
     }
 
+
+
     @Override
     public void onDrawerItemSelected(View view, int position) {
-
+        displayView(position);
     }
 
+    private void displayView(int position) {
+        Fragment fragment = null;
+        String title = getString(R.string.app_name);
+        switch (position) {
+            case 0:
+                fragment = new Hair();
+                title = getString(R.string.title_home);
+                break;
+            /*case 1:
+                fragment = new FriendsFragment();
+                title = getString(R.string.title_friends);
+                break;
+            case 2:
+                fragment = new MessagesFragment();
+                title = getString(R.string.title_messages);
+                break;*/
+            default:
+                break;
+        }
 
+        if (fragment != null) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.container_body, fragment);
+            fragmentTransaction.commit();
 
-
+            // set the toolbar title
+            getSupportActionBar().setTitle(title);
+        }
+    }
 }

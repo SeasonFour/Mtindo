@@ -11,7 +11,18 @@
         android:id="@+id/button1"
 
         android:layout_gravity="bottom"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="142dp" />
+        android:layout_marginBottom="56dp"
+        android:layout_above="@+id/button2"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Post to your store"
+        android:id="@+id/button2"
+
+        android:layout_gravity="bottom"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

@@ -37,9 +37,10 @@ View picview;
         //Initialize ImageView
         ImageView imageView = (ImageView) picview.findViewById(R.id.imageView );
         Picasso.with(getActivity())
-                .load("https://cms-assets.tutsplus.com/uploads/users/21/posts/19431/featured_image/CodeFeature.jpg")
+                .load("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQJ6i4TOiVidyBVIpUjRAgNaB3LfLm_BOBi1HWU-DxRHeEaaV1x")
                 .into(imageView);
         // Inflate the layout for this fragment
+
 
 
         CardView card = (CardView)picview .findViewById(R.id.card_view1);
@@ -47,7 +48,7 @@ View picview;
 
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), Createstore.class);
+                Intent i = new Intent(getActivity(), Hair.class);
                 getActivity().startActivity(i);
 
             }
