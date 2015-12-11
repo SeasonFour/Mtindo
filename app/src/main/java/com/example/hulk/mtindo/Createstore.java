@@ -122,6 +122,7 @@ public class Createstore extends AppCompatActivity {
         });
 
 
+
 //load image onclick intent
      /*   Button buttonLoadImage = (Button) findViewById(R.id.buttonLoadPicture);
         buttonLoadImage.setOnClickListener(new View.OnClickListener() {
@@ -152,6 +153,7 @@ public class Createstore extends AppCompatActivity {
 
 
     }
+
     //Spinner method
     private void initSpinnerHintAndFloatingLabel() {
         spinner1 = (MaterialSpinner) findViewById(R.id.spinner1);
