@@ -8,7 +8,7 @@ import fr.ganfra.materialspinner.MaterialSpinner;
 
 public class Post_update extends AppCompatActivity {
     private static final String ERROR_MSG = "No";
-    private static final String[] ITEMS = {"Home", "Beauty", "Make up"};
+    private static final String[] ITEMS = {"Hair", "Beauty", "Make up"};
 
     private ArrayAdapter<String> adapter;
 

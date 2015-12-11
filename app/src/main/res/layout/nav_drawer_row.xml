@@ -12,7 +12,6 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:textSize="15dp"
-
         android:textStyle="bold" />
 
 </RelativeLayout>
