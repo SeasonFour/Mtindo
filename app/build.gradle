@@ -39,5 +39,6 @@ dependencies {
        exclude group: 'com.android.support', module: 'appcompat-v7'
     }
     compile 'com.firebase:firebase-client-android:2.4.1+'
+    compile 'com.github.traex.rippleeffect:library:1.3'
 
 }

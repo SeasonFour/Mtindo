@@ -17,6 +17,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+
 import fr.ganfra.materialspinner.MaterialSpinner;
 
 
@@ -26,6 +30,8 @@ public class Createstore extends AppCompatActivity {
     private static final int SELECT_PICTURE = 1;
     private String selectedImagePath;
     private ImageView img;
+    final Createstore context = this;
+
 
     private EditText inputName, /*inputEmail*/
             inputStorename, inputDescription, inputTelephone;
@@ -53,6 +59,9 @@ public class Createstore extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_createstore);
+        Firebase.setAndroidContext(this);
+        final Firebase STOREPROFILES = new Firebase("https://mtindo.firebaseio.com/");
+        final Firebase thestores = STOREPROFILES.child("stores");
 
 
         //Material spinner adapter
@@ -89,10 +98,29 @@ public class Createstore extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 submitForm();
+//                Capturing user data from textfields
+                String theinputname = inputName.getText().toString();
+                String theinputStorename = inputStorename.getText().toString();
+                String theinputDescription = inputDescription.getText().toString();
+                String theinputTelephone = inputTelephone.getText().toString();
+
+//                Connect to constructor class
+                Store store = new Store(theinputname,theinputStorename,theinputDescription,theinputTelephone);
+                thestores.push().setValue(store, new Firebase.CompletionListener() {
+                    @Override
+                    public void onComplete(FirebaseError firebaseError, Firebase firebase) {
+                        if (firebaseError != null) {
+                            Toast.makeText(context, "Contact not saved! Check Connection", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(context, "Contact saved Successfully", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
 
 
             }
         });
+
 
 //load image onclick intent
      /*   Button buttonLoadImage = (Button) findViewById(R.id.buttonLoadPicture);
