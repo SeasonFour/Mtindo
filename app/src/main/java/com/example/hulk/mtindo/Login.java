@@ -95,7 +95,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
         if (requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             handleSignInResult(result);
-            go();
+
 
         }
     }
@@ -120,10 +120,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
     private void updateUI(boolean b) {
 
     }
-    private void go(){
-        Intent i = new Intent(Login.this,Createstore.class);
-        startActivity(i);
-    }
+
     private void setStatus(String text) {
         ((TextView) findViewById(R.id.login_proceed)).setText(text);
     }
