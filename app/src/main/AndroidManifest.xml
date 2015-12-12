@@ -15,13 +15,14 @@
         <activity android:name=".Login"></activity>
         <activity android:name=".Post_update"></activity>
         <activity android:name=".Createstore">
+        </activity>
+        <activity android:name=".Maint">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Maint"></activity>
         <activity
             android:name=".Signin"
             android:label="@string/title_activity_signin"

@@ -16,15 +16,17 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import static com.example.hulk.mtindo.R.id.login_proceed;
+import static com.example.hulk.mtindo.R.id.sign_in_button;
 
 
 public class Login extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, View.OnClickListener {
     private static final String TAG = "SignInActivity";
     private static final int RC_SIGN_IN = 9001;
-
     private GoogleApiClient mGoogleApiClient;
     private TextView mStatusTextView;
     private ProgressDialog mProgressDialog;
+    private String status;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,16 +55,22 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
         // may be displayed when only basic profile is requested. Try adding the
         // Scopes.PLUS_LOGIN scope to the GoogleSignInOptions to see the
         // difference.
-        SignInButton signInButton = (SignInButton) findViewById(R.id.sign_in_button);
+        SignInButton signInButton = (SignInButton) findViewById(sign_in_button);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
         signInButton.setScopes(gso.getScopeArray());
-        findViewById(R.id.sign_in_button).setOnClickListener(this);
+        findViewById(login_proceed).setOnClickListener(this);
+        findViewById(sign_in_button).setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.sign_in_button:
                 signIn();
+                break;
+            case R.id.login_proceed:
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 break;
             // ...
         }
@@ -71,6 +79,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
     private void signIn() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
+        setStatus("Logging in...");
     }
 
 
@@ -98,9 +107,14 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
             GoogleSignInAccount acct = result.getSignInAccount();
             mStatusTextView.setText(getString(R.string.signed_in_fmt, acct.getDisplayName()));
             updateUI(true);
+            String email = result.getSignInAccount().getEmail();
+            setStatus("Logged in : " + email);
+            findViewById(R.id.sign_in_button).setVisibility(View.GONE);
+            findViewById(R.id.login_proceed).setVisibility(View.VISIBLE);
         } else {
             // Signed out, show unauthenticated UI.
             updateUI(false);
+            setStatus("Login failed");
         }
     }
     private void updateUI(boolean b) {
@@ -110,5 +124,9 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
         Intent i = new Intent(Login.this,Createstore.class);
         startActivity(i);
     }
+    private void setStatus(String text) {
+        ((TextView) findViewById(R.id.login_text)).setText(text);
+    }
+
 
 }

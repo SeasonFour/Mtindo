@@ -88,7 +88,7 @@
             <com.rey.material.widget.TextView
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:id="@+id/context">
+                android:id="@+id/login_text">
 
             </com.rey.material.widget.TextView>
 
