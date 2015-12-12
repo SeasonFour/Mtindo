@@ -105,7 +105,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
         if (result.isSuccess()) {
             // Signed in successfully, show authenticated UI.
             GoogleSignInAccount acct = result.getSignInAccount();
-            mStatusTextView.setText(getString(R.string.signed_in_fmt, acct.getDisplayName()));
+//            mStatusTextView.setText(getString(R.string.signed_in_fmt, acct.getDisplayName()));
             updateUI(true);
             String email = result.getSignInAccount().getEmail();
             setStatus("Logged in : " + email);
@@ -125,7 +125,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
         startActivity(i);
     }
     private void setStatus(String text) {
-        ((TextView) findViewById(R.id.login_text)).setText(text);
+        ((TextView) findViewById(R.id.login_proceed)).setText(text);
     }
 
 

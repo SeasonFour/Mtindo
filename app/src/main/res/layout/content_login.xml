@@ -26,27 +26,13 @@
     <com.rey.material.widget.Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login Proceed"
         android:id="@+id/login_proceed"
-        android:background="#536DFE"
+        android:textColor="#536DFE"
+        android:background="#E8EAF6"
         android:layout_below="@+id/sign_in_button"
         android:layout_alignRight="@+id/sign_in_button"
         android:layout_alignEnd="@+id/sign_in_button"
         android:layout_marginTop="58dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="You are not Logged in"
-        android:id="@+id/textView2"
-        android:layout_marginBottom="83dp"
-        android:textColor="#1A237E"
-        android:textSize="20dp"
-        android:layout_above="@+id/login_proceed"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="42dp"
-        android:layout_marginStart="42dp" />
 
 
 </RelativeLayout>
