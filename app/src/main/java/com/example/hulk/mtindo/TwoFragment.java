@@ -42,7 +42,7 @@ public class TwoFragment extends Fragment /*implements View.OnClickListener*/{
 
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(),Post_update.class);
+                Intent i = new Intent(getActivity(),Signin.class);
                 getActivity().startActivity(i);
 
             }
