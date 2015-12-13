@@ -1,90 +1,99 @@
 package com.example.hulk.mtindo;
 
-/*
-
-public class Hair extends AppCompatActivity {
-
-    //Toolbar
-    private Toolbar mToolbar;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hair);
-
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-
-        setSupportActionBar(mToolbar);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Hair/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-       */
-/* if (id == R.id.action_settings) {
-            return true;
-        }*//*
-
-
-        return super.onOptionsItemSelected(item);
-    }
-}*/
-
-
-
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 public class Hair extends Fragment {
 
-    public Hair() {
-        // Required empty public constructor
-    }
+    public static TabLayout tabLayout;
+    public static ViewPager viewPager;
+    public static int int_items = 3 ;
 
+    @Nullable
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        /**
+         *Inflate tab_layout and setup Views.
+         */
+        View x =  inflater.inflate(R.layout.activity_hair,null);
+        tabLayout = (TabLayout) x.findViewById(R.id.tabs);
+        viewPager = (ViewPager) x.findViewById(R.id.viewpager);
+
+        /**
+         *Set an Apater for the View Pager
+         */
+        viewPager.setAdapter(new MyAdapter(getChildFragmentManager()));
+
+        /**
+         * Now , this is a workaround ,
+         * The setupWithViewPager dose't works without the runnable .
+         * Maybe a Support Library Bug .
+         */
+
+        tabLayout.post(new Runnable() {
+            @Override
+            public void run() {
+                tabLayout.setupWithViewPager(viewPager);
+            }
+        });
+
+        return x;
 
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.activity_hair, container, false);
+    class MyAdapter extends FragmentPagerAdapter{
 
+        public MyAdapter(FragmentManager fm) {
+            super(fm);
+        }
 
-        // Inflate the layout for this fragment
-        return rootView;
+        /**
+         * Return fragment with respect to Position .
+         */
+
+        @Override
+        public Fragment getItem(int position)
+        {
+            switch (position){
+                case 0 : return new OneFragment();
+                case 1 : return new TwoFragment();
+                case 2 : return new ThreeFragment();
+            }
+            return null;
+        }
+
+        @Override
+        public int getCount() {
+
+            return int_items;
+
+        }
+
+        /**
+         * This method returns the title of the tab according to the position.
+         */
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+
+            switch (position){
+                case 0 :
+                    return "Explore";
+                case 1 :
+                    return "Join Community";
+                case 2 :
+                    return "Offers";
+            }
+            return null;
+        }
     }
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-    }
-
 
 }

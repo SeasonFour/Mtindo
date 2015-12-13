@@ -12,9 +12,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity implements OneFragmentDrawer.FragmentDrawerListener {
 
@@ -22,6 +20,9 @@ public class MainActivity extends ActionBarActivity implements OneFragmentDrawer
 
     private Toolbar mToolbar;
     private OneFragmentDrawer drawerFragment;
+
+    FragmentManager mFragmentManager;
+    FragmentTransaction mFragmentTransaction;
 
 
 
@@ -42,6 +43,16 @@ public class MainActivity extends ActionBarActivity implements OneFragmentDrawer
 
         // display the first navigation drawer view on app launch
         displayView(0);
+
+       /* *
+         * Lets inflate the very first fragment
+         * Here , we are inflating the TabFragment as the first Fragment*/
+
+
+        mFragmentManager = getSupportFragmentManager();
+        mFragmentTransaction = mFragmentManager.beginTransaction();
+     /*   mFragmentTransaction.replace(R.id.containerView,new Hair()).commit();*/
+
     }
 
 
@@ -52,7 +63,7 @@ public class MainActivity extends ActionBarActivity implements OneFragmentDrawer
         return true;
     }
 
-    @Override
+   /* @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -60,9 +71,9 @@ public class MainActivity extends ActionBarActivity implements OneFragmentDrawer
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-       /* if (id == R.id.action_settings) {
+        if (id == R.id.action_settings) {
             return true;
-        }*/
+        }
 
         if(id == R.id.action_search){
             Toast.makeText(getApplicationContext(), "Search action is selected!", Toast.LENGTH_SHORT).show();
@@ -70,7 +81,10 @@ public class MainActivity extends ActionBarActivity implements OneFragmentDrawer
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
+
+
+    //Item on click navigation drawer
 
     @Override
     public void onDrawerItemSelected(View view, int position) {
@@ -86,11 +100,11 @@ public class MainActivity extends ActionBarActivity implements OneFragmentDrawer
                 title = getString(R.string.title_home);
                 break;
             case 1:
-                fragment = new Hair();
+                fragment = new OneFragment();
                 title = getString(R.string.title_friends);
                 break;
             case 2:
-                fragment = new Hair();
+                fragment = new TwoFragment();
                 title = getString(R.string.title_messages);
                 break;
             default:
