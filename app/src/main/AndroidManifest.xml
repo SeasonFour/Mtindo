@@ -11,11 +11,15 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Login" />
-        <activity android:name=".Post_update" />
-        <activity android:name=".Createstore"></activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Login"></activity>
+        <activity android:name=".Post_update"></activity>
+        <activity android:name=".Createstore">
+        </activity>
         <activity android:name=".Maint">
+
+        </activity>
+        <activity android:name=".Beauty">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,10 +29,6 @@
         <activity
             android:name=".Signin"
             android:label="@string/title_activity_signin"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Beauty"
-            android:label="@string/title_activity_beauty"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
