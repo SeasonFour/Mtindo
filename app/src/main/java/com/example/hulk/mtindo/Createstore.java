@@ -3,6 +3,7 @@ package com.example.hulk.mtindo;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -21,6 +22,8 @@ import android.widget.Toast;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 
+import java.io.ByteArrayOutputStream;
+
 import fr.ganfra.materialspinner.MaterialSpinner;
 
 
@@ -29,7 +32,7 @@ public class Createstore extends AppCompatActivity {
     private static int RESULT_LOAD_IMAGE = 1;
     private static final int SELECT_PICTURE = 1;
     private String selectedImagePath;
-    private ImageView img;
+    private ImageView image;
     final Createstore context = this;
 
 
@@ -139,7 +142,7 @@ public class Createstore extends AppCompatActivity {
         });*/
 
         // Gallery selector
-        img = (ImageView)findViewById(R.id.ImageView01);
+        image = (ImageView)findViewById(R.id.ImageView01);
         //Intent onclick add profile image button
         ((Button) findViewById(R.id.Button01))
                 .setOnClickListener(new View.OnClickListener() {
@@ -148,6 +151,7 @@ public class Createstore extends AppCompatActivity {
                         intent.setType("image/*");
                         intent.setAction(Intent.ACTION_GET_CONTENT);
                         startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECT_PICTURE);
+
                     }
                 });
 
@@ -202,7 +206,7 @@ public class Createstore extends AppCompatActivity {
                 Uri selectedImageUri = data.getData();
                 selectedImagePath = getPath(selectedImageUri);
                 System.out.println("Image Path : " + selectedImagePath);
-                img.setImageURI(selectedImageUri);
+                image.setImageURI(selectedImageUri);
             }
         }
     }
@@ -214,9 +218,6 @@ public class Createstore extends AppCompatActivity {
         cursor.moveToFirst();
         return cursor.getString(column_index);
     }
-
-
-
     /**
      * Validating form
      */
@@ -246,8 +247,6 @@ public class Createstore extends AppCompatActivity {
     }
 
     private boolean validateName() {
-
-
         if (inputName.getText().toString().trim().isEmpty() || inputName.length() < 3) {
             inputLayoutName.setError(getString(R.string.err_msg_name));
             requestFocus(inputName);
@@ -366,5 +365,13 @@ public class Createstore extends AppCompatActivity {
 
 
     }
+//    Method to convert image to base64
+public static String encodeToBase64(Bitmap image) {
+    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+    image.compress(Bitmap.CompressFormat.PNG, 100, baos);
+    byte[] b = baos.toByteArray();
+    String imageEncoded = com.firebase.client.utilities.Base64.encodeBytes(b);
+    return imageEncoded;
+}
 }
 
