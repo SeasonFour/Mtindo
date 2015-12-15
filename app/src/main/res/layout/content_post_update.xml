@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.hulk.mtindo.Post_update"
+    tools:showIn="@layout/activity_post_update"
+    android:background="#ffffff"
+    android:paddingTop="100dp"
+    android:paddingLeft="20dp">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <!--Name-->
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/Name"
+                app:met_floatingLabel="highlight"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/Name" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#888888"
+                android:textSize="14sp"
+                android:id="@+id/textView" />
+            <!--Spinner for category-->
+
+            <!--DEscription-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#888888"
+                android:textSize="14sp" />
+            <!--Price-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#888888"
+                android:textSize="14sp" />
+            <!--Tag/Mention-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#888888"
+                android:textSize="14sp" />
+
+
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/Description"
+        app:met_floatingLabel="highlight"
+        android:id="@+id/Description"
+        android:layout_below="@+id/Name"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/Price"
+        app:met_floatingLabel="highlight"
+        android:id="@+id/Price"
+        android:layout_below="@+id/Description"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/Tag"
+        app:met_floatingLabel="highlight"
+        android:id="@+id/Tag"
+        android:layout_below="@+id/Price"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+            <com.rey.material.widget.TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/login_text">
+
+            </com.rey.material.widget.TextView>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <com.rey.material.widget.Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#C41411"
+        android:onClick="onClick"
+        android:text="Cancel"
+        android:textColor="#FCE4EC"
+        android:id="@+id/view6"
+        android:layout_below="@+id/scrollView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+    </com.rey.material.widget.Button>
+
+    <com.rey.material.widget.Button
+android:layout_height="wrap_content"
+android:layout_width="wrap_content"
+android:background="#1ABC9C"
+android:text="Post"
+android:onClick="onClick"
+android:textColor="#FCE4EC"
+android:id="@+id/Post_btn"
+        android:layout_alignTop="@+id/view6"
+        android:layout_toRightOf="@+id/view6"
+        android:layout_toEndOf="@+id/view6"
+        android:layout_marginLeft="91dp"
+        android:layout_marginStart="91dp"></com.rey.material.widget.Button>
+
+</RelativeLayout>
+
+
+
+

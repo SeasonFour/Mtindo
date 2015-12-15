@@ -1,4 +1,45 @@
 <resources>
     <string name="app_name">Mtindo</string>
     <string name="action_settings">Settings</string>
+<<<<<<< HEAD
+=======
+    <string name="hint_name">Enter your full name</string>
+    <string name="hint_telephone">Phone number</string>
+    <string name="hint_storename">Enter store name</string>
+    <string name="hint_description">Enter brief description of your store</string>
+    <string name="btn_createstore">createstore</string>
+    <string name="Name">Full name</string>
+    <string name="Description">Description</string>
+    <string name="Price">Price</string>
+    <string name="Tag">Tag</string>
+    <string name="Cancel">Cancel</string>
+    <string name="sigsned_in_fmt" />
+    <string name="err_msg_name" />
+    <string name="err_msg_storename" />
+    <string name="err_msg_description" />
+    <string name="err_msg_telephone" />
+    <string name="signed_in_fmt" />
+
+    <!-- Getting started with material design-->
+    <string name="action_search">Search</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="nav_item_home">Home</string>
+    <string name="nav_item_friends">Friends</string>
+    <string name="nav_item_notifications">Messages</string>
+
+    <!-- navigation drawer item labels  -->
+    <string-array name="nav_drawer_labels">
+        <item>@string/nav_item_home</item>
+        <item>@string/nav_item_friends</item>
+        <item>@string/nav_item_notifications</item>
+    </string-array>
+
+    <string name="title_messages">Messages</string>
+    <string name="title_friends">Friends</string>
+    <string name="title_home">Home</string>
+    <string name="title_activity_homepage">Homepage</string>
+    <string name="title_activity_signin">Signin</string>
+>>>>>>> origin/master
 </resources>
