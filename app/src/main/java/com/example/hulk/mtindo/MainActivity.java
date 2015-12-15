@@ -1,6 +1,5 @@
 package com.example.hulk.mtindo;
 
-<<<<<<< HEAD
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,7 +10,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
-=======
 /**
  * Created by maureen on 12/9/15.
  */
@@ -28,13 +26,11 @@ public class MainActivity extends AppCompatActivity implements OneFragmentDrawer
 
     private Toolbar mToolbar;
     private OneFragmentDrawer drawerFragment;
->>>>>>> origin/master
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-<<<<<<< HEAD
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -48,8 +44,6 @@ public class MainActivity extends AppCompatActivity implements OneFragmentDrawer
         });
     }
 
-=======
-
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
 
         setSupportActionBar(mToolbar);
@@ -62,7 +56,6 @@ public class MainActivity extends AppCompatActivity implements OneFragmentDrawer
     }
 
 
->>>>>>> origin/master
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -78,14 +71,12 @@ public class MainActivity extends AppCompatActivity implements OneFragmentDrawer
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-<<<<<<< HEAD
         if (id == R.id.action_settings) {
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
-=======
       /*  if (id == R.id.action_settings) {
             return true;
         }
@@ -97,7 +88,4 @@ public class MainActivity extends AppCompatActivity implements OneFragmentDrawer
     public void onDrawerItemSelected(View view, int position) {
 
     }
-
-
->>>>>>> origin/master
 }
