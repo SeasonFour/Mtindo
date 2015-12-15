@@ -126,9 +126,9 @@ public class Createstore extends AppCompatActivity {
                     @Override
                     public void onComplete(FirebaseError firebaseError, Firebase firebase) {
                         if (firebaseError != null) {
-                            Toast.makeText(context, "Contact not saved! Check Connection", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "No Connection", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(context, "Contact saved Successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "Store created Successfully", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -190,29 +190,7 @@ public class Createstore extends AppCompatActivity {
     }
 //select image
 
-    /*@Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
-            Uri selectedImage = data.getData();
-            String[] filePathColumn = {MediaStore.Images.Media.DATA};
-
-            Cursor cursor = getContentResolver().query(selectedImage,
-                    filePathColumn, null, null, null);
-            cursor.moveToFirst();
-
-            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-            String picturePath = cursor.getString(columnIndex);
-            cursor.close();
-
-            ImageView imageView = (ImageView) findViewById(R.id.imgView);
-
-            imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
-
-
-        }
-    }*/
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
             if (requestCode == SELECT_PICTURE) {
@@ -220,10 +198,10 @@ public class Createstore extends AppCompatActivity {
                 selectedImagePath = getPath(selectedImageUri);
                 System.out.println("Image Path : " + selectedImagePath);
                 image.setImageURI(selectedImageUri);
-                BitmapFactory.Options options = new BitmapFactory.Options();
-                options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-                Bitmap bitmap = BitmapFactory.decodeFile(selectedImagePath, options);
-                image.setImageBitmap(bitmap);
+
+
+
+
 
             }
         }

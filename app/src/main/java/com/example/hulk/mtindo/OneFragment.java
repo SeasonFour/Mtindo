@@ -11,9 +11,8 @@ import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
-import com.squareup.picasso.Picasso;
+
 
 
 public class OneFragment extends Fragment{
@@ -35,10 +34,10 @@ View picview;
 
         picview =inflater.inflate(R.layout.fragment_one, container, false);
         //Initialize ImageView
-        ImageView imageView = (ImageView) picview.findViewById(R.id.imageView );
-        Picasso.with(getActivity())
-                .load("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQJ6i4TOiVidyBVIpUjRAgNaB3LfLm_BOBi1HWU-DxRHeEaaV1x")
-                .into(imageView);
+//        ImageView imageView = (ImageView) picview.findViewById(R.id.imageView );
+//        Picasso.with(getActivity())
+//                .load("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQJ6i4TOiVidyBVIpUjRAgNaB3LfLm_BOBi1HWU-DxRHeEaaV1x")
+//                .into(imageView);
         // Inflate the layout for this fragment
 
 
