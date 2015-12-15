@@ -51,7 +51,7 @@ public class MainActivity extends ActionBarActivity implements OneFragmentDrawer
 
         mFragmentManager = getSupportFragmentManager();
         mFragmentTransaction = mFragmentManager.beginTransaction();
-     /*   mFragmentTransaction.replace(R.id.containerView,new Hair()).commit();*/
+     /*   mFragmentTransaction.replace(R.id.containerView,new Mtindo()).commit();*/
 
     }
 
@@ -96,16 +96,16 @@ public class MainActivity extends ActionBarActivity implements OneFragmentDrawer
         String title = getString(R.string.app_name);
         switch (position) {
             case 0:
-                fragment = new Hair();
-                title = getString(R.string.title_home);
+                fragment = new Mtindo();
+                title = "Mtindo";
                 break;
             case 1:
                 fragment = new OneFragment();
-                title = getString(R.string.title_friends);
+                title ="Beauty";
                 break;
             case 2:
                 fragment = new TwoFragment();
-                title = getString(R.string.title_messages);
+                title = "Make-up";
                 break;
             default:
                 break;

@@ -1,22 +1,16 @@
 package com.example.hulk.mtindo;
 
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
 /**
  * Created by maureen on 12/10/15.
  */
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.CardView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-
-import com.squareup.picasso.Picasso;
-
-
-public class OneFragment extends Fragment{
+/*public class OneFragment extends Fragment{
 View picview;
 
     public OneFragment() {
@@ -48,7 +42,7 @@ View picview;
 
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), Hair.class);
+                Intent i = new Intent(getActivity(), Mtindo.class);
                 getActivity().startActivity(i);
 
             }
@@ -60,6 +54,26 @@ View picview;
 
 
 
+    }
+
+}*/
+
+public class OneFragment extends Fragment {
+
+    public OneFragment() {
+        // Required empty public constructor
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_one, container, false);
     }
 
 }

@@ -50,17 +50,6 @@ public class TwoFragment extends Fragment /*implements View.OnClickListener*/{
 
 
 
- /*       rootView=inflater.inflate(R.layout.fragment_two, container, false);
-        Button  postButton = (Button)rootView .findViewById(R.id.button2);
-        postButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent j = new Intent(getActivity(),Post_update.class);
-                getActivity().startActivity(j);
-
-            }
-        });*/
 
 
 
