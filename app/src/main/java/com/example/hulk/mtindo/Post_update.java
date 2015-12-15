@@ -34,6 +34,7 @@ public class Post_update extends AppCompatActivity {
                 final EditText updateTag = (EditText) findViewById(R.id.Tag);
                 Button Post_btn = (Button) findViewById(R.id.Post_btn);
 
+
                 //Capture user input
                 String theName = updateName.getText().toString();
                 String theDescription = updateDescription.getText().toString();
@@ -60,5 +61,8 @@ public class Post_update extends AppCompatActivity {
         });
 
     }
+
+
+
 
 }

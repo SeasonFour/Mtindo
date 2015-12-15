@@ -5,7 +5,7 @@ package com.example.hulk.mtindo;
  */
 public class Store {
     String UserName,Telephone,StoreName,Description;
-    public Store(String UserName,String Telephone, String StoreName,String Description){
+    public Store(String UserName, String Telephone, String StoreName, String Description, String theinputimage){
         this.UserName = UserName;
         this.Telephone = Telephone;
         this.StoreName = StoreName;

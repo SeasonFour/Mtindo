@@ -97,6 +97,7 @@ public class Createstore extends AppCompatActivity {
         inputTelephone = (EditText) findViewById(R.id.input_telephone);
         inputStorename = (EditText) findViewById(R.id.input_storename);
         inputDescription = (EditText) findViewById(R.id.input_description);
+        image = (ImageView) findViewById(R.id.imageView3);
 
 
         //Create store button
@@ -118,9 +119,9 @@ public class Createstore extends AppCompatActivity {
                 String theinputStorename = inputStorename.getText().toString();
                 String theinputDescription = inputDescription.getText().toString();
                 String theinputTelephone = inputTelephone.getText().toString();
-
+                String theinputimage = image.toString();
 //                Connect to constructor class
-                Store store = new Store(theinputname, theinputStorename, theinputDescription, theinputTelephone);
+                Store store = new Store(theinputname, theinputStorename, theinputDescription, theinputTelephone, theinputimage);
                 thestores.push().setValue(store, new Firebase.CompletionListener() {
                     @Override
                     public void onComplete(FirebaseError firebaseError, Firebase firebase) {
@@ -219,6 +220,10 @@ public class Createstore extends AppCompatActivity {
                 selectedImagePath = getPath(selectedImageUri);
                 System.out.println("Image Path : " + selectedImagePath);
                 image.setImageURI(selectedImageUri);
+                BitmapFactory.Options options = new BitmapFactory.Options();
+                options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+                Bitmap bitmap = BitmapFactory.decodeFile(selectedImagePath, options);
+                image.setImageBitmap(bitmap);
 
             }
         }
