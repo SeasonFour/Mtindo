@@ -24,19 +24,19 @@
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
 
-    <string name="nav_item_home">Hair</string>
-    <string name="nav_item_friends">Beauty</string>
-    <string name="nav_item_notifications">Make-Up</string>
+    <string name="nav_item_home">Home</string>
+    <string name="nav_item_Beauty">Beauty</string>
+    <string name="nav_item_Makeup">Make-Up</string>
 
     <!-- navigation drawer item labels  -->
     <string-array name="nav_drawer_labels">
         <item>@string/nav_item_home</item>
-        <item>@string/nav_item_friends</item>
-        <item>@string/nav_item_notifications</item>
+        <item>@string/nav_item_Beauty</item>
+        <item>@string/nav_item_Makeup</item>
     </string-array>
 
-    <string name="title_messages">Make-up</string>
-    <string name="title_friends">Beauty</string>
-    <string name="title_home">Hair</string>
+    <string name="title_Makeup">Make-up</string>
+    <string name="title_Beauty">Beauty</string>
+    <string name="title_home">Home</string>
     <string name="title_activity_homepage">Homepage</string>
 </resources>

@@ -11,7 +11,7 @@
         android:id="@+id/action_search"
         android:title="@string/action_search"
         android:orderInCategory="100"
-        android:icon="@drawable/image"
+        android:icon="@drawable/icsearchwhite"
         app:showAsAction="ifRoom" />
 
 

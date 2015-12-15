@@ -35,7 +35,7 @@ public class Createstore extends AppCompatActivity {
 
     //spinner variables
     private static final String ERROR_MSG = "Very very very long error message to get scrolling or multiline animation when the error button is clicked";
-    private static final String[] ITEMS = {"Hair", "Beauty", "Makeup"};
+    private static final String[] ITEMS = {"Mtindo", "Beauty", "Makeup"};
 
     //Declare adapter
     private ArrayAdapter<String> adapter;

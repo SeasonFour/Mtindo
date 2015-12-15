@@ -11,7 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class Hair extends Fragment {
+public class Mtindo extends Fragment {
 
     public static TabLayout tabLayout;
     public static ViewPager viewPager;
@@ -23,7 +23,7 @@ public class Hair extends Fragment {
         /**
          *Inflate tab_layout and setup Views.
          */
-        View x =  inflater.inflate(R.layout.activity_hair,null);
+        View x =  inflater.inflate(R.layout.activity_mtindo,null);
         tabLayout = (TabLayout) x.findViewById(R.id.tabs);
         viewPager = (ViewPager) x.findViewById(R.id.viewpager);
 
