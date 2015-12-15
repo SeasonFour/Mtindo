@@ -33,8 +33,10 @@ public class Signin extends AppCompatActivity {
                         intent.setType("image/*");
                         intent.setAction(Intent.ACTION_GET_CONTENT);
                         startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECT_PICTURE);
+
                     }
                 });
+
 
 
     }
