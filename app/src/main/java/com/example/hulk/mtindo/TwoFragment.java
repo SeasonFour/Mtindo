@@ -36,17 +36,34 @@ public class TwoFragment extends Fragment /*implements View.OnClickListener*/{
         // Inflate the layout for this fragment
         //Intent onclick button form join community to create store
 
-        rootView=inflater.inflate(R.layout.fragment_two, container, false);
-        Button  createButton = (Button)rootView .findViewById(R.id.button1);
+        rootView = inflater.inflate(R.layout.fragment_two, container, false);
+        Button createButton = (Button) rootView.findViewById(R.id.button1);
         createButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(),Signin.class);
+                Intent i = new Intent(getActivity(), Createstore.class);
                 getActivity().startActivity(i);
 
             }
         });
+
+
+
+ /*       rootView=inflater.inflate(R.layout.fragment_two, container, false);
+        Button  postButton = (Button)rootView .findViewById(R.id.button2);
+        postButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent j = new Intent(getActivity(),Post_update.class);
+                getActivity().startActivity(j);
+
+            }
+        });*/
+
+
+
 
         return rootView;
     }
