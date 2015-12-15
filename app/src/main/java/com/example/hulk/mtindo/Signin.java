@@ -1,13 +1,14 @@
 package com.example.hulk.mtindo;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
+import android.widget.ImageView;
 
 public class Signin extends AppCompatActivity {
+    private static final int SELECT_PICTURE = 1;
+    private String selectedImagePath;
+    private ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,14 +17,23 @@ public class Signin extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        // Gallery selector
+//        image = (ImageView) findViewById(ImageView01);
+//        //Intent onclick add profile image button
+//        ((Button) findViewById(R.id.Button01))
+//                .setOnClickListener(new View.OnClickListener() {
+//                    public void onClick(View arg0) {
+//                        Intent intent = new Intent();
+//                        intent.setType("image/*");
+//                        intent.setAction(Intent.ACTION_GET_CONTENT);
+//                        startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECT_PICTURE);
+//                    }
+//                });
+//        // ATTENTION: This was auto-generated to implement the App Indexing API.
+//        // See https://g.co/AppIndexing/AndroidStudio for more information.
+//        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+
+
     }
 
 }

@@ -4,24 +4,28 @@ package com.example.hulk.mtindo;
  * Created by hulk on 12/10/15.
  */
 public class Update {
-    String Name, Description, Price, Tag;
+    String theName, description, price, tag;
 
     public Update(String Name,String Description, String Price, String Tag){
-        this.Name = Name;
-        this.Description = Description;
-        this.Price = Price;
-        this.Tag = Tag;
+        this.theName = Name;
+        this.description = Description;
+        this.price = Price;
+        this.tag = Tag;
     }
     public String getTheName(){
-        return this.Name;
+        return theName;
     }
     public String getDescription(){
-        return this.Description;
+        return description;
     }
     public String getPrice(){
-        return this.Price;
+        return price;
     }
     public String getTag(){
-        return this.Tag;
+        return tag;
+    }
+    //Very important hwen reading from firebase
+    public Update(){
+
     }
 }

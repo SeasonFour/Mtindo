@@ -35,6 +35,9 @@ public class Update_manager extends Activity{
 //        mAdapter = new MyAdapter(myDataset);
         mRecyclerView.setAdapter(mAdapter);
 
+//        Link Adapter
+        Update_adapter update_adapter = new Update_adapter(Update.class,R.layout.update_card,ViewHolder.class,rootref);
+        mRecyclerView.setAdapter(update_adapter);
 
     }
 }

@@ -4,6 +4,7 @@ package com.example.hulk.mtindo;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -21,10 +22,16 @@ import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 
 import fr.ganfra.materialspinner.MaterialSpinner;
+
+import static com.example.hulk.mtindo.R.id.ImageView01;
 
 
 public class Createstore extends AppCompatActivity {
@@ -57,6 +64,11 @@ public class Createstore extends AppCompatActivity {
 
 
     private Button btnSignUp;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,7 +120,7 @@ public class Createstore extends AppCompatActivity {
                 String theinputTelephone = inputTelephone.getText().toString();
 
 //                Connect to constructor class
-                Store store = new Store(theinputname,theinputStorename,theinputDescription,theinputTelephone);
+                Store store = new Store(theinputname, theinputStorename, theinputDescription, theinputTelephone);
                 thestores.push().setValue(store, new Firebase.CompletionListener() {
                     @Override
                     public void onComplete(FirebaseError firebaseError, Firebase firebase) {
@@ -123,7 +135,6 @@ public class Createstore extends AppCompatActivity {
 
             }
         });
-
 
 
 //load image onclick intent
@@ -142,7 +153,7 @@ public class Createstore extends AppCompatActivity {
         });*/
 
         // Gallery selector
-        image = (ImageView)findViewById(R.id.ImageView01);
+        image = (ImageView) findViewById(ImageView01);
         //Intent onclick add profile image button
         ((Button) findViewById(R.id.Button01))
                 .setOnClickListener(new View.OnClickListener() {
@@ -151,11 +162,11 @@ public class Createstore extends AppCompatActivity {
                         intent.setType("image/*");
                         intent.setAction(Intent.ACTION_GET_CONTENT);
                         startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECT_PICTURE);
-
                     }
                 });
-
-
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     //Spinner method
@@ -164,6 +175,7 @@ public class Createstore extends AppCompatActivity {
         spinner1.setAdapter(adapter);
         spinner1.setPaddingSafe(0, 0, 0, 0);
     }
+
     //spinner validation
     public void activateError(View view) {
         if (!shown) {
@@ -207,17 +219,25 @@ public class Createstore extends AppCompatActivity {
                 selectedImagePath = getPath(selectedImageUri);
                 System.out.println("Image Path : " + selectedImagePath);
                 image.setImageURI(selectedImageUri);
+
             }
         }
     }
 
     public String getPath(Uri uri) {
-        String[] projection = { MediaStore.Images.Media.DATA };
+        String[] projection = {MediaStore.Images.Media.DATA};
         Cursor cursor = managedQuery(uri, projection, null, null, null);
         int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
         cursor.moveToFirst();
         return cursor.getString(column_index);
+
+
     }
+
+
+
+
+
     /**
      * Validating form
      */
@@ -285,19 +305,19 @@ public class Createstore extends AppCompatActivity {
         return true;
     }*/
 
-   private boolean validateDescription() {
+    private boolean validateDescription() {
 
 
-       if (inputDescription.getText().toString().trim().isEmpty() || inputDescription.length() < 3) {
-           inputLayoutDescription.setError(getString(R.string.err_msg_description));
-           requestFocus(inputDescription);
-           return false;
-       } else {
-           inputLayoutDescription.setErrorEnabled(false);
-       }
+        if (inputDescription.getText().toString().trim().isEmpty() || inputDescription.length() < 3) {
+            inputLayoutDescription.setError(getString(R.string.err_msg_description));
+            requestFocus(inputDescription);
+            return false;
+        } else {
+            inputLayoutDescription.setErrorEnabled(false);
+        }
 
-       return true;
-   }
+        return true;
+    }
 
     private boolean validateTelephone() {
         if (inputTelephone.getText().toString().trim().isEmpty() || inputTelephone.length() > 10) {
@@ -320,6 +340,46 @@ public class Createstore extends AppCompatActivity {
         if (view.requestFocus()) {
             getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
         }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client.connect();
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "Createstore Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app deep link URI is correct.
+                Uri.parse("android-app://com.example.hulk.mtindo/http/host/path")
+        );
+        AppIndex.AppIndexApi.start(client, viewAction);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "Createstore Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app deep link URI is correct.
+                Uri.parse("android-app://com.example.hulk.mtindo/http/host/path")
+        );
+        AppIndex.AppIndexApi.end(client, viewAction);
+        client.disconnect();
     }
 
 
@@ -362,16 +422,22 @@ public class Createstore extends AppCompatActivity {
 
 
         }
-
-
     }
-//    Method to convert image to base64
-public static String encodeToBase64(Bitmap image) {
-    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-    image.compress(Bitmap.CompressFormat.PNG, 100, baos);
-    byte[] b = baos.toByteArray();
-    String imageEncoded = com.firebase.client.utilities.Base64.encodeBytes(b);
-    return imageEncoded;
+
+    //    Method to convert image to base64
+    public static String encodeToBase64(Bitmap image) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        image.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        byte[] b = baos.toByteArray();
+        String imageEncoded = com.firebase.client.utilities.Base64.encodeBytes(b);
+        return imageEncoded;
+    }
+
+    public static Bitmap decodeFromBase64(String input) throws IOException, IOException {
+        byte[] decodedByte = com.firebase.client.utilities.Base64.decode(input);
+        return BitmapFactory.decodeByteArray(decodedByte, 0, decodedByte.length);
+    }
+
 }
-}
+
 
