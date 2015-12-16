@@ -89,12 +89,12 @@ public class MainActivity extends ActionBarActivity implements OneFragmentDrawer
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-       /* //noinspection SimplifiableIfStatement
+      /*  //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
-        }*/
+        }
 
-       /* if(id == R.id.action_search){
+        if(id == R.id.action_search){
             Toast.makeText(getApplicationContext(), "Search action is selected!", Toast.LENGTH_SHORT).show();
             return true;
         }*/
