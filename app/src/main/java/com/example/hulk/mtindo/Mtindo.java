@@ -65,7 +65,7 @@ public class Mtindo extends Fragment {
             switch (position){
                 case 0 : return new OneFragment();
                 case 1 : return new TwoFragment();
-                case 2 : return new ThreeFragment();
+                case 2 : return new OffersSlider();
             }
             return null;
         }

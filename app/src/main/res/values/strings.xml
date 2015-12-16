@@ -25,18 +25,18 @@
     <string name="drawer_close">Close</string>
 
     <string name="nav_item_home">Home</string>
-    <string name="nav_item_Beauty">Beauty</string>
-    <string name="nav_item_Makeup">Make-Up</string>
+    <string name="nav_item_Categories">Categories</string>
+    <string name="nav_item_Offers">Offers</string>
 
     <!-- navigation drawer item labels  -->
     <string-array name="nav_drawer_labels">
         <item>@string/nav_item_home</item>
-        <item>@string/nav_item_Beauty</item>
-        <item>@string/nav_item_Makeup</item>
+        <item>@string/nav_item_Categories</item>
+        <item>@string/nav_item_Offers</item>
     </string-array>
 
-    <string name="title_Makeup">Make-up</string>
-    <string name="title_Beauty">Beauty</string>
+    <string name="title_Offers">Offers</string>
+    <string name="title_Categories">Categories</string>
     <string name="title_home">Home</string>
     <string name="title_activity_homepage">Homepage</string>
 </resources>

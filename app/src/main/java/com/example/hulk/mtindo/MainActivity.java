@@ -187,15 +187,15 @@ public class MainActivity extends ActionBarActivity implements OneFragmentDrawer
         switch (position) {
             case 0:
                 fragment = new Mtindo();
-                title = "Mtindo";
+                title = "Home";
                 break;
             case 1:
                 fragment = new OneFragment();
-                title ="Beauty";
+                title ="Explore";
                 break;
             case 2:
-                fragment = new TwoFragment();
-                title = "Make-up";
+                fragment = new OffersSlider();
+                title = "Offers";
                 break;
             default:
                 break;
