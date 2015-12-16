@@ -12,10 +12,8 @@ public class Beauty extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beauty);
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
 
-        //Db connection
+        //DB connection
         Firebase.setAndroidContext(this);
         Firebase rootref = new Firebase("https://mtindo.firebaseio.com/updates");
 
