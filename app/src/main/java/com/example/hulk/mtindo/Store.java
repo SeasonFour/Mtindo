@@ -25,4 +25,8 @@ public class Store {
         return Description;
     }
 
+    public Store(){
+
+    }
+
 }
