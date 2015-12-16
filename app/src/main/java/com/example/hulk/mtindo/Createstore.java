@@ -12,6 +12,7 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
@@ -35,6 +36,7 @@ import static com.example.hulk.mtindo.R.id.ImageView01;
 
 
 public class Createstore extends AppCompatActivity {
+    private static final String TAG = "Createstore";
     //select gallery images variables
     private static int RESULT_LOAD_IMAGE = 1;
     private static final int SELECT_PICTURE = 1;
@@ -218,14 +220,20 @@ public class Createstore extends AppCompatActivity {
         if (resultCode == RESULT_OK) {
             if (requestCode == SELECT_PICTURE) {
                 Uri selectedImageUri = data.getData();
+                Log.i(TAG, "Image Uri : " + selectedImageUri);
                 selectedImagePath = getPath(selectedImageUri);
-                System.out.println("Image Path : " + selectedImagePath);
-                image.setImageURI(selectedImageUri);
-                BitmapFactory.Options options = new BitmapFactory.Options();
-                options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-                Bitmap bitmap = BitmapFactory.decodeFile(selectedImagePath, options);
-                image.setImageBitmap(bitmap);
-
+                Log.i(TAG, "Image Path : " + selectedImagePath);
+//                image.setImageURI(selectedImageUri);
+//                BitmapFactory.Options options = new BitmapFactory.Options();
+//                options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+//                Bitmap bitmap = BitmapFactory.decodeFile(selectedImagePath, options);
+//                image.setImageBitmap(bitmap);
+                try {
+                    // see http://stackoverflow.com/questions/9638455
+                    image.setImageBitmap(MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImageUri));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
