@@ -62,6 +62,9 @@ public class MainActivity extends BaseActivity implements OneFragmentDrawer.Frag
         return true;
     }
 
+//    Getting google image and user ID
+
+
    /* @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

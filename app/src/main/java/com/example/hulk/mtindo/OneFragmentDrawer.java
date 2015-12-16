@@ -3,6 +3,7 @@ package com.example.hulk.mtindo;
 /**
  * Created by maureen on 12/9/15.
  */
+
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,10 +18,16 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.Result;
+import com.google.android.gms.common.api.ResultCallback;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class OneFragmentDrawer extends Fragment {
+public class OneFragmentDrawer extends Fragment implements GoogleApiClient.ConnectionCallbacks,
+        GoogleApiClient.OnConnectionFailedListener, ResultCallback {
 
     private static String TAG = OneFragmentDrawer.class.getSimpleName();
 
@@ -118,6 +125,32 @@ public class OneFragmentDrawer extends Fragment {
                 mDrawerToggle.syncState();
             }
         });
+
+    }
+
+    @Override
+    public void onConnected(Bundle bundle) {
+//        if (Plus.PeopleApi.getCurrentPerson(mGoogleApiClient) != null) {
+//            Person currentPerson = Plus.PeopleApi.getCurrentPerson(mGoogleApiClient);
+//            String personName = currentPerson.getDisplayName();
+//            String personPhoto = currentPerson.getImage();
+//            String personGooglePlusProfile = currentPerson.getUrl();
+//        }
+
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(ConnectionResult connectionResult) {
+
+    }
+
+    @Override
+    public void onResult(Result result) {
 
     }
 
