@@ -17,37 +17,34 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import fr.ganfra.materialspinner.MaterialSpinner;
 
 
 public class Createstore extends AppCompatActivity {
-    //select gallery images variables
+    //select form gallery images variables
     private static int RESULT_LOAD_IMAGE = 1;
     private static final int SELECT_PICTURE = 1;
     private String selectedImagePath;
     private ImageView img;
-
+    //edit text variables
     private EditText inputName, /*inputEmail*/
             inputStorename, inputDescription, inputTelephone;
     private TextInputLayout inputLayoutName, /*inputLayoutEmail,*/
             inputLayoutStore, inputLayoutDescription, inputLayoutTelephone;
 
-//variables phone
-
 
     //spinner variables
     private static final String ERROR_MSG = "Very very very long error message to get scrolling or multiline animation when the error button is clicked";
-    private static final String[] ITEMS = {"Hair", "Beauty", "Makeup"};
+    private static final String[] ITEMS = {"Mtindo", "Beauty", "Makeup"};
 
-
+    //Declare adapter
     private ArrayAdapter<String> adapter;
-
+    //Material spinner
     MaterialSpinner spinner1;
     private boolean shown = false;
 
-
-    private Button btnSignUp;
+    //Createstore activity button
+    private Button btnpostUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,44 +52,50 @@ public class Createstore extends AppCompatActivity {
         setContentView(R.layout.activity_createstore);
 
 
+        //Material spinner adapter
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ITEMS);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-
         initSpinnerHintAndFloatingLabel();
 
 
+        //Edit text input layouts
         inputLayoutName = (TextInputLayout) findViewById(R.id.input_layout_name);
         inputLayoutStore = (TextInputLayout) findViewById(R.id.input_layout_storename);
         inputLayoutTelephone = (TextInputLayout) findViewById(R.id.input_layout_telephone);
         inputLayoutDescription = (TextInputLayout) findViewById(R.id.input_layout_description);
         /*inputLayoutEmail = (TextInputLayout) findViewById(R.id.input_layout_email);*/
 
-
-        /*inputEmail = (EditText) findViewById(R.id.input_email);*/
+        //Edit text id
         inputName = (EditText) findViewById(R.id.input_name);
         inputTelephone = (EditText) findViewById(R.id.input_telephone);
         inputStorename = (EditText) findViewById(R.id.input_storename);
         inputDescription = (EditText) findViewById(R.id.input_description);
+        /*inputEmail = (EditText) findViewById(R.id.input_email);*/
 
-        btnSignUp = (Button) findViewById(R.id.btn_createstore);
 
+        //Textchanged listener
         inputName.addTextChangedListener(new MyTextWatcher(inputName));
-        /*inputEmail.addTextChangedListener(new MyTextWatcher(inputEmail));*/
         inputStorename.addTextChangedListener(new MyTextWatcher(inputStorename));
         inputDescription.addTextChangedListener(new MyTextWatcher(inputDescription));
         inputTelephone.addTextChangedListener(new MyTextWatcher(inputStorename));
+        /*inputEmail.addTextChangedListener(new MyTextWatcher(inputEmail));*/
+
+        //Create store button
+        btnpostUp = (Button) findViewById(R.id.btn_createstore);
 
 
-        btnSignUp.setOnClickListener(new View.OnClickListener() {
+        // create store button on clicklistener
+        btnpostUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 submitForm();
+
+
             }
         });
 
-//load image onclick intent
-     /*   Button buttonLoadImage = (Button) findViewById(R.id.buttonLoadPicture);
+        //load image onclick intent
+         /*   Button buttonLoadImage = (Button) findViewById(R.id.buttonLoadPicture);
         buttonLoadImage.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -106,9 +109,9 @@ public class Createstore extends AppCompatActivity {
             }
         });*/
 
-
+        //  Gallery selector onclick intent
         img = (ImageView)findViewById(R.id.ImageView01);
-
+        //Intent onclick add profile image button
         ((Button) findViewById(R.id.Button01))
                 .setOnClickListener(new View.OnClickListener() {
                     public void onClick(View arg0) {
@@ -123,16 +126,13 @@ public class Createstore extends AppCompatActivity {
     }
 
 
-
-
-
-
-    private void initSpinnerHintAndFloatingLabel() {
+    //Spinner method
+        private void initSpinnerHintAndFloatingLabel() {
         spinner1 = (MaterialSpinner) findViewById(R.id.spinner1);
         spinner1.setAdapter(adapter);
         spinner1.setPaddingSafe(0, 0, 0, 0);
-    }
-
+        }
+    //spinner validation
     public void activateError(View view) {
         if (!shown) {
             spinner1.setError(ERROR_MSG);
@@ -168,6 +168,8 @@ public class Createstore extends AppCompatActivity {
 
         }
     }*/
+
+    //select image
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
             if (requestCode == SELECT_PICTURE) {
@@ -187,12 +189,8 @@ public class Createstore extends AppCompatActivity {
         return cursor.getString(column_index);
     }
 
-
-
-
-
     /**
-     * Validating form
+     * Validating form on submit
      */
 
     private void submitForm() {
@@ -200,9 +198,6 @@ public class Createstore extends AppCompatActivity {
             return;
         }
 
-        /*if (!validateEmail()) {
-            return;
-        }*/
 
         if (!validateStorename()) {
             return;
@@ -215,11 +210,17 @@ public class Createstore extends AppCompatActivity {
             return;
         }
 
+        /*if (!validateEmail()) {
+            return;
+        }*/
 
         Toast.makeText(getApplicationContext(), "Store created!", Toast.LENGTH_SHORT).show();
     }
 
+    //Validate name edit text
     private boolean validateName() {
+
+
         if (inputName.getText().toString().trim().isEmpty() || inputName.length() < 3) {
             inputLayoutName.setError(getString(R.string.err_msg_name));
             requestFocus(inputName);
@@ -231,6 +232,7 @@ public class Createstore extends AppCompatActivity {
         return true;
     }
 
+    //Validate StoreName edit text
     private boolean validateStorename() {
         if (inputTelephone.getText().toString().trim().isEmpty() || inputStorename.length() < 3) {
             inputLayoutStore.setError(getString(R.string.err_msg_storename));
@@ -258,25 +260,11 @@ public class Createstore extends AppCompatActivity {
         return true;
     }*/
 
-   /* private boolean validateTelephone() {
-        String phone = inputTelephone.getText().toString().trim();
-        if (phone.isEmpty() || phone.equals("")) {
-            inputLayoutTelephone.setError(getString(R.string.err_msg_telephone));
-            requestFocus(inputTelephone);
-            return false;
+    //Validate Description edit text
 
-
-        } else if (phone.equals("0")) {
-            inputLayoutTelephone.setError(getString(R.string.err_msg_telephone));
-            requestFocus(inputTelephone);
-            return false;
-        } else {
-            inputLayoutTelephone.setErrorEnabled(false);
-        }
-
-        return true;
-    }*/
    private boolean validateDescription() {
+
+
        if (inputDescription.getText().toString().trim().isEmpty() || inputDescription.length() < 3) {
            inputLayoutDescription.setError(getString(R.string.err_msg_description));
            requestFocus(inputDescription);
@@ -288,6 +276,8 @@ public class Createstore extends AppCompatActivity {
        return true;
    }
 
+
+    //Validate Phonenumber edit text
     private boolean validateTelephone() {
         if (inputTelephone.getText().toString().trim().isEmpty() || inputTelephone.length() > 10) {
             inputLayoutTelephone.setError(getString(R.string.err_msg_telephone));
@@ -299,23 +289,7 @@ public class Createstore extends AppCompatActivity {
 
         return true;
     }
-
-  /*  private boolean validateData() {
-        boolean result = true;
-        String phone = edtPhone.getText().toString();
-        if (phone == null || phone.equals("")) {
-            phoneLayout.setError(getString(R.string.invalidNumber));
-            result = false;
-        }
-        else if (phone.equals("0")) {
-            phoneLayout.setError(getString(R.string.invalidNumberZero));
-            result = false;
-        }
-
-        return result;
-    }*/
-
-
+    //Validate E-mail
 
    /* private static boolean isValidEmail(String email) {
         return !TextUtils.isEmpty(email) && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
@@ -326,7 +300,7 @@ public class Createstore extends AppCompatActivity {
             getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
         }
     }
-
+    //Text
 
     private class MyTextWatcher implements TextWatcher {
 

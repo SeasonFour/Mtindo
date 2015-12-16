@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Inbox"
+        android:id="@+id/nav_item_inbox"
+        android:icon="@drawable/image"/>
+
+    <item android:title="Sent"
+        android:id="@+id/nav_item_sent"
+        android:icon="@drawable/image"/>
+
+    <item android:title="Drafts"
+        android:id="@+id/nav_item_draft"
+        android:icon="@drawable/image"/>
+
+
+
+    <item android:title="Others">
+        <menu>
+            <item
+                android:title="Spam"
+                android:icon="@drawable/image"/>
+            <item
+                android:title="Bin"
+                android:icon="@drawable/image"/>
+        </menu>
+    </item>
+    <group android:id="@+id/group_settings_id">
+
+        <item android:title="Settings"
+            android:icon="@drawable/image"/>
+        <item android:title="Help"
+            android:icon="@drawable/image"/>
+    </group>
+</menu>

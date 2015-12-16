@@ -17,4 +17,26 @@
     <string name="err_msg_description" />
     <string name="err_msg_telephone" />
     <string name="signed_in_fmt" />
+
+
+    <!--Navigation Drawer material design-->
+    <string name="action_search">Search</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="nav_item_home">Home</string>
+    <string name="nav_item_Categories">Categories</string>
+    <string name="nav_item_Offers">Offers</string>
+
+    <!-- navigation drawer item labels  -->
+    <string-array name="nav_drawer_labels">
+        <item>@string/nav_item_home</item>
+        <item>@string/nav_item_Categories</item>
+        <item>@string/nav_item_Offers</item>
+    </string-array>
+
+    <string name="title_Offers">Offers</string>
+    <string name="title_Categories">Categories</string>
+    <string name="title_home">Home</string>
+    <string name="title_activity_homepage">Homepage</string>
 </resources>
