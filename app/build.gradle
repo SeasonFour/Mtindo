@@ -64,6 +64,8 @@ dependencies {
     compile 'com.firebase:firebase-client-android:2.4.1+'
 
 
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.daimajia.slider:library:1.1.5@aar'
 
 
 }

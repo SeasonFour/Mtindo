@@ -37,6 +37,10 @@
 
         </activity>
         <activity android:name=".Makeup">
+
+        </activity>
+
+        <activity android:name=".OffersSlide">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
