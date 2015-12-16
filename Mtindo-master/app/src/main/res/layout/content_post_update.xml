@@ -58,7 +58,7 @@
     <com.rengwuxian.materialedittext.MaterialEditText
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:hint="@string/Description"
+        android:hint="@string/description"
         app:met_floatingLabel="highlight"
         android:id="@+id/Description"
         android:layout_below="@+id/Name"
