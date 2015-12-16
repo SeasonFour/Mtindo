@@ -153,7 +153,7 @@ public class Createstore extends AppCompatActivity {
             }
         });*/
 
-        // Gallery selector
+        // Select image from Gallery
         image = (ImageView) findViewById(ImageView01);
         //Intent onclick add profile image button
         ((Button) findViewById(R.id.Button01))
@@ -213,6 +213,7 @@ public class Createstore extends AppCompatActivity {
 
         }
     }*/
+//    Handles image once uploaded
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
             if (requestCode == SELECT_PICTURE) {

@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:id="@+id/imageView"
-            android:background="@drawable/irene"
+            android:background="@drawable/ess"
             android:layout_centerHorizontal="true"
             android:layout_weight="1.51"
             />
@@ -66,7 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:id="@+id/imageView2"
-            android:background="@drawable/irene"
+            android:background="@drawable/ess"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_weight="1.51" />
@@ -101,7 +101,7 @@
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:id="@+id/imageView3"
-            android:background="@drawable/irene"
+            android:background="@drawable/ess"
             android:layout_centerHorizontal="true"
             android:layout_weight="1.51"
             />

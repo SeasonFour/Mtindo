@@ -130,12 +130,6 @@ public class OneFragmentDrawer extends Fragment implements GoogleApiClient.Conne
 
     @Override
     public void onConnected(Bundle bundle) {
-//        if (Plus.PeopleApi.getCurrentPerson(mGoogleApiClient) != null) {
-//            Person currentPerson = Plus.PeopleApi.getCurrentPerson(mGoogleApiClient);
-//            String personName = currentPerson.getDisplayName();
-//            String personPhoto = currentPerson.getImage();
-//            String personGooglePlusProfile = currentPerson.getUrl();
-//        }
 
     }
 

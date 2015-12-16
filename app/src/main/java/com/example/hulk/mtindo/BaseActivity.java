@@ -7,6 +7,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -15,6 +18,8 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.plus.Plus;
+import com.google.android.gms.plus.model.people.Person;
 
 /**
  * Created by hulk on 12/11/15.
@@ -25,7 +30,9 @@ public class BaseActivity extends AppCompatActivity implements GoogleApiClient.O
 
     private GoogleApiClient mGoogleApiClient;
     private GoogleSignInResult signInResult;
-
+    private ImageView imgProfilePic;
+    private TextView txtName;
+    private static final int PROFILE_PIC_SIZE = 400;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -63,6 +70,7 @@ public class BaseActivity extends AppCompatActivity implements GoogleApiClient.O
             signInResult = result;
             if (result.isSuccess()) {
                 onLoginSucceeded();
+                getProfileInformation();
             } else {
                 startLoginActivity();
             }
@@ -109,4 +117,42 @@ public class BaseActivity extends AppCompatActivity implements GoogleApiClient.O
     public void onConnectionFailed(ConnectionResult connectionResult) {
 
     }
-}
+    private  void getProfileInformation() {
+        try {
+            if (Plus.PeopleApi.getCurrentPerson(mGoogleApiClient) != null) {
+                Person currentPerson = Plus.PeopleApi
+                        .getCurrentPerson(mGoogleApiClient);
+                String personName = currentPerson.getDisplayName();
+                String personPhotoUrl = currentPerson.getImage().getUrl();
+                String personGooglePlusProfile = currentPerson.getUrl();
+                String email = Plus.AccountApi.getAccountName(mGoogleApiClient);
+
+                Log.e(TAG, "Name: " + personName + ", plusProfile: "
+                        + personGooglePlusProfile + ", email: " + email
+                        + ", Image: " + personPhotoUrl);
+
+                txtName.setText(personName);
+
+                personPhotoUrl = personPhotoUrl.substring(0,
+                        personPhotoUrl.length() - 2)
+                        + PROFILE_PIC_SIZE;
+
+                new LoadProfileImage(imgProfilePic).execute(personPhotoUrl);
+
+
+        }
+            else {
+            Toast.makeText(getApplicationContext(),
+                    "Person information is null", Toast.LENGTH_LONG).show();
+        }
+
+          } catch (Exception e) {
+            e.printStackTrace();
+          }
+        }
+
+
+    }
+
+
+
