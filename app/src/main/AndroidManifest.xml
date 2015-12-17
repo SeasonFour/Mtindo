@@ -2,12 +2,30 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hulk.mtindo">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+
+
     <application
+
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+        android:theme="@style/MyMaterialTheme">
+
+        <!--
+        <activity android:name=".Mtindo"
+            android:label="@string/app_name"
+            android:theme="@style/MyMaterialTheme" >
+
+        </activity>
+        -->
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -18,8 +36,10 @@
         <activity android:name=".Createstore">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity android:name=".Maint"></activity>
         <activity android:name=".Beauty"></activity>
@@ -35,11 +55,26 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+        <activity android:name=".Post_update" />
+        <activity
+            android:name=".Login"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".Createstore"
+            android:theme="@style/MyMaterialTheme" />
+        <activity android:name=".Hair" >
 
         <activity
             android:name=".Beauty_pros"
             android:label="@string/title_activity_beauty_pros"
             android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".Makeup">
+
+        </activity>
+
+        <activity android:name=".OffersSlider">
 
         </activity>
     </application>
