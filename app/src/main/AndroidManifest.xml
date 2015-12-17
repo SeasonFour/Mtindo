@@ -40,6 +40,10 @@
             android:name=".Beauty_pros"
             android:label="@string/title_activity_beauty_pros"
             android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
 
@@ -51,10 +55,7 @@
 
         <!--</activity>-->
         <activity android:name=".SplashScreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
 
         </activity>
         <activity android:name="MyAppIntro"></activity>
