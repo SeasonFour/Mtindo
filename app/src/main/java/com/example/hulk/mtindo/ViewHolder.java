@@ -2,6 +2,7 @@ package com.example.hulk.mtindo;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -10,6 +11,7 @@ import android.widget.TextView;
  */
 public class ViewHolder extends RecyclerView.ViewHolder{
     TextView Name,Description,Price,Tag,storeName,userName, telephone, description1;
+    ImageView imageViewStore;
     public ViewHolder(View itemView) {
         super(itemView);
         Name = (TextView) itemView.findViewById(R.id.Nameu);
@@ -20,6 +22,8 @@ public class ViewHolder extends RecyclerView.ViewHolder{
         userName = (TextView) itemView.findViewById(R.id.UserName);
         telephone = (TextView) itemView.findViewById(R.id.Telephone);
         description1 = (TextView) itemView.findViewById(R.id.Description1);
+        imageViewStore = (ImageView) itemView.findViewById(R.id.imageViewStore);
+
 
     }
 }

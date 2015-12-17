@@ -117,7 +117,7 @@ public class Createstore extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 submitForm();
-                encodeToBase64(bitmapImage);
+
 
 
 //                Capturing user data from textfields
@@ -126,8 +126,10 @@ public class Createstore extends AppCompatActivity {
                 String theinputDescription = inputDescription.getText().toString();
                 String theinputTelephone = inputTelephone.getText().toString();
 
+                String theinputImage =  encodeToBase64(bitmapImage);
+
 //                Connect to constructor class
-                Store store = new Store(theinputname, theinputStorename, theinputDescription, theinputTelephone);
+                Store store = new Store(theinputname, theinputStorename, theinputDescription, theinputTelephone,theinputImage);
                 thestores.push().setValue(store, new Firebase.CompletionListener() {
                     @Override
                     public void onComplete(FirebaseError firebaseError, Firebase firebase) {
@@ -220,7 +222,8 @@ public class Createstore extends AppCompatActivity {
                 image.setImageURI(selectedImageUri);
 
                 try {
-                    image.setImageBitmap(MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImageUri));
+                    bitmapImage = MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImageUri);
+                    image.setImageBitmap(bitmapImage);
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -428,7 +431,6 @@ public class Createstore extends AppCompatActivity {
         image.compress(Bitmap.CompressFormat.PNG, 100, baos);
         byte[] b = baos.toByteArray();
         String imageEncoded = com.firebase.client.utilities.Base64.encodeBytes(b);
-
         return imageEncoded;
     }
     public static Bitmap decodeFromBase64(String input) throws IOException {

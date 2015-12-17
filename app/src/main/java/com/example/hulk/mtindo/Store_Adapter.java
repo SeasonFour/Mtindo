@@ -26,6 +26,9 @@ public class Store_Adapter extends FirebaseRecyclerViewAdapter<Store , ViewHolde
         viewHolder.userName.setText(store.getuserName());
         viewHolder.telephone.setText(store.getTelephone());
         viewHolder.description1.setText(store.getDescription());
+//        viewHolder.imageViewStore.setImageBitmap(decodeFromBase64(imageEncoded));
+
+
 
     }
 }
