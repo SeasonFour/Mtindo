@@ -1,0 +1,323 @@
+<html><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Chapter&nbsp;70.&nbsp;Building Java Libraries</title><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="base.css"><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="docs.css"><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="userguide.css"><meta content="DocBook XSL Stylesheets V1.75.2" name="generator"><link rel="home" href="userguide.html" title="Gradle User Guide"><link rel="up" href="userguide.html" title="Gradle User Guide"><link rel="prev" href="new_model.html" title="Chapter&nbsp;69.&nbsp;Rule based model configuration"><link rel="next" href="sample_list.html" title="Appendix&nbsp;A.&nbsp;Gradle Samples"></head><body><div class="navheader"><div><div class="navbar"><a xmlns:xslthl="http://xslthl.sf.net" href="new_model.html" title="Chapter&nbsp;69.&nbsp;Rule based model configuration">Previous</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="Gradle User Guide">Contents</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="sample_list.html" title="Appendix&nbsp;A.&nbsp;Gradle Samples">Next</a></div></div></div><div class="chapter"><div class="titlepage"><div><div><h1 xmlns:xslthl="http://xslthl.sf.net"><a name="building_java_libraries"></a>Chapter&nbsp;70.&nbsp;Building Java Libraries</h1></div></div></div><div class="note"><p>
+            Support for building Java libraries using the new software model is currently <a class="link" href="feature_lifecycle.html">incubating</a>. Please be aware that the DSL, APIs and other configuration may change in later Gradle versions.
+        </p></div><p>The JVM component plugins for building Java libraries are intended to replace the <a class="link" href="java_plugin.html">Java plugin</a>, and
+        leverage the <a class="link" href="new_model.html">new rule based model configuration</a>
+        to achieve the best performance, improved expressiveness
+        and support for variant-aware dependency management.
+    </p><div class="section"><div class="titlepage"><div><div><h2 class="title"><a name="N18344"></a>70.1.&nbsp;The Software Model</h2></div></div></div><p>The JVM component plugins rely on a software model which describes how an application is built and how components
+            of the model relate to each other. The software model is organized around key concepts:
+        </p><p>
+            </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">A
+                    <em class="firstterm">component</em>
+                    is a general concept for a piece of software that might be deliverable. Examples of components are a standalone
+                    application, a web application, a library, etc.  A component is often composed of other components.
+                </li><li class="listitem">A
+                    <em class="firstterm">library</em>
+                    is a buildable component. In the Java world, a library is often assimilated to a Jar file, but while a Jar file
+                    represents an output, a library is the description of how the output is built. A library is defined by the combination of its source sets and variants.
+                </li><li class="listitem">A
+                    <em class="firstterm">source set</em>
+                    represents a logical group of source files in a component. As such, a source set is often an input to a single
+                    compilation task, which will produce an output (classes, compiled CSS, etc). A library may consist of multiple <em class="firstterm">source sets</em>.
+                </li><li class="listitem">A
+                    <em class="firstterm">variant</em>
+                    represents a modulation of a component. A library, for example, might target Java 6 and Java 7, effectively producing two
+                    distinct outputs: a Java 6 jar and a Java 7 jar. In this case, the target platform is an example of a <em class="firstterm">variant dimension</em>.
+                    Custom library types may define their own <em class="firstterm">variant dimensions</em>, which will participate in dependency resolution.
+                </li><li class="listitem">A <em class="firstterm">binary</em>
+                    represents the output of a library. Given a combination of variants, a library may produce multiple binaries. A binary is often
+                    a consumable artifact of other components.
+                </li></ul></div><p>
+        </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a name="N1836F"></a>70.2.&nbsp;Usage</h2></div></div></div><p>To use the JVM component plugins, include the following in your build script:</p><div class="example"><a name="newJavaQuickstart"></a><p class="title"><b>Example&nbsp;70.1.&nbsp;Using the JVM component plugins</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">plugins {
+    id <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'jvm-component'</span>
+    id <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'java-lang'</span>
+}
+</pre></div></div><br class="example-break"></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a name="N1837E"></a>70.3.&nbsp;Creating a library</h2></div></div></div><p>A library is created by declaring a <a class="ulink" href="../javadoc/org/gradle/jvm/JvmLibrarySpec.html" target="_top"><code class="classname">JvmLibrarySpec</code></a> under the <code class="literal">components</code>
+            element of the <code class="literal">model</code>:
+        </p><div class="example"><a name="newJavaQuickstart"></a><p class="title"><b>Example&nbsp;70.2.&nbsp;Creating a java library</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">model {
+    components {
+        main(JvmLibrarySpec)
+    }
+}
+</pre><p>Output of <strong class="userinput"><code>gradle build</code></strong></p><pre class="screen">&gt; gradle build
+:compileMainJarMainJava
+:processMainJarMainResources
+:createMainJar
+:mainJar
+:assemble
+:check UP-TO-DATE
+:build
+
+BUILD SUCCESSFUL
+</pre></div></div><br class="example-break"><p>This example creates a library named <code class="literal">main</code>, which will implicitly create a <a class="ulink" href="../javadoc/org/gradle/language/java/JavaSourceSet.html" target="_top"><code class="classname">JavaSourceSet</code></a>
+            named <code class="literal">java</code>.
+            The conventions of the <a class="link" href="java_plugin.html">legacy Java plugin</a> are observed, where Java sources
+            are expected to be found in <code class="filename">src/main/java</code>,
+            while resources are expected to be found in <code class="filename">src/main/resources</code>.
+        </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a name="N183B5"></a>70.4.&nbsp;Source Sets</h2></div></div></div><p>Source sets represent logical groupings of source files in a library.  A library can define multiple source sets and all
+            sources will be compiled and included in the resulting binaries.  When a library is added to a build, the following
+            source sets are added by default.</p><div xmlns:xslthl="http://xslthl.sf.net" class="table"><p class="title"><b>Table&nbsp;70.1.&nbsp;Java plugin - default source sets</b></p><div class="table-contents"><table id="N183BA"><thead><tr>
+                    <td>Source Set</td>
+                    <td>Type</td>
+                    <td>Directory</td>
+                </tr></thead><tr>
+                <td>java</td>
+                <td><a class="ulink" href="../javadoc/org/gradle/language/java/JavaSourceSet.html" target="_top"><code class="classname">JavaSourceSet</code></a></td>
+                <td>src/${library.name}/java</td>
+            </tr><tr>
+                <td>resources</td>
+                <td><a class="ulink" href="../javadoc/org/gradle/language/jvm/JvmResourceSet.html" target="_top"><code class="classname">JvmResourceSet</code></a></td>
+                <td>src/${library.name}/resources</td>
+            </tr></table></div></div><p>It is possible to configure an existing <em class="firstterm">source set</em>
+            through the <code class="literal">sources</code> container:
+        </p><div class="example"><a name="newJavaQuickstart"></a><p class="title"><b>Example&nbsp;70.3.&nbsp;Configuring a source set</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">components {
+    main {
+        sources {
+            java {
+                <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// configure the "java" source set</span>
+            }
+        }
+    }
+}
+</pre></div></div><br class="example-break"><p>It is also possible to create an additional source set, using the
+            <a class="ulink" href="../javadoc/org/gradle/language/java/JavaSourceSet.html" target="_top"><code class="classname">JavaSourceSet</code></a>
+            type:
+        </p><div class="example"><a name="newJavaQuickstart"></a><p class="title"><b>Example&nbsp;70.4.&nbsp;Creating a new source set</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">components {
+    main {
+        sources {
+            mySourceSet(JavaSourceSet) {
+                <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// configure the "mySourceSet" source set</span>
+            }
+        }
+    }
+}
+</pre></div></div><br class="example-break"></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a name="N18408"></a>70.5.&nbsp;Tasks</h2></div></div></div><p>By default, when the plugins above are applied, no new tasks are added to the build.  However, when libraries are defined,
+            conventional tasks are added which build and package each binary of the library.</p><p>For each binary of a library, a single lifecycle task is created which executes all tasks associated with building the binary.
+            To build all binaries, the standard <strong class="userinput"><code>build</code></strong> lifecycle task can be used.</p><div xmlns:xslthl="http://xslthl.sf.net" class="table"><p class="title"><b>Table&nbsp;70.2.&nbsp;Java plugin - lifecycle tasks</b></p><div class="table-contents"><table id="java_lifecycle_tasks"><thead><tr>
+                    <td>Component Type</td>
+                    <td>Binary Type</td>
+                    <td>Lifecycle Task</td>
+                </tr></thead><tr>
+                <td><a class="ulink" href="../javadoc/org/gradle/jvm/JvmLibrarySpec.html" target="_top"><code class="classname">JvmLibrarySpec</code></a></td>
+                <td><a class="ulink" href="../javadoc/org/gradle/jvm/JvmBinarySpec.html" target="_top"><code class="classname">JvmBinarySpec</code></a></td>
+                <td>${binary.name}</td>
+            </tr></table></div></div><p>For each source set added to a library, tasks are added to compile or process the source files for each binary.</p><div xmlns:xslthl="http://xslthl.sf.net" class="table"><p class="title"><b>Table&nbsp;70.3.&nbsp;Java plugin - source set tasks</b></p><div class="table-contents"><table id="java_sourceset_tasks"><thead><tr>
+                    <td>Source Set Type</td>
+                    <td>Task name</td>
+                    <td>Type</td>
+                    <td>Description</td>
+                </tr></thead><tr>
+                <td><a class="ulink" href="../javadoc/org/gradle/language/java/JavaSourceSet.html" target="_top"><code class="classname">JavaSourceSet</code></a></td>
+                <td>compile${binary.name}${library.name}${sourceset.name}</td>
+                <td><a class="ulink" href="../javadoc/org/gradle/language/java/tasks/PlatformJavaCompile.html" target="_top"><code class="classname">PlatformJavaCompile</code></a></td>
+                <td>Compiles the sources of a given source set.</td>
+            </tr><tr>
+                <td><a class="ulink" href="../javadoc/org/gradle/language/jvm/JvmResourceSet.html" target="_top"><code class="classname">JvmResourceSet</code></a></td>
+                <td>process${binary.name}${library.name}${sourceset.name}</td>
+                <td><a class="ulink" href="../javadoc/org/gradle/language/jvm/tasks/ProcessResources.html" target="_top"><code class="classname">ProcessResources</code></a></td>
+                <td>Copies the resources in the given source set to the classes output directory.</td>
+            </tr></table></div></div><p>For each binary in a library, a packaging task is added to create the jar for that binary.</p><div xmlns:xslthl="http://xslthl.sf.net" class="table"><p class="title"><b>Table&nbsp;70.4.&nbsp;Java plugin - packaging tasks</b></p><div class="table-contents"><table id="java_packaging_tasks"><thead><tr>
+                    <td>Binary Type</td>
+                    <td>Task name</td>
+                    <td>Depends on</td>
+                    <td>Type</td>
+                    <td>Description</td>
+                </tr></thead><tr>
+                <td><a class="ulink" href="../javadoc/org/gradle/jvm/JvmBinarySpec.html" target="_top"><code class="classname">JvmBinarySpec</code></a></td>
+                <td>create${binary.name}</td>
+                <td>all <a class="ulink" href="../javadoc/org/gradle/language/java/tasks/PlatformJavaCompile.html" target="_top"><code class="classname">PlatformJavaCompile</code></a> and <a class="ulink" href="../javadoc/org/gradle/language/jvm/tasks/ProcessResources.html" target="_top"><code class="classname">ProcessResources</code></a>
+                tasks associated with the binary</td>
+                <td><a class="ulink" href="../dsl/org.gradle.jvm.tasks.Jar.html" target="_top"><code class="classname">Jar</code></a></td>
+                <td>Packages the compiled classes and processed resources of the binary.</td>
+            </tr></table></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a name="N184A9"></a>70.6.&nbsp;Finding out more about your project</h2></div></div></div><p>
+            Gradle provides a report that you can run from the command-line that shows details about the components and binaries that your
+            project produces. To use this report, just run <strong class="userinput"><code>gradle components</code></strong>. Below is an example of running this report for
+            one of the sample projects:
+        </p><div class="example"><a name="newJavaComponentReport"></a><p class="title"><b>Example&nbsp;70.5.&nbsp;The components report</b></p><div class="example-contents"><p>Output of <strong class="userinput"><code>gradle components</code></strong></p><pre class="screen">&gt; gradle components
+:components
+
+------------------------------------------------------------
+Root project
+------------------------------------------------------------
+
+JVM library 'main'
+------------------
+
+Source sets
+    Java source 'main:java'
+        srcDir: src/main/java
+    Java source 'main:mySourceSet'
+        srcDir: src/main/mySourceSet
+    JVM resources 'main:resources'
+        srcDir: src/main/resources
+
+Binaries
+    Jar 'mainJar'
+        build using task: :mainJar
+        targetPlatform: java7
+        tool chain: JDK 7 (1.7)
+        Jar file: build/jars/mainJar/main.jar
+
+Note: currently not all plugins register their components, so some components may not be visible here.
+
+BUILD SUCCESSFUL
+
+Total time: 1 secs
+</pre></div></div><br class="example-break"></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a name="N184BB"></a>70.7.&nbsp;Dependencies between components</h2></div></div></div><p>The JVM component plugins support API dependencies between components. Having an API dependency means that if
+            <code class="literal">A</code> depends on <code class="literal">B</code>, then the API of <code class="literal">B</code>
+            is required to compile <code class="literal">A</code>. Gradle will then
+            make sure that the dependency is built before the dependent component, and that the dependency
+            appears on the <em class="firstterm">compile classpath</em>.
+            API dependencies are (by nature) not transitive.  Runtime (transitive) dependency management is not implemented yet.
+        </p><p>Currently the plugin supports two kinds of dependencies:
+            </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">API dependencies onto a local project</li><li class="listitem">API dependencies onto a local library</li></ul></div><p>
+            Dependencies onto external components are not yet supported.
+        </p><p>Dependencies are declared on a <a class="ulink" href="../dsl/org.gradle.api.tasks.SourceSet.html" target="_top"><code class="classname">SourceSet</code></a>:</p><div class="example"><a name="newJavaMultiComponents"></a><p class="title"><b>Example&nbsp;70.6.&nbsp;Declaring a dependency onto a library</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">model {
+    components {
+        core(JvmLibrarySpec)
+
+        server(JvmLibrarySpec) {
+            sources {
+                java {
+                    dependencies {
+                        library <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'core'</span>
+                    }
+                }
+            }
+        }
+    }
+}
+</pre><p>Output of <strong class="userinput"><code>gradle serverJar</code></strong></p><pre class="screen">&gt; gradle serverJar
+:compileCoreJarCoreJava
+:processCoreJarCoreResources
+:createCoreJar
+:coreJar
+:compileServerJarServerJava
+:createServerJar
+:serverJar
+
+BUILD SUCCESSFUL
+</pre></div></div><br class="example-break"><p>This example declares an API dependency for the <code class="literal">java</code> source set of the <code class="literal">server</code> library
+        onto the <code class="literal">core</code> library of the same project. However, it is possible to create a dependency on a library in a different
+        project as well:</p><div class="example"><a name="newJavaMultiComponents"></a><p class="title"><b>Example&nbsp;70.7.&nbsp;Declaring a dependency onto a project with an explicit library</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">client(JvmLibrarySpec) {
+     sources {
+         java {
+             dependencies {
+                 project <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">':util'</span> library <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'main'</span>
+             }
+         }
+     }
+ }
+</pre><p>Output of <strong class="userinput"><code>gradle clientJar</code></strong></p><pre class="screen">&gt; gradle clientJar
+:util:compileMainJarMainJava
+:util:createMainJar
+:util:mainJar
+:compileClientJarClientJava
+:createClientJar
+:clientJar
+
+BUILD SUCCESSFUL
+
+</pre></div></div><br class="example-break"><p>When the target project only defines a single library, the <code class="literal">library</code> selector can be omitted
+        altogether:</p><div class="example"><a name="newJavaMultiComponents"></a><p class="title"><b>Example&nbsp;70.8.&nbsp;Declaring a dependency onto a project with an implicit library</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">dependencies {
+    project <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">':util'</span>
+}
+</pre></div></div><br class="example-break"><p>The <a class="ulink" href="../javadoc/org/gradle/platform/base/DependencySpecContainer.html" target="_top"><code class="classname">DependencySpecContainer</code></a> class provides a complete reference of the dependencies DSL.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a name="N1851F"></a>70.8.&nbsp;Platform aware dependency management</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="N18522"></a>70.8.1.&nbsp;Specifying the target platform</h3></div></div></div><p>The software model extracts the target platform as a core concept. In the Java world, this means that a library can be built, or resolved,
+            against a specific version of Java. For example, if you compile a library for Java 5, we know that such a library can be consumed by a library
+            built for Java 6, but the opposite is not true. Gradle lets you define which platforms a library targets, and will take care of:</p><p>
+                </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">generating a binary for each target platform (eg, a Java 5 jar as well as a Java 6 jar)</li><li class="listitem">resolving dependencies against a matching platform</li></ul></div><p>
+            </p><p>The <code class="literal">targetPlatform</code> DSL defines which platforms a library should be built against:</p><div class="example"><a name="newJavaTargetPlatforms"></a><p class="title"><b>Example&nbsp;70.9.&nbsp;Declaring target platforms</b></p><div class="example-contents"><p><code class="filename">core/build.gradle</code></p><pre class="programlisting">model {
+    components {
+        main(JvmLibrarySpec) {
+            targetPlatform <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'java5'</span>
+            targetPlatform <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'java6'</span>
+        }
+   }
+}
+</pre><p>Output of <strong class="userinput"><code>gradle :core:build</code></strong></p><pre class="screen">&gt; gradle :core:build
+:core:compileJava5MainJarMainJava
+:core:processJava5MainJarMainResources
+:core:createJava5MainJar
+:core:java5MainJar
+:core:compileJava6MainJarMainJava
+:core:compileJava6MainJarMainJava6
+:core:processJava6MainJarMainResources
+:core:createJava6MainJar
+:core:java6MainJar
+:core:assemble
+:core:check UP-TO-DATE
+:core:build
+
+BUILD SUCCESSFUL
+</pre></div></div><br class="example-break"><p>When building the application, Gradle generates two binaries: <code class="literal">java5MainJar</code> and <code class="literal">java6MainJar</code>
+                corresponding to the target versions of Java. These artifacts will participate in dependency resolution as described
+                <a class="link" href="building_java_libraries.html#java_dependency_resolution">here</a>.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="N18550"></a>70.8.2.&nbsp;Binary specific source sets</h3></div></div></div><p>For each <a class="ulink" href="../javadoc/org/gradle/jvm/JvmLibrarySpec.html" target="_top"><code class="classname">JvmLibrarySpec</code></a> it is possible to define additional source sets for each binary. A common use case for this
+            is having specific dependencies for each variant and source sets that conform to those dependencies. The example below configures a <code class="literal">java6</code> source set on the <code class="literal">java6MainJar</code>
+            binary:</p><div class="example"><a name="newJavaTargetPlatforms-java6MainJar"></a><p class="title"><b>Example&nbsp;70.10.&nbsp;Declaring binary specific sources</b></p><div class="example-contents"><p><code class="filename">core/build.gradle</code></p><pre class="programlisting">main {
+    binaries.named(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'java6MainJar'</span>) {
+        sources {
+            java6(JavaSourceSet) {
+                source.srcDir <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src/main/java6'</span>
+            }
+        }
+    }
+}
+</pre><p>Output of <strong class="userinput"><code>gradle clean :core:java6MainJar</code></strong></p><pre class="screen">&gt; gradle clean :core:java6MainJar
+:core:clean
+:server:clean UP-TO-DATE
+:core:compileJava6MainJarMainJava
+:core:compileJava6MainJarMainJava6
+:core:processJava6MainJarMainResources
+:core:createJava6MainJar
+:core:java6MainJar
+
+BUILD SUCCESSFUL
+
+</pre></div></div><br class="example-break"></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="java_dependency_resolution"></a>70.8.3.&nbsp;Dependency resolution</h3></div></div></div><p>When a library targets multiple versions of Java and depends on another library, Gradle will make its best effort to
+                resolve the dependency to the most appropriate version of the dependency library.  In practice, this means that Gradle chooses
+                the <span class="emphasis"><em>highest compatible</em></span> version:</p><p>
+                </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">for a binary <code class="literal">B</code> built for Java <code class="literal">n</code></li><li class="listitem">for a dependency binary <code class="literal">D</code> built for Java <code class="literal">m</code></li><li class="listitem"><code class="literal">D</code> is compatible with <code class="literal">B</code> if <code class="literal">m&lt;=n</code></li><li class="listitem">for multiple compatible binaries <code class="literal">D(java 5), D(java 6), ...D(java m)</code>, choose the compatible D binary with the highest Java version</li></ul></div><p>
+            </p><div class="example"><a name="newJavaTargetPlatforms-server"></a><p class="title"><b>Example&nbsp;70.11.&nbsp;Declaring target platforms</b></p><div class="example-contents"><p><code class="filename">server/build.gradle</code></p><pre class="programlisting">model {
+    components {
+        main(JvmLibrarySpec) {
+            targetPlatform <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'java5'</span>
+            targetPlatform <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'java6'</span>
+            sources {
+                java {
+                    dependencies {
+                        project <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">':core'</span> library <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'main'</span>
+                    }
+                }
+            }
+        }
+    }
+}
+</pre><p>Output of <strong class="userinput"><code>gradle clean :server:build</code></strong></p><pre class="screen">&gt; gradle clean :server:build
+:core:clean
+:server:clean UP-TO-DATE
+:core:compileJava5MainJarMainJava
+:core:processJava5MainJarMainResources
+:core:createJava5MainJar
+:core:java5MainJar
+:server:compileJava5MainJarMainJava
+:server:createJava5MainJar
+:server:java5MainJar
+:core:compileJava6MainJarMainJava
+:core:compileJava6MainJarMainJava6
+:core:processJava6MainJarMainResources
+:core:createJava6MainJar
+:core:java6MainJar
+:server:compileJava6MainJarMainJava
+:server:createJava6MainJar
+:server:java6MainJar
+:server:assemble
+:server:check UP-TO-DATE
+:server:build
+
+BUILD SUCCESSFUL
+</pre></div></div><br class="example-break"><p>In the example above, Gradle automatically chooses the Java 6 variant of the dependency for the Java 6 variant of the <code class="literal">server</code> component,
+            and chooses the Java 5 version of the dependency for the Java 5 variant of the <code class="literal">server</code> component.
+            </p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a name="N185B1"></a>70.9.&nbsp;Custom variant resolution</h2></div></div></div><p>The Java plugin, in addition to the target platform resolution, supports resolution of custom variants. Custom variants
+            can be defined on custom binary types, as long as they extends <a class="ulink" href="../javadoc/org/gradle/jvm/JarBinarySpec.html" target="_top"><code class="classname">JarBinarySpec</code></a>. Users interested
+            in testing this incubating feature can check out the documentation of the <a class="ulink" href="../javadoc/org/gradle/platform/base/Variant.html" target="_top"><code class="classname">Variant</code></a>
+            annotation.</p></div></div><div class="navfooter"><div><div class="navbar"><a xmlns:xslthl="http://xslthl.sf.net" href="new_model.html" title="Chapter&nbsp;69.&nbsp;Rule based model configuration">Previous</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="Gradle User Guide">Contents</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="sample_list.html" title="Appendix&nbsp;A.&nbsp;Gradle Samples">Next</a></div></div></div></body></html>

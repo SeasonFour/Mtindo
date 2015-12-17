@@ -1,0 +1,37 @@
+plugins {
+    id 'jvm-component'
+    id 'java-lang'
+}
+
+model {
+    components {
+        core(JvmLibrarySpec)
+
+        server(JvmLibrarySpec) {
+            sources {
+                java {
+                    dependencies {
+                        library 'core'
+                    }
+                }
+            }
+        }
+    }
+}
+
+model {
+    components {
+       client(JvmLibrarySpec) {
+            sources {
+                java {
+                    dependencies {
+                        project ':util' library 'main'
+                    }
+                    dependencies {
+                        project ':util'
+                    }
+                }
+            }
+        }
+    }
+}
