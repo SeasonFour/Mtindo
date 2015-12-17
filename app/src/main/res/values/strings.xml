@@ -17,6 +17,8 @@
     <string name="err_msg_description" />
     <string name="err_msg_telephone" />
     <string name="signed_in_fmt" />
+    <string name="description">Description</string>
+    <string name="contact">Contact</string>
 
 
     <!--Navigation Drawer material design-->

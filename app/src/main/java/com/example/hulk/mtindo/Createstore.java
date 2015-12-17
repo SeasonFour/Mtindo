@@ -112,7 +112,7 @@ public class Createstore extends AppCompatActivity {
         //  Gallery selector onclick intent
         img = (ImageView)findViewById(R.id.ImageView01);
         //Intent onclick add profile image button
-        ((Button) findViewById(R.id.Button01))
+        ((ImageView) findViewById(R.id.ImageView02))
                 .setOnClickListener(new View.OnClickListener() {
                     public void onClick(View arg0) {
                         Intent intent = new Intent();

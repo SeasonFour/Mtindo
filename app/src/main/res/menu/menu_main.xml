@@ -12,7 +12,10 @@
         android:title="@string/action_search"
         android:orderInCategory="100"
         android:icon="@drawable/icsearchwhite"
-        app:showAsAction="ifRoom" />
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="ifRoom"
+        android:actionViewClass="android.widget.SearchView"/>
+
 
 
 </menu>
