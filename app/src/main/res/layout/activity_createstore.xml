@@ -52,39 +52,43 @@
 
 
         <ImageView android:id="@+id/ImageView02"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-
+            android:layout_width="50dp"
+            android:layout_height="50dp"
 
             android:background="@drawable/iccamera"
             android:layout_gravity="center_horizontal">
 
         </ImageView>
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
         <ImageView android:id="@+id/ImageView01"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-
-            android:gravity="center_vertical"
-            android:scaleType="fitXY">
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:gravity="right|center_vertical"
+            android:scaleType="fitXY"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true">
 
         </ImageView>
 
+</RelativeLayout>
 
 
-        <EditText
-            android:id="@+id/input_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:singleLine="true"
-            android:hint="@string/hint_name" />
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/input_layout_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/input_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimary"
 
+                android:hint="@string/hint_name" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -98,6 +102,8 @@
                 android:layout_height="wrap_content"
                 android:singleLine="true"
                 android:numeric="integer"
+                android:textColor="@color/colorPrimary"
+                app:ms_floatingLabelColor="@color/colorPrimary"
                 android:hint="@string/hint_telephone" />
 
         </android.support.design.widget.TextInputLayout>
@@ -112,6 +118,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
+                android:textColor="@color/colorPrimary"
+                app:ms_floatingLabelColor="@color/colorPrimary"
                 android:hint="@string/hint_storename" />
         </android.support.design.widget.TextInputLayout>
 
@@ -125,6 +133,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
+                app:ms_floatingLabelColor="@color/colorPrimary"
                 android:hint="@string/hint_description" />
 
         </android.support.design.widget.TextInputLayout>

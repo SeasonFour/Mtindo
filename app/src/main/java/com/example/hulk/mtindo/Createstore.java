@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
 import fr.ganfra.materialspinner.MaterialSpinner;
 
 
@@ -198,6 +199,9 @@ public class Createstore extends AppCompatActivity {
             return;
         }
 
+        if (!validateTelephone()) {
+            return;
+        }
 
         if (!validateStorename()) {
             return;
@@ -206,33 +210,61 @@ public class Createstore extends AppCompatActivity {
         if (!validateDescription()) {
             return;
         }
-        if (!validateTelephone()) {
-            return;
-        }
+
 
         /*if (!validateEmail()) {
             return;
         }*/
-        if (!shown) {
-            spinner1.setError(ERROR_MSG);
+        if (activateError()) {
+           return;
 
         }
+
+
+
+
 
         Toast.makeText(getApplicationContext(), "Store created!", Toast.LENGTH_SHORT).show();
     }
 
+
+    //validate spinner
+    private boolean activateError() {
+        if (!shown) {
+            spinner1.setError(ERROR_MSG);
+
+        } else {
+            spinner1.setError(null);
+
+        }
+
+        return true;
+    }
+
     //VALIDATIONS
+
 
     //Validate name edit text
     private boolean validateName() {
-
-
         if (inputName.getText().toString().trim().isEmpty() || inputName.length() < 3) {
             inputLayoutName.setError(getString(R.string.err_msg_name));
             requestFocus(inputName);
             return false;
+
         } else {
             inputLayoutName.setErrorEnabled(false);
+        }
+
+        return true;
+    }
+    //Validate Phonenumber edit text
+    private boolean validateTelephone() {
+        if (inputTelephone.getText().toString().trim().isEmpty() || inputTelephone.length() > 10) {
+            inputLayoutTelephone.setError(getString(R.string.err_msg_telephone));
+            requestFocus(inputTelephone);
+            return false;
+        } else {
+            inputLayoutTelephone.setErrorEnabled(false);
         }
 
         return true;
@@ -252,19 +284,7 @@ public class Createstore extends AppCompatActivity {
         return true;
     }
 
-/*    private boolean validateEmail() {
-        String email = inputEmail.getText().toString().trim();
 
-        if (email.isEmpty() || !isValidEmail(email)) {
-            inputLayoutEmail.setError(getString(R.string.err_msg_email));
-            requestFocus(inputEmail);
-            return false;
-        } else {
-            inputLayoutEmail.setErrorEnabled(false);
-        }
-
-        return true;
-    }*/
 
     //Validate Description edit text
 
@@ -283,23 +303,28 @@ public class Createstore extends AppCompatActivity {
    }
 
 
-    //Validate Phonenumber edit text
-    private boolean validateTelephone() {
-        if (inputTelephone.getText().toString().trim().isEmpty() || inputTelephone.length() > 10) {
-            inputLayoutTelephone.setError(getString(R.string.err_msg_telephone));
-            requestFocus(inputTelephone);
+
+/*    private boolean validateEmail() {
+        String email = inputEmail.getText().toString().trim();
+
+        if (email.isEmpty() || !isValidEmail(email)) {
+            inputLayoutEmail.setError(getString(R.string.err_msg_email));
+            requestFocus(inputEmail);
             return false;
         } else {
-            inputLayoutTelephone.setErrorEnabled(false);
+            inputLayoutEmail.setErrorEnabled(false);
         }
 
         return true;
-    }
+    }*/
+
     //Validate E-mail
 
    /* private static boolean isValidEmail(String email) {
         return !TextUtils.isEmpty(email) && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }*/
+
+
 
     private void requestFocus(View view) {
         if (view.requestFocus()) {

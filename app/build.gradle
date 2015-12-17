@@ -27,8 +27,6 @@ android {
     }
 }
 
-
-
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
@@ -51,8 +49,6 @@ dependencies {
     }
 
 
-
-
     //picasso
     compile 'com.squareup.picasso:picasso:2.5.2'
 
@@ -67,7 +63,6 @@ dependencies {
 
     //material library
     compile 'com.github.rey5137:material:1.2.2'
-
 
 
     //firebase dependancy
