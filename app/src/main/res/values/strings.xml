@@ -41,4 +41,6 @@
     <string name="title_Categories">Categories</string>
     <string name="title_home">Home</string>
     <string name="title_activity_homepage">Homepage</string>
+    <string name="title_activity_signin">Signin</string>
+    <string name="title_activity_beauty">Beauty</string>
 </resources>

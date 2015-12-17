@@ -13,5 +13,19 @@
         android:paddingBottom="10dp"
         android:textSize="15dp"
         android:textStyle="bold" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/personPhoto"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="200dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/personId"
+        android:layout_below="@+id/personPhoto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="73dp" />
 
 </RelativeLayout>

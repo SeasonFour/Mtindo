@@ -2,6 +2,7 @@ package com.example.hulk.mtindo;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -16,15 +17,17 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import static com.example.hulk.mtindo.R.id.login_proceed;
+import static com.example.hulk.mtindo.R.id.sign_in_button;
 
 
 public class Login extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, View.OnClickListener {
     private static final String TAG = "SignInActivity";
     private static final int RC_SIGN_IN = 9001;
-
-    public GoogleApiClient mGoogleApiClient;
+    private GoogleApiClient mGoogleApiClient;
     private TextView mStatusTextView;
     private ProgressDialog mProgressDialog;
+    private String status;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,24 +50,28 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
-
-
         // Customize sign-in button. The sign-in button can be displayed in// multiple sizes and color schemes. It can also be contextually
         // rendered based on the requested scopes. For example. a red button may
         // be displayed when Google+ scopes are requested, but a white button
-       // may be displayed when only basic profile is requested. Try adding the
-       // Scopes.PLUS_LOGIN scope to the GoogleSignInOptions to see the
-       // difference.
-        SignInButton signInButton = (SignInButton) findViewById(R.id.sign_in_button);
+        // may be displayed when only basic profile is requested. Try adding the
+        // Scopes.PLUS_LOGIN scope to the GoogleSignInOptions to see the
+        // difference.
+        SignInButton signInButton = (SignInButton) findViewById(sign_in_button);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
         signInButton.setScopes(gso.getScopeArray());
-        findViewById(R.id.sign_in_button).setOnClickListener(this);
+        findViewById(login_proceed).setOnClickListener(this);
+        findViewById(sign_in_button).setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.sign_in_button:
                 signIn();
+                break;
+            case R.id.login_proceed:
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 break;
             // ...
         }
@@ -73,7 +80,9 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
     private void signIn() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
+        setStatus("Logging in...");
     }
+
 
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
@@ -87,7 +96,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
         if (requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             handleSignInResult(result);
-            go();
+
 
         }
     }
@@ -97,19 +106,29 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
         if (result.isSuccess()) {
             // Signed in successfully, show authenticated UI.
             GoogleSignInAccount acct = result.getSignInAccount();
-            mStatusTextView.setText(getString(R.string.signed_in_fmt, acct.getDisplayName()));
+//            mStatusTextView.setText(getString(R.string.signed_in_fmt, acct.getDisplayName()));
             updateUI(true);
+            String email = result.getSignInAccount().getEmail();
+            setStatus("Logged in : " + email);
+            findViewById(R.id.sign_in_button).setVisibility(View.GONE);
+            findViewById(R.id.login_proceed).setVisibility(View.VISIBLE);
+
+//          Retrieving and displaying user data
+            String personId = acct.getId();
+            Uri personPhoto = acct.getPhotoUrl();
         } else {
             // Signed out, show unauthenticated UI.
             updateUI(false);
+            setStatus("Login failed");
         }
     }
     private void updateUI(boolean b) {
 
     }
-    private void go(){
-        Intent i = new Intent(Login.this,Createstore.class);
-        startActivity(i);
+
+    private void setStatus(String text) {
+        ((TextView) findViewById(R.id.login_proceed)).setText(text);
     }
+
 
 }

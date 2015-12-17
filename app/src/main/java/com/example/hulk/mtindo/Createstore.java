@@ -3,6 +3,8 @@ package com.example.hulk.mtindo;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -18,46 +20,69 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.common.api.GoogleApiClient;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+
 import fr.ganfra.materialspinner.MaterialSpinner;
+
+import static com.example.hulk.mtindo.R.id.ImageView01;
 
 
 public class Createstore extends AppCompatActivity {
-    //select form gallery images variables
+    //select gallery images variables
     private static int RESULT_LOAD_IMAGE = 1;
     private static final int SELECT_PICTURE = 1;
     private String selectedImagePath;
-    private ImageView img;
-    //edit text variables
+    private ImageView image;
+    final Createstore context = this;
+
+
     private EditText inputName, /*inputEmail*/
             inputStorename, inputDescription, inputTelephone;
     private TextInputLayout inputLayoutName, /*inputLayoutEmail,*/
             inputLayoutStore, inputLayoutDescription, inputLayoutTelephone;
 
 
+//variables phone
+
+
     //spinner variables
-    private static final String ERROR_MSG = "Error";
+    private static final String ERROR_MSG = "Very very very long error message to get scrolling or multiline animation when the error button is clicked";
     private static final String[] ITEMS = {"Hair", "Beauty", "Makeup"};
 
-    //Declare adapter
+
     private ArrayAdapter<String> adapter;
-    //Material spinner
+
     MaterialSpinner spinner1;
     private boolean shown = false;
 
-    //Createstore activity button
-    private Button btncreate;
+
+    private Button btnSignUp;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_createstore);
+        Firebase.setAndroidContext(this);
+        final Firebase STOREPROFILES = new Firebase("https://mtindo.firebaseio.com/");
+        final Firebase thestores = STOREPROFILES.child("stores");
 
 
         //Material spinner adapter
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ITEMS);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         initSpinnerHintAndFloatingLabel();
-
 
         //Edit text input layouts
         inputLayoutName = (TextInputLayout) findViewById(R.id.input_layout_name);
@@ -67,36 +92,54 @@ public class Createstore extends AppCompatActivity {
         /*inputLayoutEmail = (TextInputLayout) findViewById(R.id.input_layout_email);*/
 
         //Edit text id
+        /*inputEmail = (EditText) findViewById(R.id.input_email);*/
         inputName = (EditText) findViewById(R.id.input_name);
         inputTelephone = (EditText) findViewById(R.id.input_telephone);
         inputStorename = (EditText) findViewById(R.id.input_storename);
         inputDescription = (EditText) findViewById(R.id.input_description);
-        /*inputEmail = (EditText) findViewById(R.id.input_email);*/
+        image = (ImageView) findViewById(R.id.imageView3);
 
 
-        //Textchanged listener
+        //Create store button
+        btnSignUp = (Button) findViewById(R.id.btn_createstore);
+
         inputName.addTextChangedListener(new MyTextWatcher(inputName));
+        /*inputEmail.addTextChangedListener(new MyTextWatcher(inputEmail));*/
         inputStorename.addTextChangedListener(new MyTextWatcher(inputStorename));
         inputDescription.addTextChangedListener(new MyTextWatcher(inputDescription));
         inputTelephone.addTextChangedListener(new MyTextWatcher(inputStorename));
-        /*inputEmail.addTextChangedListener(new MyTextWatcher(inputEmail));*/
-
-        //Create store button
-        btncreate = (Button) findViewById(R.id.btn_createstore);
-
 
         // create store button on clicklistener
-        btncreate.setOnClickListener(new View.OnClickListener() {
+        btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 submitForm();
+//                Capturing user data from textfields
+                String theinputname = inputName.getText().toString();
+                String theinputStorename = inputStorename.getText().toString();
+                String theinputDescription = inputDescription.getText().toString();
+                String theinputTelephone = inputTelephone.getText().toString();
+                String theinputimage = image.toString();
+//                Connect to constructor class
+                Store store = new Store(theinputname, theinputStorename, theinputDescription, theinputTelephone, theinputimage);
+                thestores.push().setValue(store, new Firebase.CompletionListener() {
+                    @Override
+                    public void onComplete(FirebaseError firebaseError, Firebase firebase) {
+                        if (firebaseError != null) {
+                            Toast.makeText(context, "Contact not saved! Check Connection", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(context, "Contact saved Successfully", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
 
 
             }
         });
 
-        //load image onclick intent
-         /*   Button buttonLoadImage = (Button) findViewById(R.id.buttonLoadPicture);
+
+//load image onclick intent
+     /*   Button buttonLoadImage = (Button) findViewById(R.id.buttonLoadPicture);
         buttonLoadImage.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -110,10 +153,10 @@ public class Createstore extends AppCompatActivity {
             }
         });*/
 
-        //  Gallery selector onclick intent
-        img = (ImageView)findViewById(R.id.ImageView01);
+        // Gallery selector
+        image = (ImageView) findViewById(ImageView01);
         //Intent onclick add profile image button
-        ((ImageView) findViewById(R.id.ImageView02))
+        ((Button) findViewById(R.id.Button01))
                 .setOnClickListener(new View.OnClickListener() {
                     public void onClick(View arg0) {
                         Intent intent = new Intent();
@@ -122,17 +165,18 @@ public class Createstore extends AppCompatActivity {
                         startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECT_PICTURE);
                     }
                 });
-
-
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
-
     //Spinner method
-        private void initSpinnerHintAndFloatingLabel() {
+    private void initSpinnerHintAndFloatingLabel() {
         spinner1 = (MaterialSpinner) findViewById(R.id.spinner1);
         spinner1.setAdapter(adapter);
         spinner1.setPaddingSafe(0, 0, 0, 0);
-        }
+    }
+
     //spinner validation
     public void activateError(View view) {
         if (!shown) {
@@ -169,29 +213,38 @@ public class Createstore extends AppCompatActivity {
 
         }
     }*/
-
-    //select image
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
             if (requestCode == SELECT_PICTURE) {
                 Uri selectedImageUri = data.getData();
                 selectedImagePath = getPath(selectedImageUri);
                 System.out.println("Image Path : " + selectedImagePath);
-                img.setImageURI(selectedImageUri);
+                image.setImageURI(selectedImageUri);
+                BitmapFactory.Options options = new BitmapFactory.Options();
+                options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+                Bitmap bitmap = BitmapFactory.decodeFile(selectedImagePath, options);
+                image.setImageBitmap(bitmap);
+
             }
         }
     }
 
     public String getPath(Uri uri) {
-        String[] projection = { MediaStore.Images.Media.DATA };
+        String[] projection = {MediaStore.Images.Media.DATA};
         Cursor cursor = managedQuery(uri, projection, null, null, null);
         int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
         cursor.moveToFirst();
         return cursor.getString(column_index);
+
+
     }
 
+
+
+
+
     /**
-     * Validating form on submit
+     * Validating form
      */
 
     private void submitForm() {
@@ -199,9 +252,9 @@ public class Createstore extends AppCompatActivity {
             return;
         }
 
-        if (!validateTelephone()) {
+        /*if (!validateEmail()) {
             return;
-        }
+        }*/
 
         if (!validateStorename()) {
             return;
@@ -210,67 +263,26 @@ public class Createstore extends AppCompatActivity {
         if (!validateDescription()) {
             return;
         }
-
-
-        /*if (!validateEmail()) {
+        if (!validateTelephone()) {
             return;
-        }*/
-        if (activateError()) {
-           return;
-
         }
-
-
-
 
 
         Toast.makeText(getApplicationContext(), "Store created!", Toast.LENGTH_SHORT).show();
     }
 
-
-    //validate spinner
-    private boolean activateError() {
-        if (!shown) {
-            spinner1.setError(ERROR_MSG);
-
-        } else {
-            spinner1.setError(null);
-
-        }
-
-        return true;
-    }
-
-    //VALIDATIONS
-
-
-    //Validate name edit text
     private boolean validateName() {
         if (inputName.getText().toString().trim().isEmpty() || inputName.length() < 3) {
             inputLayoutName.setError(getString(R.string.err_msg_name));
             requestFocus(inputName);
             return false;
-
         } else {
             inputLayoutName.setErrorEnabled(false);
         }
 
         return true;
     }
-    //Validate Phonenumber edit text
-    private boolean validateTelephone() {
-        if (inputTelephone.getText().toString().trim().isEmpty() || inputTelephone.length() > 10) {
-            inputLayoutTelephone.setError(getString(R.string.err_msg_telephone));
-            requestFocus(inputTelephone);
-            return false;
-        } else {
-            inputLayoutTelephone.setErrorEnabled(false);
-        }
 
-        return true;
-    }
-
-    //Validate StoreName edit text
     private boolean validateStorename() {
         if (inputTelephone.getText().toString().trim().isEmpty() || inputStorename.length() < 3) {
             inputLayoutStore.setError(getString(R.string.err_msg_storename));
@@ -283,26 +295,6 @@ public class Createstore extends AppCompatActivity {
 
         return true;
     }
-
-
-
-    //Validate Description edit text
-
-   private boolean validateDescription() {
-
-
-       if (inputDescription.getText().toString().trim().isEmpty() || inputDescription.length() < 3) {
-           inputLayoutDescription.setError(getString(R.string.err_msg_description));
-           requestFocus(inputDescription);
-           return false;
-       } else {
-           inputLayoutDescription.setErrorEnabled(false);
-       }
-
-       return true;
-   }
-
-
 
 /*    private boolean validateEmail() {
         String email = inputEmail.getText().toString().trim();
@@ -318,20 +310,83 @@ public class Createstore extends AppCompatActivity {
         return true;
     }*/
 
-    //Validate E-mail
+    private boolean validateDescription() {
+
+
+        if (inputDescription.getText().toString().trim().isEmpty() || inputDescription.length() < 3) {
+            inputLayoutDescription.setError(getString(R.string.err_msg_description));
+            requestFocus(inputDescription);
+            return false;
+        } else {
+            inputLayoutDescription.setErrorEnabled(false);
+        }
+
+        return true;
+    }
+
+    private boolean validateTelephone() {
+        if (inputTelephone.getText().toString().trim().isEmpty() || inputTelephone.length() > 10) {
+            inputLayoutTelephone.setError(getString(R.string.err_msg_telephone));
+            requestFocus(inputTelephone);
+            return false;
+        } else {
+            inputLayoutTelephone.setErrorEnabled(false);
+        }
+
+        return true;
+    }
+
 
    /* private static boolean isValidEmail(String email) {
         return !TextUtils.isEmpty(email) && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }*/
-
-
 
     private void requestFocus(View view) {
         if (view.requestFocus()) {
             getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
         }
     }
-    //Text
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client.connect();
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "Createstore Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app deep link URI is correct.
+                Uri.parse("android-app://com.example.hulk.mtindo/http/host/path")
+        );
+        AppIndex.AppIndexApi.start(client, viewAction);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "Createstore Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app deep link URI is correct.
+                Uri.parse("android-app://com.example.hulk.mtindo/http/host/path")
+        );
+        AppIndex.AppIndexApi.end(client, viewAction);
+        client.disconnect();
+    }
+
 
     private class MyTextWatcher implements TextWatcher {
 
@@ -372,8 +427,22 @@ public class Createstore extends AppCompatActivity {
 
 
         }
-
-
     }
+
+    //    Method to convert image to base64
+    public static String encodeToBase64(Bitmap image) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        image.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        byte[] b = baos.toByteArray();
+        String imageEncoded = com.firebase.client.utilities.Base64.encodeBytes(b);
+        return imageEncoded;
+    }
+
+    public static Bitmap decodeFromBase64(String input) throws IOException, IOException {
+        byte[] decodedByte = com.firebase.client.utilities.Base64.decode(input);
+        return BitmapFactory.decodeByteArray(decodedByte, 0, decodedByte.length);
+    }
+
 }
+
 
