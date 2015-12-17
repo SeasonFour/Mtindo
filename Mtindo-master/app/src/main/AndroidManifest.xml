@@ -25,8 +25,10 @@
         <activity android:name=".Maint">
 
         </activity>
-
         <activity android:name=".SplashScreen">
+        </activity>
+
+        <activity android:name=".StoreCardView">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,11 +41,13 @@
         </activity>
 
         <activity android:name=".Beauty">
+
         </activity>
+
         <activity android:name=".Update_manager">
 
-
         </activity>
+
         <activity
             android:name=".Signin"
             android:label="@string/title_activity_signin"
