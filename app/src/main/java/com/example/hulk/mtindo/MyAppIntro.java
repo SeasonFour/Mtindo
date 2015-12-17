@@ -22,9 +22,10 @@ public class MyAppIntro extends AppIntro {
 
         // Instead of fragments, you can also use our default slide
         // Just set a title, description, background and image. AppIntro will do the rest
-        addSlide(AppIntroFragment.newInstance("Journal", "A place to save your journals", R.drawable.image, Color.parseColor("#3F51B5")));
-        addSlide(AppIntroFragment.newInstance("Secure data", "Your data is secure stored on the cloud", R.drawable.image, Color.parseColor("#3F51B5")));
-        addSlide(AppIntroFragment.newInstance("title", "description", R.drawable.image, Color.parseColor("#3F51B5")));
+        addSlide(AppIntroFragment.newInstance("EXPAND YOUR CLIENTELE", "Increase your reach  and income with your own online store", R.drawable.image, Color.parseColor("#3F51B5")));
+        addSlide(AppIntroFragment.newInstance("EXHIBIT YOUR WORK " ," Showcase your talent to the rest of the world by uploading photos and have new clients find you", R.drawable.image3, Color.parseColor("#3F51B5")));
+        addSlide(AppIntroFragment.newInstance("BUILD A REPUTATION ", "Enjoy raving reviews and feedback from your clients ", R.drawable.image, Color.parseColor("#3F51B5")));
+        addSlide(AppIntroFragment.newInstance("FIND THE BEST HAIR AND BEAUTY PROFESSIONALS ", "Check out their work,compare prices and rate and reveiw their services", R.drawable.image4, Color.parseColor("#3F51B5")));
 
 
         // OPTIONAL METHODS

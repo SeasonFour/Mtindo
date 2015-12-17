@@ -4185,3 +4185,1082 @@ Total time: 2.668 secs
 13:21:45.310 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 799: received null
 13:21:45.311 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received end-of-input from client.
 13:21:45.311 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 794: stopping connection
+14:54:44.110 [DEBUG] [org.gradle.messaging.remote.internal.inet.TcpIncomingConnector] Accepted connection from /127.0.0.1:34257 to /127.0.0.1:56017.
+14:55:17.595 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 803: received class org.gradle.launcher.daemon.protocol.Build
+14:55:17.932 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received non-IO message from client: Build{id=eb9200ac-8963-45aa-ad16-93ad252121a6.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}
+14:55:18.171 [INFO] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received command: Build{id=eb9200ac-8963-45aa-ad16-93ad252121a6.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}.
+14:55:18.236 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Starting executing command: Build{id=eb9200ac-8963-45aa-ad16-93ad252121a6.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo} with connection: socket connection from /127.0.0.1:56017 to /127.0.0.1:34257.
+14:55:19.249 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: started DaemonCommandExecution[command = Build{id=eb9200ac-8963-45aa-ad16-93ad252121a6.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@3c1234d8] after 93.0 minutes of idle
+14:55:19.396 [INFO] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Marking the daemon as busy, address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+14:55:19.468 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+14:55:20.808 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+14:55:21.736 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired.
+14:55:26.813 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+14:55:26.994 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] updating lastActivityAt to 1450353326973
+14:55:27.141 [INFO] [org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy] Daemon is about to start building Build{id=eb9200ac-8963-45aa-ad16-93ad252121a6.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}. Dispatching build started information...
+14:55:27.183 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 805: dispatching class org.gradle.launcher.daemon.protocol.BuildStarted
+14:55:27.254 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is busy, sleeping until state changes.
+14:55:27.482 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 803: received class org.gradle.launcher.daemon.protocol.CloseInput
+14:55:27.483 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received IO message from client: org.gradle.launcher.daemon.protocol.CloseInput@108a1cf3
+14:55:28.173 [DEBUG] [org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment] Configuring env variables: {PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/java/jdk1.8.0_60/bin:/usr/local/java/jdk1.8.0_60/jre/bin, LC_MEASUREMENT=om_KE.UTF-8, XAUTHORITY=/home/maureen/.Xauthority, XMODIFIERS=@im=ibus, LC_TELEPHONE=om_KE.UTF-8, XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/, GDMSESSION=ubuntu, MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path, LC_TIME=om_KE.UTF-8, TEXTDOMAINDIR=/usr/share/locale/, GTK_IM_MODULE=ibus, DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-3m3sudXJOY, DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path, XDG_CURRENT_DESKTOP=Unity, JRE_HOME=/usr/local/java/jdk1.8.0_60/jre, LD_LIBRARY_PATH=/home/maureen/android-studio/bin:, UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/1601, QT4_IM_MODULE=xim, LC_PAPER=om_KE.UTF-8, SESSION_MANAGER=local/maureen-HP-15-Notebook-PC:@/tmp/.ICE-unix/1752,unix/maureen-HP-15-Notebook-PC:/tmp/.ICE-unix/1752, LOGNAME=maureen, JOB=dbus, PWD=/home/maureen, IM_CONFIG_PHASE=1, LANGUAGE=en_US, SHELL=/bin/bash, LC_ADDRESS=om_KE.UTF-8, GIO_LAUNCHED_DESKTOP_FILE=/home/maureen/.local/share/applications/jetbrains-studio.desktop, INSTANCE=, GNOME_DESKTOP_SESSION_ID=this-is-deprecated, GTK_MODULES=overlay-scrollbar:unity-gtk-module, CLUTTER_IM_MODULE=xim, XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0, TEXTDOMAIN=im-config, COMPIZ_BIN_PATH=/usr/bin/, SESSIONTYPE=gnome-session, SHLVL=0, LC_IDENTIFICATION=om_KE.UTF-8, LC_MONETARY=om_KE.UTF-8, COMPIZ_CONFIG_PROFILE=ubuntu, QT_IM_MODULE=ibus, JAVA_HOME=/usr/local/java/jdk1.8.0_60, XFILESEARCHPATH=/usr/dt/app-defaults/%L/Dt, XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg, LANG=en_US.UTF-8, GNOME_KEYRING_CONTROL=/run/user/1000/keyring-VDBYJq, XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0, XDG_SESSION_ID=c2, SELINUX_INIT=YES, DISPLAY=:0, LC_NAME=om_KE.UTF-8, GDM_LANG=en_US, XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/maureen, GPG_AGENT_INFO=/run/user/1000/keyring-VDBYJq/gpg:0:1, DESKTOP_SESSION=ubuntu, SESSION=ubuntu, USER=maureen, XDG_MENU_PREFIX=gnome-, GIO_LAUNCHED_DESKTOP_FILE_PID=10251, LC_NUMERIC=om_KE.UTF-8, SSH_AUTH_SOCK=/run/user/1000/keyring-VDBYJq/ssh, XDG_SEAT=seat0, NLSPATH=/usr/dt/lib/nls/msg/%L/%N.cat, QT_QPA_PLATFORMTHEME=appmenu-qt5, XDG_VTNR=7, XDG_RUNTIME_DIR=/run/user/1000, HOME=/home/maureen, GNOME_KEYRING_PID=1529}
+14:55:29.780 [DEBUG] [org.gradle.launcher.daemon.server.exec.LogToClient] About to start relaying all logs to the client via the connection.
+14:55:30.061 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 10561). The daemon log file: /home/maureen/AndroidStudioProjects/Mtindo/daemon/2.8/daemon-10561.out.log
+14:55:30.589 [INFO] [org.gradle.launcher.daemon.server.health.DaemonHealthTracker] Starting 37th build in daemon [uptime: 4 hrs 50 mins 52.351 secs, performance: 92%, memory: 37% of 954.7 MB]
+14:55:30.806 [INFO] [org.gradle.launcher.daemon.server.exec.ForwardClientInput] Closing daemon's stdin at end of input.
+14:55:30.822 [INFO] [org.gradle.launcher.daemon.server.exec.ForwardClientInput] The daemon will no longer process any standard input.
+14:55:30.972 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
+14:55:31.090 [INFO] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=14711b76-a4fb-4ab0-a36c-95517117a17b,javaHome=/home/maureen/Downloads/jdk1.8.0_60,daemonRegistryDir=/home/maureen/AndroidStudioProjects/Mtindo/daemon,pid=10561,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]
+Configuration on demand is an incubating feature.
+:app:preBuild UP-TO-DATE
+:app:preDebugBuild UP-TO-DATE
+:app:checkDebugManifest
+:app:preReleaseBuild UP-TO-DATE
+:app:prepareComAndroidSupportAppcompatV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportCardviewV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportDesign2311Library UP-TO-DATE
+:app:prepareComAndroidSupportRecyclerviewV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportSupportV42311Library UP-TO-DATE
+:app:prepareComDaimajiaSliderLibrary115Library UP-TO-DATE
+:app:prepareComGithubGanfraMaterialSpinner111Library UP-TO-DATE
+:app:prepareComGithubPaolorotoloAppintro320Library UP-TO-DATE
+:app:prepareComGithubRey5137Material122Library UP-TO-DATE
+:app:prepareComGithubTraexRippleeffectLibrary13Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesAuth830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesBase830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesBasement830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesMeasurement830Library UP-TO-DATE
+:app:prepareComRengwuxianMaterialedittextLibrary214Library UP-TO-DATE
+:app:prepareComWangAviLibrary100Library UP-TO-DATE
+:app:prepareDebugDependencies
+:app:compileDebugAidl UP-TO-DATE
+:app:compileDebugRenderscript UP-TO-DATE
+:app:generateDebugBuildConfig UP-TO-DATE
+:app:generateDebugAssets UP-TO-DATE
+:app:mergeDebugAssets UP-TO-DATE
+:app:generateDebugResValues UP-TO-DATE
+:app:processDebugGoogleServices
+:app:generateDebugResources
+:app:mergeDebugResources FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:mergeDebugResources'.
+> /home/maureen/AndroidStudioProjects/Mtindo/app/src/main/res/drawable/image2jpg: Error: The file name must end with .xml or .png
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+BUILD FAILED
+
+Total time: 5 mins 28.151 secs
+15:00:06.880 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache outputFileStates.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/outputFileStates.bin)
+15:00:06.880 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache fileHashes.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/fileHashes.bin)
+15:00:06.880 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on task history cache (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts).
+15:00:06.889 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_init class cache for initialization script '/tmp/asLocalRepo36.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/asLocalRepo36_aspqpu9agrbjsryvdzqji1yac/cp_init).
+15:00:06.927 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on init class cache for initialization script '/tmp/asLocalRepo36.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/asLocalRepo36_aspqpu9agrbjsryvdzqji1yac/init).
+15:00:06.927 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_settings class cache for settings file '/home/maureen/AndroidStudioProjects/Mtindo/settings.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/settings_c69f67a4sk7ddte41bxew7y32/cp_settings).
+15:00:06.927 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on settings class cache for settings file '/home/maureen/AndroidStudioProjects/Mtindo/settings.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/settings_c69f67a4sk7ddte41bxew7y32/settings).
+15:00:06.944 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_7w23j328aesr7lnx1hg7jpsgb/cp_proj).
+15:00:06.944 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_7w23j328aesr7lnx1hg7jpsgb/proj).
+15:00:06.945 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/app/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_cbndns30qslymj1belogoiewv/cp_proj).
+15:00:06.945 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/app/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_cbndns30qslymj1belogoiewv/proj).
+15:00:06.975 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.CachedStoreFactory] Resolved configuration cache closed. Cache reads: 0, disk reads: 0 (avg: 0.0 secs, total: 0.0 secs)
+15:00:06.984 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.CachedStoreFactory] Resolution result cache closed. Cache reads: 0, disk reads: 8 (avg: 0.08 secs, total: 0.646 secs)
+15:00:07.009 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.ResolutionResultsStoreFactory] Deleted 2 resolution results binary files in 0.037 secs
+15:00:07.009 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.ivyresolve.memcache.InMemoryCachedRepositoryFactory] In-memory dependency metadata cache closed. Repos cached: 26, cache instances: 4, modules served from cache: 161, artifacts: 59
+15:00:07.012 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache module-metadata.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/module-metadata.bin)
+15:00:07.012 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache artifact-at-repository.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/artifact-at-repository.bin)
+15:00:07.019 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache module-artifacts.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/module-artifacts.bin)
+15:00:07.019 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on artifact cache (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2).
+15:00:07.042 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache Plugin Resolution Cache (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/plugin-resolution) was closed 0 times.
+15:00:07.095 [DEBUG] [org.gradle.api.internal.tasks.compile.daemon.CompilerDaemonManager] Stopping 0 compiler daemon(s).
+15:00:07.095 [INFO] [org.gradle.api.internal.tasks.compile.daemon.CompilerDaemonManager] Stopped 0 compiler daemon(s).
+15:00:07.095 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has finished executing the build.
+15:01:40.566 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is busy, sleeping until state changes.
+15:01:40.848 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: finished waiting for DaemonCommandExecution[command = Build{id=eb9200ac-8963-45aa-ad16-93ad252121a6.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@3c1234d8]. Result org.gradle.launcher.daemon.server.DaemonStateCoordinator@4de13482 with state Running
+15:01:40.869 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: completed DaemonCommandExecution[command = Build{id=eb9200ac-8963-45aa-ad16-93ad252121a6.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@3c1234d8]
+15:01:40.893 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] updating lastActivityAt to 1450353700893
+15:01:40.931 [INFO] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Marking the daemon as idle, address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+15:01:40.931 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking idle by address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+15:01:40.932 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+15:01:41.062 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired.
+15:01:42.929 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+15:01:42.935 [DEBUG] [org.gradle.launcher.daemon.server.exec.ReturnResult] Daemon is dispatching the build result: Failure[value=org.gradle.initialization.ReportedException: org.gradle.internal.exceptions.LocationAwareException: Execution failed for task ':app:mergeDebugResources'.]
+15:01:42.935 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 802: dispatching class org.gradle.launcher.daemon.protocol.Failure
+15:01:43.167 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is idle, sleeping until state change or idle timeout at Thu Dec 17 18:01:40 EAT 2015
+15:01:43.553 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Finishing executing command: Build{id=eb9200ac-8963-45aa-ad16-93ad252121a6.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}
+15:01:43.788 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 803: received class org.gradle.launcher.daemon.protocol.Finished
+15:01:43.788 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received non-IO message from client: org.gradle.launcher.daemon.protocol.Finished@20817a15
+15:01:43.788 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received finished message: org.gradle.launcher.daemon.protocol.Finished@20817a15
+15:01:43.789 [DEBUG] [org.gradle.messaging.remote.internal.inet.SocketConnection] Discarding EOFException: java.io.EOFException
+15:01:43.789 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 803: received null
+15:01:43.789 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received end-of-input from client.
+15:01:43.789 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 802: stopping connection
+15:01:43.908 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 802: stopping connection
+15:02:50.519 [DEBUG] [org.gradle.messaging.remote.internal.inet.TcpIncomingConnector] Accepted connection from /127.0.0.1:37388 to /127.0.0.1:56017.
+15:02:51.274 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 808: received class org.gradle.launcher.daemon.protocol.Build
+15:02:51.275 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received non-IO message from client: Build{id=a4d3f986-6505-4f34-9b0f-bc38bf6cdd8b.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}
+15:02:51.275 [INFO] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received command: Build{id=a4d3f986-6505-4f34-9b0f-bc38bf6cdd8b.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}.
+15:02:51.275 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Starting executing command: Build{id=a4d3f986-6505-4f34-9b0f-bc38bf6cdd8b.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo} with connection: socket connection from /127.0.0.1:56017 to /127.0.0.1:37388.
+15:02:51.275 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: started DaemonCommandExecution[command = Build{id=a4d3f986-6505-4f34-9b0f-bc38bf6cdd8b.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@4edcaa09] after 1.0 minutes of idle
+15:02:51.275 [INFO] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Marking the daemon as busy, address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+15:02:51.276 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+15:02:51.276 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+15:02:51.276 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired.
+15:02:51.305 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+15:02:51.305 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] updating lastActivityAt to 1450353771305
+15:02:51.305 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is busy, sleeping until state changes.
+15:02:51.357 [INFO] [org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy] Daemon is about to start building Build{id=a4d3f986-6505-4f34-9b0f-bc38bf6cdd8b.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}. Dispatching build started information...
+15:02:51.357 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 810: dispatching class org.gradle.launcher.daemon.protocol.BuildStarted
+15:02:51.463 [DEBUG] [org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment] Configuring env variables: {PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/java/jdk1.8.0_60/bin:/usr/local/java/jdk1.8.0_60/jre/bin, LC_MEASUREMENT=om_KE.UTF-8, XAUTHORITY=/home/maureen/.Xauthority, XMODIFIERS=@im=ibus, LC_TELEPHONE=om_KE.UTF-8, XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/, GDMSESSION=ubuntu, MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path, LC_TIME=om_KE.UTF-8, TEXTDOMAINDIR=/usr/share/locale/, GTK_IM_MODULE=ibus, DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-3m3sudXJOY, DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path, XDG_CURRENT_DESKTOP=Unity, JRE_HOME=/usr/local/java/jdk1.8.0_60/jre, LD_LIBRARY_PATH=/home/maureen/android-studio/bin:, UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/1601, QT4_IM_MODULE=xim, LC_PAPER=om_KE.UTF-8, SESSION_MANAGER=local/maureen-HP-15-Notebook-PC:@/tmp/.ICE-unix/1752,unix/maureen-HP-15-Notebook-PC:/tmp/.ICE-unix/1752, LOGNAME=maureen, JOB=dbus, PWD=/home/maureen, IM_CONFIG_PHASE=1, LANGUAGE=en_US, SHELL=/bin/bash, LC_ADDRESS=om_KE.UTF-8, GIO_LAUNCHED_DESKTOP_FILE=/home/maureen/.local/share/applications/jetbrains-studio.desktop, INSTANCE=, GNOME_DESKTOP_SESSION_ID=this-is-deprecated, GTK_MODULES=overlay-scrollbar:unity-gtk-module, CLUTTER_IM_MODULE=xim, XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0, TEXTDOMAIN=im-config, COMPIZ_BIN_PATH=/usr/bin/, SESSIONTYPE=gnome-session, SHLVL=0, LC_IDENTIFICATION=om_KE.UTF-8, LC_MONETARY=om_KE.UTF-8, COMPIZ_CONFIG_PROFILE=ubuntu, QT_IM_MODULE=ibus, JAVA_HOME=/usr/local/java/jdk1.8.0_60, XFILESEARCHPATH=/usr/dt/app-defaults/%L/Dt, XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg, LANG=en_US.UTF-8, GNOME_KEYRING_CONTROL=/run/user/1000/keyring-VDBYJq, XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0, XDG_SESSION_ID=c2, SELINUX_INIT=YES, DISPLAY=:0, LC_NAME=om_KE.UTF-8, GDM_LANG=en_US, XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/maureen, GPG_AGENT_INFO=/run/user/1000/keyring-VDBYJq/gpg:0:1, DESKTOP_SESSION=ubuntu, SESSION=ubuntu, USER=maureen, XDG_MENU_PREFIX=gnome-, GIO_LAUNCHED_DESKTOP_FILE_PID=10251, LC_NUMERIC=om_KE.UTF-8, SSH_AUTH_SOCK=/run/user/1000/keyring-VDBYJq/ssh, XDG_SEAT=seat0, NLSPATH=/usr/dt/lib/nls/msg/%L/%N.cat, QT_QPA_PLATFORMTHEME=appmenu-qt5, XDG_VTNR=7, XDG_RUNTIME_DIR=/run/user/1000, HOME=/home/maureen, GNOME_KEYRING_PID=1529}
+15:02:51.499 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 808: received class org.gradle.launcher.daemon.protocol.CloseInput
+15:02:51.499 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received IO message from client: org.gradle.launcher.daemon.protocol.CloseInput@c16fd45
+15:02:51.563 [DEBUG] [org.gradle.launcher.daemon.server.exec.LogToClient] About to start relaying all logs to the client via the connection.
+15:02:51.564 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 10561). The daemon log file: /home/maureen/AndroidStudioProjects/Mtindo/daemon/2.8/daemon-10561.out.log
+15:02:51.599 [INFO] [org.gradle.launcher.daemon.server.health.DaemonHealthTracker] Starting 38th build in daemon [uptime: 4 hrs 58 mins 13.786 secs, performance: 94%, memory: 38% of 954.7 MB]
+15:02:51.612 [INFO] [org.gradle.launcher.daemon.server.exec.ForwardClientInput] Closing daemon's stdin at end of input.
+15:02:51.613 [INFO] [org.gradle.launcher.daemon.server.exec.ForwardClientInput] The daemon will no longer process any standard input.
+15:02:51.663 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
+15:02:51.683 [INFO] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=14711b76-a4fb-4ab0-a36c-95517117a17b,javaHome=/home/maureen/Downloads/jdk1.8.0_60,daemonRegistryDir=/home/maureen/AndroidStudioProjects/Mtindo/daemon,pid=10561,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]
+Configuration on demand is an incubating feature.
+:app:preBuild UP-TO-DATE
+:app:preDebugBuild UP-TO-DATE
+:app:checkDebugManifest
+:app:preReleaseBuild UP-TO-DATE
+:app:prepareComAndroidSupportAppcompatV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportCardviewV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportDesign2311Library UP-TO-DATE
+:app:prepareComAndroidSupportRecyclerviewV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportSupportV42311Library UP-TO-DATE
+:app:prepareComDaimajiaSliderLibrary115Library UP-TO-DATE
+:app:prepareComGithubGanfraMaterialSpinner111Library UP-TO-DATE
+:app:prepareComGithubPaolorotoloAppintro320Library UP-TO-DATE
+:app:prepareComGithubRey5137Material122Library UP-TO-DATE
+:app:prepareComGithubTraexRippleeffectLibrary13Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesAuth830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesBase830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesBasement830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesMeasurement830Library UP-TO-DATE
+:app:prepareComRengwuxianMaterialedittextLibrary214Library UP-TO-DATE
+:app:prepareComWangAviLibrary100Library UP-TO-DATE
+:app:prepareDebugDependencies
+:app:compileDebugAidl UP-TO-DATE
+:app:compileDebugRenderscript UP-TO-DATE
+:app:generateDebugBuildConfig UP-TO-DATE
+:app:generateDebugAssets UP-TO-DATE
+:app:mergeDebugAssets UP-TO-DATE
+:app:generateDebugResValues UP-TO-DATE
+:app:processDebugGoogleServices
+:app:generateDebugResources
+:app:mergeDebugResources
+:app:processDebugManifest
+:app:processDebugResources
+:app:generateDebugSources
+:app:compileDebugJavaWithJavacNote: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+:app:compileDebugNdk UP-TO-DATE
+:app:compileDebugSources
+:app:transformClassesWithDexForDebug
+:app:mergeDebugJniLibFolders UP-TO-DATE
+:app:transformNative_libsWithMergeJniLibsForDebug UP-TO-DATE
+:app:processDebugJavaRes UP-TO-DATE
+:app:transformResourcesWithMergeJavaResForDebug UP-TO-DATE
+:app:validateDebugSigning
+:app:packageDebug
+:app:zipalignDebug
+:app:assembleDebug
+
+BUILD SUCCESSFUL
+
+Total time: 2 mins 13.457 secs
+15:05:02.780 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache fileHashes.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/fileHashes.bin)
+15:05:02.806 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache outputFileStates.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/outputFileStates.bin)
+15:05:02.807 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache taskArtifacts.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/taskArtifacts.bin)
+15:05:02.807 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache fileSnapshots.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/fileSnapshots.bin)
+15:05:02.807 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on task history cache (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts).
+15:05:02.807 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_init class cache for initialization script '/tmp/asLocalRepo37.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/asLocalRepo37_ezuy522shbftxanzu08w65ykd/cp_init).
+15:05:02.807 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on init class cache for initialization script '/tmp/asLocalRepo37.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/asLocalRepo37_ezuy522shbftxanzu08w65ykd/init).
+15:05:02.807 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_settings class cache for settings file '/home/maureen/AndroidStudioProjects/Mtindo/settings.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/settings_c69f67a4sk7ddte41bxew7y32/cp_settings).
+15:05:02.807 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on settings class cache for settings file '/home/maureen/AndroidStudioProjects/Mtindo/settings.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/settings_c69f67a4sk7ddte41bxew7y32/settings).
+15:05:02.807 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_7w23j328aesr7lnx1hg7jpsgb/cp_proj).
+15:05:02.808 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_7w23j328aesr7lnx1hg7jpsgb/proj).
+15:05:02.808 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/app/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_cbndns30qslymj1belogoiewv/cp_proj).
+15:05:02.808 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/app/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_cbndns30qslymj1belogoiewv/proj).
+15:05:02.808 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache jars (/home/maureen/AndroidStudioProjects/Mtindo/caches/jars-1) was closed 0 times.
+15:05:02.843 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.CachedStoreFactory] Resolved configuration cache closed. Cache reads: 0, disk reads: 0 (avg: 0.0 secs, total: 0.0 secs)
+15:05:02.844 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.CachedStoreFactory] Resolution result cache closed. Cache reads: 0, disk reads: 8 (avg: 0.0 secs, total: 0.0 secs)
+15:05:02.844 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.ResolutionResultsStoreFactory] Deleted 2 resolution results binary files in 0.036 secs
+15:05:02.844 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.ivyresolve.memcache.InMemoryCachedRepositoryFactory] In-memory dependency metadata cache closed. Repos cached: 26, cache instances: 4, modules served from cache: 161, artifacts: 59
+15:05:02.926 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache artifact-at-repository.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/artifact-at-repository.bin)
+15:05:02.926 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache module-artifacts.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/module-artifacts.bin)
+15:05:02.926 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache module-metadata.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/module-metadata.bin)
+15:05:02.927 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on artifact cache (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2).
+15:05:02.927 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache Plugin Resolution Cache (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/plugin-resolution) was closed 0 times.
+15:05:02.927 [DEBUG] [org.gradle.api.internal.tasks.compile.daemon.CompilerDaemonManager] Stopping 0 compiler daemon(s).
+15:05:02.927 [INFO] [org.gradle.api.internal.tasks.compile.daemon.CompilerDaemonManager] Stopped 0 compiler daemon(s).
+15:05:02.927 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has finished executing the build.
+15:05:04.000 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is busy, sleeping until state changes.
+15:05:04.001 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: finished waiting for DaemonCommandExecution[command = Build{id=a4d3f986-6505-4f34-9b0f-bc38bf6cdd8b.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@4edcaa09]. Result org.gradle.launcher.daemon.server.DaemonStateCoordinator@4de13482 with state Running
+15:05:04.001 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: completed DaemonCommandExecution[command = Build{id=a4d3f986-6505-4f34-9b0f-bc38bf6cdd8b.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@4edcaa09]
+15:05:04.001 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] updating lastActivityAt to 1450353904001
+15:05:04.001 [INFO] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Marking the daemon as idle, address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+15:05:04.001 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking idle by address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+15:05:04.001 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+15:05:04.105 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired.
+15:05:04.164 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+15:05:04.165 [DEBUG] [org.gradle.launcher.daemon.server.exec.ReturnResult] Daemon is dispatching the build result: Success[value=org.gradle.tooling.internal.provider.BuildActionResult@65400259]
+15:05:04.165 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is idle, sleeping until state change or idle timeout at Thu Dec 17 18:05:04 EAT 2015
+15:05:04.165 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 807: dispatching class org.gradle.launcher.daemon.protocol.Success
+15:05:04.192 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Finishing executing command: Build{id=a4d3f986-6505-4f34-9b0f-bc38bf6cdd8b.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}
+15:05:04.468 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 808: received class org.gradle.launcher.daemon.protocol.Finished
+15:05:04.468 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received non-IO message from client: org.gradle.launcher.daemon.protocol.Finished@5fdb73fa
+15:05:04.468 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received finished message: org.gradle.launcher.daemon.protocol.Finished@5fdb73fa
+15:05:04.468 [DEBUG] [org.gradle.messaging.remote.internal.inet.SocketConnection] Discarding EOFException: java.io.EOFException
+15:05:04.468 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 808: received null
+15:05:04.468 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received end-of-input from client.
+15:05:04.468 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 807: stopping connection
+15:05:04.468 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 807: stopping connection
+15:30:11.414 [DEBUG] [org.gradle.messaging.remote.internal.inet.TcpIncomingConnector] Accepted connection from /127.0.0.1:57617 to /127.0.0.1:56017.
+15:30:14.047 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 917: received class org.gradle.launcher.daemon.protocol.Build
+15:30:14.058 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received non-IO message from client: Build{id=2d3cc5f7-2c87-4564-b619-a86633d01bd9.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}
+15:30:14.058 [INFO] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received command: Build{id=2d3cc5f7-2c87-4564-b619-a86633d01bd9.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}.
+15:30:14.058 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Starting executing command: Build{id=2d3cc5f7-2c87-4564-b619-a86633d01bd9.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo} with connection: socket connection from /127.0.0.1:56017 to /127.0.0.1:57617.
+15:30:14.262 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: started DaemonCommandExecution[command = Build{id=2d3cc5f7-2c87-4564-b619-a86633d01bd9.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@3a1e2a0e] after 25.0 minutes of idle
+15:30:14.262 [INFO] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Marking the daemon as busy, address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+15:30:14.262 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+15:30:14.293 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+15:30:14.461 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired.
+15:30:15.068 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+15:30:15.068 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] updating lastActivityAt to 1450355415068
+15:30:15.068 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is busy, sleeping until state changes.
+15:30:15.068 [INFO] [org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy] Daemon is about to start building Build{id=2d3cc5f7-2c87-4564-b619-a86633d01bd9.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}. Dispatching build started information...
+15:30:15.068 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 919: dispatching class org.gradle.launcher.daemon.protocol.BuildStarted
+15:30:15.130 [DEBUG] [org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment] Configuring env variables: {PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/java/jdk1.8.0_60/bin:/usr/local/java/jdk1.8.0_60/jre/bin, LC_MEASUREMENT=om_KE.UTF-8, XAUTHORITY=/home/maureen/.Xauthority, XMODIFIERS=@im=ibus, LC_TELEPHONE=om_KE.UTF-8, XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/, GDMSESSION=ubuntu, MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path, LC_TIME=om_KE.UTF-8, TEXTDOMAINDIR=/usr/share/locale/, GTK_IM_MODULE=ibus, DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-3m3sudXJOY, DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path, XDG_CURRENT_DESKTOP=Unity, JRE_HOME=/usr/local/java/jdk1.8.0_60/jre, LD_LIBRARY_PATH=/home/maureen/android-studio/bin:, UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/1601, QT4_IM_MODULE=xim, LC_PAPER=om_KE.UTF-8, SESSION_MANAGER=local/maureen-HP-15-Notebook-PC:@/tmp/.ICE-unix/1752,unix/maureen-HP-15-Notebook-PC:/tmp/.ICE-unix/1752, LOGNAME=maureen, JOB=dbus, PWD=/home/maureen, IM_CONFIG_PHASE=1, LANGUAGE=en_US, SHELL=/bin/bash, LC_ADDRESS=om_KE.UTF-8, GIO_LAUNCHED_DESKTOP_FILE=/home/maureen/.local/share/applications/jetbrains-studio.desktop, INSTANCE=, GNOME_DESKTOP_SESSION_ID=this-is-deprecated, GTK_MODULES=overlay-scrollbar:unity-gtk-module, CLUTTER_IM_MODULE=xim, XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0, TEXTDOMAIN=im-config, COMPIZ_BIN_PATH=/usr/bin/, SESSIONTYPE=gnome-session, SHLVL=0, LC_IDENTIFICATION=om_KE.UTF-8, LC_MONETARY=om_KE.UTF-8, COMPIZ_CONFIG_PROFILE=ubuntu, QT_IM_MODULE=ibus, JAVA_HOME=/usr/local/java/jdk1.8.0_60, XFILESEARCHPATH=/usr/dt/app-defaults/%L/Dt, XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg, LANG=en_US.UTF-8, GNOME_KEYRING_CONTROL=/run/user/1000/keyring-VDBYJq, XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0, XDG_SESSION_ID=c2, SELINUX_INIT=YES, DISPLAY=:0, LC_NAME=om_KE.UTF-8, GDM_LANG=en_US, XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/maureen, GPG_AGENT_INFO=/run/user/1000/keyring-VDBYJq/gpg:0:1, DESKTOP_SESSION=ubuntu, SESSION=ubuntu, USER=maureen, XDG_MENU_PREFIX=gnome-, GIO_LAUNCHED_DESKTOP_FILE_PID=10251, LC_NUMERIC=om_KE.UTF-8, SSH_AUTH_SOCK=/run/user/1000/keyring-VDBYJq/ssh, XDG_SEAT=seat0, NLSPATH=/usr/dt/lib/nls/msg/%L/%N.cat, QT_QPA_PLATFORMTHEME=appmenu-qt5, XDG_VTNR=7, XDG_RUNTIME_DIR=/run/user/1000, HOME=/home/maureen, GNOME_KEYRING_PID=1529}
+15:30:15.136 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 917: received class org.gradle.launcher.daemon.protocol.CloseInput
+15:30:15.136 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received IO message from client: org.gradle.launcher.daemon.protocol.CloseInput@3c477dfa
+15:30:15.159 [DEBUG] [org.gradle.launcher.daemon.server.exec.LogToClient] About to start relaying all logs to the client via the connection.
+15:30:15.160 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 10561). The daemon log file: /home/maureen/AndroidStudioProjects/Mtindo/daemon/2.8/daemon-10561.out.log
+15:30:15.222 [INFO] [org.gradle.launcher.daemon.server.health.DaemonHealthTracker] Starting 39th build in daemon [uptime: 5 hrs 25 mins 37.372 secs, performance: 86%, memory: 41% of 954.7 MB]
+15:30:15.223 [INFO] [org.gradle.launcher.daemon.server.exec.ForwardClientInput] Closing daemon's stdin at end of input.
+15:30:15.224 [INFO] [org.gradle.launcher.daemon.server.exec.ForwardClientInput] The daemon will no longer process any standard input.
+15:30:15.269 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
+15:30:15.269 [INFO] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=14711b76-a4fb-4ab0-a36c-95517117a17b,javaHome=/home/maureen/Downloads/jdk1.8.0_60,daemonRegistryDir=/home/maureen/AndroidStudioProjects/Mtindo/daemon,pid=10561,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]
+Configuration on demand is an incubating feature.
+:app:preBuild UP-TO-DATE
+:app:preDebugBuild UP-TO-DATE
+:app:checkDebugManifest
+:app:preReleaseBuild UP-TO-DATE
+:app:prepareComAndroidSupportAppcompatV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportCardviewV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportDesign2311Library UP-TO-DATE
+:app:prepareComAndroidSupportRecyclerviewV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportSupportV42311Library UP-TO-DATE
+:app:prepareComDaimajiaSliderLibrary115Library UP-TO-DATE
+:app:prepareComGithubGanfraMaterialSpinner111Library UP-TO-DATE
+:app:prepareComGithubPaolorotoloAppintro320Library UP-TO-DATE
+:app:prepareComGithubRey5137Material122Library UP-TO-DATE
+:app:prepareComGithubTraexRippleeffectLibrary13Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesAuth830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesBase830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesBasement830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesMeasurement830Library UP-TO-DATE
+:app:prepareComRengwuxianMaterialedittextLibrary214Library UP-TO-DATE
+:app:prepareComWangAviLibrary100Library UP-TO-DATE
+:app:prepareDebugDependencies
+:app:compileDebugAidl UP-TO-DATE
+:app:compileDebugRenderscript UP-TO-DATE
+:app:generateDebugBuildConfig UP-TO-DATE
+:app:generateDebugAssets UP-TO-DATE
+:app:mergeDebugAssets UP-TO-DATE
+:app:generateDebugResValues UP-TO-DATE
+:app:processDebugGoogleServices
+:app:generateDebugResources
+:app:mergeDebugResources
+:app:processDebugManifest UP-TO-DATE
+:app:processDebugResources
+:app:generateDebugSources
+:app:compileDebugJavaWithJavacNote: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+:app:compileDebugNdk UP-TO-DATE
+:app:compileDebugSources
+:app:transformClassesWithDexForDebug
+:app:mergeDebugJniLibFolders UP-TO-DATE
+:app:transformNative_libsWithMergeJniLibsForDebug UP-TO-DATE
+:app:processDebugJavaRes UP-TO-DATE
+:app:transformResourcesWithMergeJavaResForDebug UP-TO-DATE
+:app:validateDebugSigning
+:app:packageDebug
+:app:zipalignDebug
+:app:assembleDebug
+
+BUILD SUCCESSFUL
+
+Total time: 1 mins 31.075 secs
+15:31:41.222 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache outputFileStates.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/outputFileStates.bin)
+15:31:41.222 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache fileHashes.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/fileHashes.bin)
+15:31:41.223 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache taskArtifacts.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/taskArtifacts.bin)
+15:31:41.223 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache fileSnapshots.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/fileSnapshots.bin)
+15:31:41.223 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on task history cache (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts).
+15:31:41.223 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_init class cache for initialization script '/tmp/asLocalRepo38.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/asLocalRepo38_95ormybds1yml3vy7bx70apli/cp_init).
+15:31:41.223 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on init class cache for initialization script '/tmp/asLocalRepo38.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/asLocalRepo38_95ormybds1yml3vy7bx70apli/init).
+15:31:41.223 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_settings class cache for settings file '/home/maureen/AndroidStudioProjects/Mtindo/settings.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/settings_c69f67a4sk7ddte41bxew7y32/cp_settings).
+15:31:41.223 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on settings class cache for settings file '/home/maureen/AndroidStudioProjects/Mtindo/settings.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/settings_c69f67a4sk7ddte41bxew7y32/settings).
+15:31:41.223 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_7w23j328aesr7lnx1hg7jpsgb/cp_proj).
+15:31:41.223 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_7w23j328aesr7lnx1hg7jpsgb/proj).
+15:31:41.223 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/app/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_cbndns30qslymj1belogoiewv/cp_proj).
+15:31:41.223 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/app/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_cbndns30qslymj1belogoiewv/proj).
+15:31:41.223 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache jars (/home/maureen/AndroidStudioProjects/Mtindo/caches/jars-1) was closed 0 times.
+15:31:41.244 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.CachedStoreFactory] Resolved configuration cache closed. Cache reads: 0, disk reads: 0 (avg: 0.0 secs, total: 0.0 secs)
+15:31:41.244 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.CachedStoreFactory] Resolution result cache closed. Cache reads: 0, disk reads: 8 (avg: 0.004 secs, total: 0.034 secs)
+15:31:41.244 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.ResolutionResultsStoreFactory] Deleted 2 resolution results binary files in 0.021 secs
+15:31:41.244 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.ivyresolve.memcache.InMemoryCachedRepositoryFactory] In-memory dependency metadata cache closed. Repos cached: 26, cache instances: 4, modules served from cache: 161, artifacts: 59
+15:31:41.244 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache artifact-at-repository.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/artifact-at-repository.bin)
+15:31:41.244 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache module-metadata.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/module-metadata.bin)
+15:31:41.244 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache module-artifacts.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/module-artifacts.bin)
+15:31:41.244 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on artifact cache (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2).
+15:31:41.244 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache Plugin Resolution Cache (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/plugin-resolution) was closed 0 times.
+15:31:41.244 [DEBUG] [org.gradle.api.internal.tasks.compile.daemon.CompilerDaemonManager] Stopping 0 compiler daemon(s).
+15:31:41.244 [INFO] [org.gradle.api.internal.tasks.compile.daemon.CompilerDaemonManager] Stopped 0 compiler daemon(s).
+15:31:41.245 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has finished executing the build.
+15:31:42.098 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is busy, sleeping until state changes.
+15:31:42.098 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: finished waiting for DaemonCommandExecution[command = Build{id=2d3cc5f7-2c87-4564-b619-a86633d01bd9.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@3a1e2a0e]. Result org.gradle.launcher.daemon.server.DaemonStateCoordinator@4de13482 with state Running
+15:31:42.098 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: completed DaemonCommandExecution[command = Build{id=2d3cc5f7-2c87-4564-b619-a86633d01bd9.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@3a1e2a0e]
+15:31:42.098 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] updating lastActivityAt to 1450355502098
+15:31:42.098 [INFO] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Marking the daemon as idle, address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+15:31:42.098 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking idle by address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+15:31:42.098 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+15:31:42.114 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired.
+15:31:42.160 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+15:31:42.160 [DEBUG] [org.gradle.launcher.daemon.server.exec.ReturnResult] Daemon is dispatching the build result: Success[value=org.gradle.tooling.internal.provider.BuildActionResult@77f0f745]
+15:31:42.160 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 916: dispatching class org.gradle.launcher.daemon.protocol.Success
+15:31:42.161 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is idle, sleeping until state change or idle timeout at Thu Dec 17 18:31:42 EAT 2015
+15:31:42.163 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Finishing executing command: Build{id=2d3cc5f7-2c87-4564-b619-a86633d01bd9.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}
+15:31:42.524 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 917: received class org.gradle.launcher.daemon.protocol.Finished
+15:31:42.524 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received non-IO message from client: org.gradle.launcher.daemon.protocol.Finished@7d7a77c1
+15:31:42.524 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received finished message: org.gradle.launcher.daemon.protocol.Finished@7d7a77c1
+15:31:42.524 [DEBUG] [org.gradle.messaging.remote.internal.inet.SocketConnection] Discarding EOFException: java.io.EOFException
+15:31:42.524 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 916: stopping connection
+15:31:42.524 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 917: received null
+15:31:42.568 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received end-of-input from client.
+15:31:42.569 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 916: stopping connection
+15:45:07.404 [DEBUG] [org.gradle.messaging.remote.internal.inet.TcpIncomingConnector] Accepted connection from /127.0.0.1:33647 to /127.0.0.1:56017.
+15:45:07.714 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 945: received class org.gradle.launcher.daemon.protocol.Build
+15:45:07.714 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received non-IO message from client: Build{id=0b303111-31e0-4917-8719-e6307b6c1ed0.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}
+15:45:07.714 [INFO] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received command: Build{id=0b303111-31e0-4917-8719-e6307b6c1ed0.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}.
+15:45:07.715 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Starting executing command: Build{id=0b303111-31e0-4917-8719-e6307b6c1ed0.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo} with connection: socket connection from /127.0.0.1:56017 to /127.0.0.1:33647.
+15:45:07.715 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: started DaemonCommandExecution[command = Build{id=0b303111-31e0-4917-8719-e6307b6c1ed0.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@338c5d3a] after 13.0 minutes of idle
+15:45:07.715 [INFO] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Marking the daemon as busy, address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+15:45:07.715 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+15:45:07.715 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+15:45:07.715 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired.
+15:45:07.736 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+15:45:07.736 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] updating lastActivityAt to 1450356307736
+15:45:07.736 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is busy, sleeping until state changes.
+15:45:07.736 [INFO] [org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy] Daemon is about to start building Build{id=0b303111-31e0-4917-8719-e6307b6c1ed0.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}. Dispatching build started information...
+15:45:07.736 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 947: dispatching class org.gradle.launcher.daemon.protocol.BuildStarted
+15:45:07.738 [DEBUG] [org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment] Configuring env variables: {PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/java/jdk1.8.0_60/bin:/usr/local/java/jdk1.8.0_60/jre/bin, LC_MEASUREMENT=om_KE.UTF-8, XAUTHORITY=/home/maureen/.Xauthority, XMODIFIERS=@im=ibus, LC_TELEPHONE=om_KE.UTF-8, XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/, GDMSESSION=ubuntu, MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path, LC_TIME=om_KE.UTF-8, TEXTDOMAINDIR=/usr/share/locale/, GTK_IM_MODULE=ibus, DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-3m3sudXJOY, DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path, XDG_CURRENT_DESKTOP=Unity, JRE_HOME=/usr/local/java/jdk1.8.0_60/jre, LD_LIBRARY_PATH=/home/maureen/android-studio/bin:, UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/1601, QT4_IM_MODULE=xim, LC_PAPER=om_KE.UTF-8, SESSION_MANAGER=local/maureen-HP-15-Notebook-PC:@/tmp/.ICE-unix/1752,unix/maureen-HP-15-Notebook-PC:/tmp/.ICE-unix/1752, LOGNAME=maureen, JOB=dbus, PWD=/home/maureen, IM_CONFIG_PHASE=1, LANGUAGE=en_US, SHELL=/bin/bash, LC_ADDRESS=om_KE.UTF-8, GIO_LAUNCHED_DESKTOP_FILE=/home/maureen/.local/share/applications/jetbrains-studio.desktop, INSTANCE=, GNOME_DESKTOP_SESSION_ID=this-is-deprecated, GTK_MODULES=overlay-scrollbar:unity-gtk-module, CLUTTER_IM_MODULE=xim, XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0, TEXTDOMAIN=im-config, COMPIZ_BIN_PATH=/usr/bin/, SESSIONTYPE=gnome-session, SHLVL=0, LC_IDENTIFICATION=om_KE.UTF-8, LC_MONETARY=om_KE.UTF-8, COMPIZ_CONFIG_PROFILE=ubuntu, QT_IM_MODULE=ibus, JAVA_HOME=/usr/local/java/jdk1.8.0_60, XFILESEARCHPATH=/usr/dt/app-defaults/%L/Dt, XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg, LANG=en_US.UTF-8, GNOME_KEYRING_CONTROL=/run/user/1000/keyring-VDBYJq, XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0, XDG_SESSION_ID=c2, SELINUX_INIT=YES, DISPLAY=:0, LC_NAME=om_KE.UTF-8, GDM_LANG=en_US, XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/maureen, GPG_AGENT_INFO=/run/user/1000/keyring-VDBYJq/gpg:0:1, DESKTOP_SESSION=ubuntu, SESSION=ubuntu, USER=maureen, XDG_MENU_PREFIX=gnome-, GIO_LAUNCHED_DESKTOP_FILE_PID=10251, LC_NUMERIC=om_KE.UTF-8, SSH_AUTH_SOCK=/run/user/1000/keyring-VDBYJq/ssh, XDG_SEAT=seat0, NLSPATH=/usr/dt/lib/nls/msg/%L/%N.cat, QT_QPA_PLATFORMTHEME=appmenu-qt5, XDG_VTNR=7, XDG_RUNTIME_DIR=/run/user/1000, HOME=/home/maureen, GNOME_KEYRING_PID=1529}
+15:45:07.738 [DEBUG] [org.gradle.launcher.daemon.server.exec.LogToClient] About to start relaying all logs to the client via the connection.
+15:45:07.738 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 10561). The daemon log file: /home/maureen/AndroidStudioProjects/Mtindo/daemon/2.8/daemon-10561.out.log
+15:45:07.738 [INFO] [org.gradle.launcher.daemon.server.health.DaemonHealthTracker] Starting 40th build in daemon [uptime: 5 hrs 40 mins 29.925 secs, performance: 87%, memory: 43% of 954.7 MB]
+15:45:07.739 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
+15:45:07.739 [INFO] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=14711b76-a4fb-4ab0-a36c-95517117a17b,javaHome=/home/maureen/Downloads/jdk1.8.0_60,daemonRegistryDir=/home/maureen/AndroidStudioProjects/Mtindo/daemon,pid=10561,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]
+Configuration on demand is an incubating feature.
+:app:preBuild UP-TO-DATE
+:app:preDebugBuild UP-TO-DATE
+:app:checkDebugManifest
+:app:preReleaseBuild UP-TO-DATE
+:app:prepareComAndroidSupportAppcompatV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportCardviewV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportDesign2311Library UP-TO-DATE
+:app:prepareComAndroidSupportRecyclerviewV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportSupportV42311Library UP-TO-DATE
+:app:prepareComDaimajiaSliderLibrary115Library UP-TO-DATE
+:app:prepareComGithubGanfraMaterialSpinner111Library UP-TO-DATE
+:app:prepareComGithubPaolorotoloAppintro320Library UP-TO-DATE
+:app:prepareComGithubRey5137Material122Library UP-TO-DATE
+:app:prepareComGithubTraexRippleeffectLibrary13Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesAuth830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesBase830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesBasement830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesMeasurement830Library UP-TO-DATE
+:app:prepareComRengwuxianMaterialedittextLibrary214Library UP-TO-DATE
+:app:prepareComWangAviLibrary100Library UP-TO-DATE
+:app:prepareDebugDependencies
+:app:compileDebugAidl UP-TO-DATE
+:app:compileDebugRenderscript UP-TO-DATE
+:app:generateDebugBuildConfig UP-TO-DATE
+:app:generateDebugAssets UP-TO-DATE
+:app:mergeDebugAssets UP-TO-DATE
+:app:generateDebugResValues UP-TO-DATE
+:app:processDebugGoogleServices
+:app:generateDebugResources
+:app:mergeDebugResources UP-TO-DATE
+:app:processDebugManifest UP-TO-DATE
+:app:processDebugResources UP-TO-DATE
+:app:generateDebugSources UP-TO-DATE
+:app:compileDebugJavaWithJavacNote: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+:app:compileDebugNdk UP-TO-DATE
+:app:compileDebugSources
+:app:transformClassesWithDexForDebug
+:app:mergeDebugJniLibFolders UP-TO-DATE
+:app:transformNative_libsWithMergeJniLibsForDebug UP-TO-DATE
+:app:processDebugJavaRes UP-TO-DATE
+:app:transformResourcesWithMergeJavaResForDebug UP-TO-DATE
+:app:validateDebugSigning
+:app:packageDebug
+:app:zipalignDebug
+:app:assembleDebug
+
+BUILD SUCCESSFUL
+
+Total time: 37.341 secs
+15:45:44.301 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache taskArtifacts.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/taskArtifacts.bin)
+15:45:44.301 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache fileHashes.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/fileHashes.bin)
+15:45:44.302 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache fileSnapshots.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/fileSnapshots.bin)
+15:45:44.302 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache outputFileStates.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/outputFileStates.bin)
+15:45:44.302 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on task history cache (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts).
+15:45:44.302 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_init class cache for initialization script '/tmp/asLocalRepo39.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/asLocalRepo39_capo5rle58yukdaxg3dlg1kjl/cp_init).
+15:45:44.302 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on init class cache for initialization script '/tmp/asLocalRepo39.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/asLocalRepo39_capo5rle58yukdaxg3dlg1kjl/init).
+15:45:44.302 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_settings class cache for settings file '/home/maureen/AndroidStudioProjects/Mtindo/settings.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/settings_c69f67a4sk7ddte41bxew7y32/cp_settings).
+15:45:44.302 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on settings class cache for settings file '/home/maureen/AndroidStudioProjects/Mtindo/settings.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/settings_c69f67a4sk7ddte41bxew7y32/settings).
+15:45:44.302 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_7w23j328aesr7lnx1hg7jpsgb/cp_proj).
+15:45:44.302 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_7w23j328aesr7lnx1hg7jpsgb/proj).
+15:45:44.302 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/app/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_cbndns30qslymj1belogoiewv/cp_proj).
+15:45:44.302 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/app/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_cbndns30qslymj1belogoiewv/proj).
+15:45:44.302 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache jars (/home/maureen/AndroidStudioProjects/Mtindo/caches/jars-1) was closed 0 times.
+15:45:44.425 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.CachedStoreFactory] Resolved configuration cache closed. Cache reads: 0, disk reads: 0 (avg: 0.0 secs, total: 0.0 secs)
+15:45:44.425 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.CachedStoreFactory] Resolution result cache closed. Cache reads: 0, disk reads: 8 (avg: 0.007 secs, total: 0.056 secs)
+15:45:44.425 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.ResolutionResultsStoreFactory] Deleted 2 resolution results binary files in 0.073 secs
+15:45:44.425 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.ivyresolve.memcache.InMemoryCachedRepositoryFactory] In-memory dependency metadata cache closed. Repos cached: 26, cache instances: 4, modules served from cache: 161, artifacts: 59
+15:45:44.465 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache module-metadata.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/module-metadata.bin)
+15:45:44.465 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache module-artifacts.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/module-artifacts.bin)
+15:45:44.465 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache artifact-at-repository.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/artifact-at-repository.bin)
+15:45:44.466 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on artifact cache (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2).
+15:45:44.466 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache Plugin Resolution Cache (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/plugin-resolution) was closed 0 times.
+15:45:44.466 [DEBUG] [org.gradle.api.internal.tasks.compile.daemon.CompilerDaemonManager] Stopping 0 compiler daemon(s).
+15:45:44.466 [INFO] [org.gradle.api.internal.tasks.compile.daemon.CompilerDaemonManager] Stopped 0 compiler daemon(s).
+15:45:44.466 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has finished executing the build.
+15:45:48.084 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is busy, sleeping until state changes.
+15:45:48.084 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: finished waiting for DaemonCommandExecution[command = Build{id=0b303111-31e0-4917-8719-e6307b6c1ed0.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@338c5d3a]. Result org.gradle.launcher.daemon.server.DaemonStateCoordinator@4de13482 with state Running
+15:45:48.084 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: completed DaemonCommandExecution[command = Build{id=0b303111-31e0-4917-8719-e6307b6c1ed0.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@338c5d3a]
+15:45:48.084 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] updating lastActivityAt to 1450356348084
+15:45:48.085 [INFO] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Marking the daemon as idle, address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+15:45:48.085 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking idle by address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+15:45:48.085 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+15:45:48.110 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired.
+15:45:48.199 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+15:45:48.199 [DEBUG] [org.gradle.launcher.daemon.server.exec.ReturnResult] Daemon is dispatching the build result: Success[value=org.gradle.tooling.internal.provider.BuildActionResult@5582297a]
+15:45:48.199 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is idle, sleeping until state change or idle timeout at Thu Dec 17 18:45:48 EAT 2015
+15:45:48.199 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 944: dispatching class org.gradle.launcher.daemon.protocol.Success
+15:45:48.200 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Finishing executing command: Build{id=0b303111-31e0-4917-8719-e6307b6c1ed0.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}
+15:45:48.432 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 945: received class org.gradle.launcher.daemon.protocol.Finished
+15:45:48.432 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received non-IO message from client: org.gradle.launcher.daemon.protocol.Finished@5439b390
+15:45:48.432 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received finished message: org.gradle.launcher.daemon.protocol.Finished@5439b390
+15:45:48.433 [DEBUG] [org.gradle.messaging.remote.internal.inet.SocketConnection] Discarding EOFException: java.io.EOFException
+15:45:48.433 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 945: received null
+15:45:48.433 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received end-of-input from client.
+15:45:48.433 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 944: stopping connection
+15:45:48.433 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 944: stopping connection
+17:00:27.172 [DEBUG] [org.gradle.messaging.remote.internal.inet.TcpIncomingConnector] Accepted connection from /127.0.0.1:41751 to /127.0.0.1:56017.
+17:00:42.275 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 967: received class org.gradle.launcher.daemon.protocol.Build
+17:00:42.432 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received non-IO message from client: Build{id=6f22c98b-7353-4965-8a66-44279272341d.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}
+17:00:42.509 [INFO] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received command: Build{id=6f22c98b-7353-4965-8a66-44279272341d.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}.
+17:00:42.510 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Starting executing command: Build{id=6f22c98b-7353-4965-8a66-44279272341d.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo} with connection: socket connection from /127.0.0.1:56017 to /127.0.0.1:41751.
+17:00:43.037 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: started DaemonCommandExecution[command = Build{id=6f22c98b-7353-4965-8a66-44279272341d.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@38d2f707] after 74.0 minutes of idle
+17:00:43.158 [INFO] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Marking the daemon as busy, address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+17:00:43.158 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+17:00:44.008 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+17:00:44.342 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired.
+17:00:46.235 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+17:00:46.381 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] updating lastActivityAt to 1450360846381
+17:00:46.563 [INFO] [org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy] Daemon is about to start building Build{id=6f22c98b-7353-4965-8a66-44279272341d.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}. Dispatching build started information...
+17:00:46.571 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is busy, sleeping until state changes.
+17:00:46.589 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 969: dispatching class org.gradle.launcher.daemon.protocol.BuildStarted
+17:00:46.772 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 967: received class org.gradle.launcher.daemon.protocol.CloseInput
+17:00:46.772 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received IO message from client: org.gradle.launcher.daemon.protocol.CloseInput@d3a9e37
+17:00:47.064 [DEBUG] [org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment] Configuring env variables: {PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/java/jdk1.8.0_60/bin:/usr/local/java/jdk1.8.0_60/jre/bin, LC_MEASUREMENT=om_KE.UTF-8, XAUTHORITY=/home/maureen/.Xauthority, XMODIFIERS=@im=ibus, LC_TELEPHONE=om_KE.UTF-8, XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/, GDMSESSION=ubuntu, MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path, LC_TIME=om_KE.UTF-8, TEXTDOMAINDIR=/usr/share/locale/, GTK_IM_MODULE=ibus, DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-3m3sudXJOY, DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path, XDG_CURRENT_DESKTOP=Unity, JRE_HOME=/usr/local/java/jdk1.8.0_60/jre, LD_LIBRARY_PATH=/home/maureen/android-studio/bin:, UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/1601, QT4_IM_MODULE=xim, LC_PAPER=om_KE.UTF-8, SESSION_MANAGER=local/maureen-HP-15-Notebook-PC:@/tmp/.ICE-unix/1752,unix/maureen-HP-15-Notebook-PC:/tmp/.ICE-unix/1752, LOGNAME=maureen, JOB=dbus, PWD=/home/maureen, IM_CONFIG_PHASE=1, LANGUAGE=en_US, SHELL=/bin/bash, LC_ADDRESS=om_KE.UTF-8, GIO_LAUNCHED_DESKTOP_FILE=/home/maureen/.local/share/applications/jetbrains-studio.desktop, INSTANCE=, GNOME_DESKTOP_SESSION_ID=this-is-deprecated, GTK_MODULES=overlay-scrollbar:unity-gtk-module, CLUTTER_IM_MODULE=xim, XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0, TEXTDOMAIN=im-config, COMPIZ_BIN_PATH=/usr/bin/, SESSIONTYPE=gnome-session, SHLVL=0, LC_IDENTIFICATION=om_KE.UTF-8, LC_MONETARY=om_KE.UTF-8, COMPIZ_CONFIG_PROFILE=ubuntu, QT_IM_MODULE=ibus, JAVA_HOME=/usr/local/java/jdk1.8.0_60, XFILESEARCHPATH=/usr/dt/app-defaults/%L/Dt, XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg, LANG=en_US.UTF-8, GNOME_KEYRING_CONTROL=/run/user/1000/keyring-VDBYJq, XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0, XDG_SESSION_ID=c2, SELINUX_INIT=YES, DISPLAY=:0, LC_NAME=om_KE.UTF-8, GDM_LANG=en_US, XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/maureen, GPG_AGENT_INFO=/run/user/1000/keyring-VDBYJq/gpg:0:1, DESKTOP_SESSION=ubuntu, SESSION=ubuntu, USER=maureen, XDG_MENU_PREFIX=gnome-, GIO_LAUNCHED_DESKTOP_FILE_PID=10251, LC_NUMERIC=om_KE.UTF-8, SSH_AUTH_SOCK=/run/user/1000/keyring-VDBYJq/ssh, XDG_SEAT=seat0, NLSPATH=/usr/dt/lib/nls/msg/%L/%N.cat, QT_QPA_PLATFORMTHEME=appmenu-qt5, XDG_VTNR=7, XDG_RUNTIME_DIR=/run/user/1000, HOME=/home/maureen, GNOME_KEYRING_PID=1529}
+17:00:47.977 [DEBUG] [org.gradle.launcher.daemon.server.exec.LogToClient] About to start relaying all logs to the client via the connection.
+17:00:48.108 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 10561). The daemon log file: /home/maureen/AndroidStudioProjects/Mtindo/daemon/2.8/daemon-10561.out.log
+17:00:48.688 [INFO] [org.gradle.launcher.daemon.server.health.DaemonHealthTracker] Starting 41st build in daemon [uptime: 6 hrs 56 mins 10.378 secs, performance: 87%, memory: 41% of 954.7 MB]
+17:00:49.176 [INFO] [org.gradle.launcher.daemon.server.exec.ForwardClientInput] Closing daemon's stdin at end of input.
+17:00:49.200 [INFO] [org.gradle.launcher.daemon.server.exec.ForwardClientInput] The daemon will no longer process any standard input.
+17:00:49.237 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
+17:00:49.256 [INFO] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=14711b76-a4fb-4ab0-a36c-95517117a17b,javaHome=/home/maureen/Downloads/jdk1.8.0_60,daemonRegistryDir=/home/maureen/AndroidStudioProjects/Mtindo/daemon,pid=10561,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]
+Configuration on demand is an incubating feature.
+:app:preBuild UP-TO-DATE
+:app:preDebugBuild UP-TO-DATE
+:app:checkDebugManifest
+:app:preReleaseBuild UP-TO-DATE
+:app:prepareComAndroidSupportAppcompatV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportCardviewV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportDesign2311Library UP-TO-DATE
+:app:prepareComAndroidSupportRecyclerviewV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportSupportV42311Library UP-TO-DATE
+:app:prepareComDaimajiaSliderLibrary115Library UP-TO-DATE
+:app:prepareComGithubGanfraMaterialSpinner111Library UP-TO-DATE
+:app:prepareComGithubPaolorotoloAppintro320Library UP-TO-DATE
+:app:prepareComGithubRey5137Material122Library UP-TO-DATE
+:app:prepareComGithubTraexRippleeffectLibrary13Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesAuth830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesBase830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesBasement830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesMeasurement830Library UP-TO-DATE
+:app:prepareComRengwuxianMaterialedittextLibrary214Library UP-TO-DATE
+:app:prepareComWangAviLibrary100Library UP-TO-DATE
+:app:prepareDebugDependencies
+:app:compileDebugAidl UP-TO-DATE
+:app:compileDebugRenderscript UP-TO-DATE
+:app:generateDebugBuildConfig UP-TO-DATE
+:app:generateDebugAssets UP-TO-DATE
+:app:mergeDebugAssets UP-TO-DATE
+:app:generateDebugResValues UP-TO-DATE
+:app:processDebugGoogleServices
+:app:generateDebugResources
+:app:mergeDebugResources
+:app:processDebugManifest UP-TO-DATE
+:app:processDebugResources
+:app:generateDebugSources
+:app:compileDebugJavaWithJavacNote: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+:app:compileDebugNdk UP-TO-DATE
+:app:compileDebugSources
+:app:transformClassesWithDexForDebug
+:app:mergeDebugJniLibFolders UP-TO-DATE
+:app:transformNative_libsWithMergeJniLibsForDebug UP-TO-DATE
+:app:processDebugJavaRes UP-TO-DATE
+:app:transformResourcesWithMergeJavaResForDebug UP-TO-DATE
+:app:validateDebugSigning
+:app:packageDebug
+:app:zipalignDebug
+:app:assembleDebug
+
+BUILD SUCCESSFUL
+
+Total time: 3 mins 55.986 secs
+17:04:20.165 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache fileSnapshots.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/fileSnapshots.bin)
+17:04:20.185 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache outputFileStates.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/outputFileStates.bin)
+17:04:20.185 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache fileHashes.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/fileHashes.bin)
+17:04:20.185 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache taskArtifacts.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/taskArtifacts.bin)
+17:04:20.185 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on task history cache (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts).
+17:04:20.185 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_init class cache for initialization script '/tmp/asLocalRepo40.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/asLocalRepo40_9rgmfr9em9qbvetwayiiw9g6e/cp_init).
+17:04:20.186 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on init class cache for initialization script '/tmp/asLocalRepo40.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/asLocalRepo40_9rgmfr9em9qbvetwayiiw9g6e/init).
+17:04:20.186 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_settings class cache for settings file '/home/maureen/AndroidStudioProjects/Mtindo/settings.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/settings_c69f67a4sk7ddte41bxew7y32/cp_settings).
+17:04:20.186 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on settings class cache for settings file '/home/maureen/AndroidStudioProjects/Mtindo/settings.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/settings_c69f67a4sk7ddte41bxew7y32/settings).
+17:04:20.186 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_7w23j328aesr7lnx1hg7jpsgb/cp_proj).
+17:04:20.186 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_7w23j328aesr7lnx1hg7jpsgb/proj).
+17:04:20.186 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/app/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_cbndns30qslymj1belogoiewv/cp_proj).
+17:04:20.186 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/app/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_cbndns30qslymj1belogoiewv/proj).
+17:04:20.194 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache jars (/home/maureen/AndroidStudioProjects/Mtindo/caches/jars-1) was closed 0 times.
+17:04:20.195 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.CachedStoreFactory] Resolved configuration cache closed. Cache reads: 0, disk reads: 0 (avg: 0.0 secs, total: 0.0 secs)
+17:04:20.195 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.CachedStoreFactory] Resolution result cache closed. Cache reads: 0, disk reads: 8 (avg: 0.045 secs, total: 0.366 secs)
+17:04:20.195 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.ResolutionResultsStoreFactory] Deleted 2 resolution results binary files in 0.001 secs
+17:04:20.195 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.ivyresolve.memcache.InMemoryCachedRepositoryFactory] In-memory dependency metadata cache closed. Repos cached: 26, cache instances: 4, modules served from cache: 161, artifacts: 59
+17:04:20.195 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache module-metadata.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/module-metadata.bin)
+17:04:20.195 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache module-artifacts.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/module-artifacts.bin)
+17:04:20.195 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache artifact-at-repository.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/artifact-at-repository.bin)
+17:04:20.196 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on artifact cache (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2).
+17:04:20.196 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache Plugin Resolution Cache (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/plugin-resolution) was closed 0 times.
+17:04:20.213 [DEBUG] [org.gradle.api.internal.tasks.compile.daemon.CompilerDaemonManager] Stopping 0 compiler daemon(s).
+17:04:20.213 [INFO] [org.gradle.api.internal.tasks.compile.daemon.CompilerDaemonManager] Stopped 0 compiler daemon(s).
+17:04:20.213 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has finished executing the build.
+17:04:34.249 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is busy, sleeping until state changes.
+17:04:34.274 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: finished waiting for DaemonCommandExecution[command = Build{id=6f22c98b-7353-4965-8a66-44279272341d.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@38d2f707]. Result org.gradle.launcher.daemon.server.DaemonStateCoordinator@4de13482 with state Running
+17:04:34.274 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: completed DaemonCommandExecution[command = Build{id=6f22c98b-7353-4965-8a66-44279272341d.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@38d2f707]
+17:04:34.274 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] updating lastActivityAt to 1450361074274
+17:04:34.287 [INFO] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Marking the daemon as idle, address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+17:04:34.287 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking idle by address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+17:04:34.287 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+17:04:34.288 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired.
+17:04:34.373 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+17:04:34.373 [DEBUG] [org.gradle.launcher.daemon.server.exec.ReturnResult] Daemon is dispatching the build result: Success[value=org.gradle.tooling.internal.provider.BuildActionResult@4d45e29c]
+17:04:34.373 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 966: dispatching class org.gradle.launcher.daemon.protocol.Success
+17:04:34.388 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Finishing executing command: Build{id=6f22c98b-7353-4965-8a66-44279272341d.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}
+17:04:34.391 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 967: received class org.gradle.launcher.daemon.protocol.Finished
+17:04:34.391 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received non-IO message from client: org.gradle.launcher.daemon.protocol.Finished@7c2f547
+17:04:34.391 [DEBUG] [org.gradle.messaging.remote.internal.inet.SocketConnection] Discarding EOFException: java.io.EOFException
+17:04:34.391 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 967: received null
+17:04:34.391 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received end-of-input from client.
+17:04:34.392 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received finished message: null
+17:04:34.392 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 966: stopping connection
+17:04:34.421 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 966: stopping connection
+17:04:34.422 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is idle, sleeping until state change or idle timeout at Thu Dec 17 20:04:34 EAT 2015
+17:06:41.947 [DEBUG] [org.gradle.messaging.remote.internal.inet.TcpIncomingConnector] Accepted connection from /127.0.0.1:39641 to /127.0.0.1:56017.
+17:06:42.008 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1016: received class org.gradle.launcher.daemon.protocol.Build
+17:06:42.008 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received non-IO message from client: Build{id=6731e31e-3d9f-411e-9c9f-49b57b580944.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}
+17:06:42.008 [INFO] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received command: Build{id=6731e31e-3d9f-411e-9c9f-49b57b580944.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}.
+17:06:42.008 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Starting executing command: Build{id=6731e31e-3d9f-411e-9c9f-49b57b580944.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo} with connection: socket connection from /127.0.0.1:56017 to /127.0.0.1:39641.
+17:06:42.008 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: started DaemonCommandExecution[command = Build{id=6731e31e-3d9f-411e-9c9f-49b57b580944.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@7ced2e71] after 2.0 minutes of idle
+17:06:42.008 [INFO] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Marking the daemon as busy, address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+17:06:42.009 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+17:06:42.009 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+17:06:42.009 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired.
+17:06:42.010 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+17:06:42.010 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] updating lastActivityAt to 1450361202010
+17:06:42.010 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is busy, sleeping until state changes.
+17:06:42.010 [INFO] [org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy] Daemon is about to start building Build{id=6731e31e-3d9f-411e-9c9f-49b57b580944.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}. Dispatching build started information...
+17:06:42.010 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1018: dispatching class org.gradle.launcher.daemon.protocol.BuildStarted
+17:06:42.021 [DEBUG] [org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment] Configuring env variables: {PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/java/jdk1.8.0_60/bin:/usr/local/java/jdk1.8.0_60/jre/bin, LC_MEASUREMENT=om_KE.UTF-8, XAUTHORITY=/home/maureen/.Xauthority, XMODIFIERS=@im=ibus, LC_TELEPHONE=om_KE.UTF-8, XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/, GDMSESSION=ubuntu, MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path, LC_TIME=om_KE.UTF-8, TEXTDOMAINDIR=/usr/share/locale/, GTK_IM_MODULE=ibus, DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-3m3sudXJOY, DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path, XDG_CURRENT_DESKTOP=Unity, JRE_HOME=/usr/local/java/jdk1.8.0_60/jre, LD_LIBRARY_PATH=/home/maureen/android-studio/bin:, UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/1601, QT4_IM_MODULE=xim, LC_PAPER=om_KE.UTF-8, SESSION_MANAGER=local/maureen-HP-15-Notebook-PC:@/tmp/.ICE-unix/1752,unix/maureen-HP-15-Notebook-PC:/tmp/.ICE-unix/1752, LOGNAME=maureen, JOB=dbus, PWD=/home/maureen, IM_CONFIG_PHASE=1, LANGUAGE=en_US, SHELL=/bin/bash, LC_ADDRESS=om_KE.UTF-8, GIO_LAUNCHED_DESKTOP_FILE=/home/maureen/.local/share/applications/jetbrains-studio.desktop, INSTANCE=, GNOME_DESKTOP_SESSION_ID=this-is-deprecated, GTK_MODULES=overlay-scrollbar:unity-gtk-module, CLUTTER_IM_MODULE=xim, XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0, TEXTDOMAIN=im-config, COMPIZ_BIN_PATH=/usr/bin/, SESSIONTYPE=gnome-session, SHLVL=0, LC_IDENTIFICATION=om_KE.UTF-8, LC_MONETARY=om_KE.UTF-8, COMPIZ_CONFIG_PROFILE=ubuntu, QT_IM_MODULE=ibus, JAVA_HOME=/usr/local/java/jdk1.8.0_60, XFILESEARCHPATH=/usr/dt/app-defaults/%L/Dt, XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg, LANG=en_US.UTF-8, GNOME_KEYRING_CONTROL=/run/user/1000/keyring-VDBYJq, XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0, XDG_SESSION_ID=c2, SELINUX_INIT=YES, DISPLAY=:0, LC_NAME=om_KE.UTF-8, GDM_LANG=en_US, XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/maureen, GPG_AGENT_INFO=/run/user/1000/keyring-VDBYJq/gpg:0:1, DESKTOP_SESSION=ubuntu, SESSION=ubuntu, USER=maureen, XDG_MENU_PREFIX=gnome-, GIO_LAUNCHED_DESKTOP_FILE_PID=10251, LC_NUMERIC=om_KE.UTF-8, SSH_AUTH_SOCK=/run/user/1000/keyring-VDBYJq/ssh, XDG_SEAT=seat0, NLSPATH=/usr/dt/lib/nls/msg/%L/%N.cat, QT_QPA_PLATFORMTHEME=appmenu-qt5, XDG_VTNR=7, XDG_RUNTIME_DIR=/run/user/1000, HOME=/home/maureen, GNOME_KEYRING_PID=1529}
+17:06:42.022 [DEBUG] [org.gradle.launcher.daemon.server.exec.LogToClient] About to start relaying all logs to the client via the connection.
+17:06:42.022 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 10561). The daemon log file: /home/maureen/AndroidStudioProjects/Mtindo/daemon/2.8/daemon-10561.out.log
+17:06:42.022 [INFO] [org.gradle.launcher.daemon.server.health.DaemonHealthTracker] Starting 42nd build in daemon [uptime: 7 hrs 2 mins 4.209 secs, performance: 88%, memory: 42% of 954.7 MB]
+17:06:42.022 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
+17:06:42.022 [INFO] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=14711b76-a4fb-4ab0-a36c-95517117a17b,javaHome=/home/maureen/Downloads/jdk1.8.0_60,daemonRegistryDir=/home/maureen/AndroidStudioProjects/Mtindo/daemon,pid=10561,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]
+Configuration on demand is an incubating feature.
+:app:preBuild UP-TO-DATE
+:app:preDebugBuild UP-TO-DATE
+:app:checkDebugManifest
+:app:preReleaseBuild UP-TO-DATE
+:app:prepareComAndroidSupportAppcompatV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportCardviewV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportDesign2311Library UP-TO-DATE
+:app:prepareComAndroidSupportRecyclerviewV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportSupportV42311Library UP-TO-DATE
+:app:prepareComDaimajiaSliderLibrary115Library UP-TO-DATE
+:app:prepareComGithubGanfraMaterialSpinner111Library UP-TO-DATE
+:app:prepareComGithubPaolorotoloAppintro320Library UP-TO-DATE
+:app:prepareComGithubRey5137Material122Library UP-TO-DATE
+:app:prepareComGithubTraexRippleeffectLibrary13Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesAuth830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesBase830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesBasement830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesMeasurement830Library UP-TO-DATE
+:app:prepareComRengwuxianMaterialedittextLibrary214Library UP-TO-DATE
+:app:prepareComWangAviLibrary100Library UP-TO-DATE
+:app:prepareDebugDependencies
+:app:compileDebugAidl UP-TO-DATE
+:app:compileDebugRenderscript UP-TO-DATE
+:app:generateDebugBuildConfig UP-TO-DATE
+:app:generateDebugAssets UP-TO-DATE
+:app:mergeDebugAssets UP-TO-DATE
+:app:generateDebugResValues UP-TO-DATE
+:app:processDebugGoogleServices
+:app:generateDebugResources
+:app:mergeDebugResources UP-TO-DATE
+:app:processDebugManifest UP-TO-DATE
+:app:processDebugResources UP-TO-DATE
+:app:generateDebugSources UP-TO-DATE
+:app:compileDebugJavaWithJavacNote: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+:app:compileDebugNdk UP-TO-DATE
+:app:compileDebugSources
+:app:transformClassesWithDexForDebug
+:app:mergeDebugJniLibFolders UP-TO-DATE
+:app:transformNative_libsWithMergeJniLibsForDebug UP-TO-DATE
+:app:processDebugJavaRes UP-TO-DATE
+:app:transformResourcesWithMergeJavaResForDebug UP-TO-DATE
+:app:validateDebugSigning
+:app:packageDebug
+:app:zipalignDebug
+:app:assembleDebug
+
+BUILD SUCCESSFUL
+
+Total time: 12.925 secs
+17:06:54.854 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache fileHashes.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/fileHashes.bin)
+17:06:54.872 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache taskArtifacts.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/taskArtifacts.bin)
+17:06:54.872 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache fileSnapshots.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/fileSnapshots.bin)
+17:06:54.872 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache outputFileStates.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/outputFileStates.bin)
+17:06:54.872 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on task history cache (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts).
+17:06:54.873 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_init class cache for initialization script '/tmp/asLocalRepo41.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/asLocalRepo41_9pj5j88sxcpe8yo4kf0779eb3/cp_init).
+17:06:54.873 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on init class cache for initialization script '/tmp/asLocalRepo41.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/asLocalRepo41_9pj5j88sxcpe8yo4kf0779eb3/init).
+17:06:54.873 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_settings class cache for settings file '/home/maureen/AndroidStudioProjects/Mtindo/settings.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/settings_c69f67a4sk7ddte41bxew7y32/cp_settings).
+17:06:54.873 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on settings class cache for settings file '/home/maureen/AndroidStudioProjects/Mtindo/settings.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/settings_c69f67a4sk7ddte41bxew7y32/settings).
+17:06:54.873 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_7w23j328aesr7lnx1hg7jpsgb/cp_proj).
+17:06:54.873 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_7w23j328aesr7lnx1hg7jpsgb/proj).
+17:06:54.873 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/app/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_cbndns30qslymj1belogoiewv/cp_proj).
+17:06:54.873 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/app/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_cbndns30qslymj1belogoiewv/proj).
+17:06:54.873 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache jars (/home/maureen/AndroidStudioProjects/Mtindo/caches/jars-1) was closed 0 times.
+17:06:54.873 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.CachedStoreFactory] Resolved configuration cache closed. Cache reads: 0, disk reads: 0 (avg: 0.0 secs, total: 0.0 secs)
+17:06:54.873 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.CachedStoreFactory] Resolution result cache closed. Cache reads: 0, disk reads: 8 (avg: 0.009 secs, total: 0.078 secs)
+17:06:54.873 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.ResolutionResultsStoreFactory] Deleted 2 resolution results binary files in 0.0 secs
+17:06:54.873 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.ivyresolve.memcache.InMemoryCachedRepositoryFactory] In-memory dependency metadata cache closed. Repos cached: 26, cache instances: 4, modules served from cache: 161, artifacts: 59
+17:06:54.873 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache module-artifacts.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/module-artifacts.bin)
+17:06:54.873 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache artifact-at-repository.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/artifact-at-repository.bin)
+17:06:54.873 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache module-metadata.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/module-metadata.bin)
+17:06:54.873 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on artifact cache (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2).
+17:06:54.873 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache Plugin Resolution Cache (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/plugin-resolution) was closed 0 times.
+17:06:54.873 [DEBUG] [org.gradle.api.internal.tasks.compile.daemon.CompilerDaemonManager] Stopping 0 compiler daemon(s).
+17:06:54.873 [INFO] [org.gradle.api.internal.tasks.compile.daemon.CompilerDaemonManager] Stopped 0 compiler daemon(s).
+17:06:54.873 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has finished executing the build.
+17:06:57.309 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is busy, sleeping until state changes.
+17:06:57.310 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: finished waiting for DaemonCommandExecution[command = Build{id=6731e31e-3d9f-411e-9c9f-49b57b580944.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@7ced2e71]. Result org.gradle.launcher.daemon.server.DaemonStateCoordinator@4de13482 with state Running
+17:06:57.310 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: completed DaemonCommandExecution[command = Build{id=6731e31e-3d9f-411e-9c9f-49b57b580944.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@7ced2e71]
+17:06:57.310 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] updating lastActivityAt to 1450361217310
+17:06:57.310 [INFO] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Marking the daemon as idle, address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+17:06:57.310 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking idle by address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+17:06:57.310 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+17:06:57.310 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired.
+17:06:57.311 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+17:06:57.311 [DEBUG] [org.gradle.launcher.daemon.server.exec.ReturnResult] Daemon is dispatching the build result: Success[value=org.gradle.tooling.internal.provider.BuildActionResult@65ef1643]
+17:06:57.311 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is idle, sleeping until state change or idle timeout at Thu Dec 17 20:06:57 EAT 2015
+17:06:57.311 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1015: dispatching class org.gradle.launcher.daemon.protocol.Success
+17:06:57.312 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Finishing executing command: Build{id=6731e31e-3d9f-411e-9c9f-49b57b580944.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}
+17:06:57.313 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1016: received class org.gradle.launcher.daemon.protocol.Finished
+17:06:57.313 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received non-IO message from client: org.gradle.launcher.daemon.protocol.Finished@4d35544c
+17:06:57.313 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received finished message: org.gradle.launcher.daemon.protocol.Finished@4d35544c
+17:06:57.313 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1015: stopping connection
+17:06:57.313 [DEBUG] [org.gradle.messaging.remote.internal.inet.SocketConnection] Discarding EOFException: java.io.EOFException
+17:06:57.313 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1016: received null
+17:06:57.355 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received end-of-input from client.
+17:06:57.355 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1015: stopping connection
+17:11:43.785 [DEBUG] [org.gradle.messaging.remote.internal.inet.TcpIncomingConnector] Accepted connection from /127.0.0.1:59141 to /127.0.0.1:56017.
+17:11:43.806 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1038: received class org.gradle.launcher.daemon.protocol.Build
+17:11:43.807 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received non-IO message from client: Build{id=705a95a4-6875-4593-b6f7-97bd75007c56.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}
+17:11:43.807 [INFO] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received command: Build{id=705a95a4-6875-4593-b6f7-97bd75007c56.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}.
+17:11:43.807 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Starting executing command: Build{id=705a95a4-6875-4593-b6f7-97bd75007c56.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo} with connection: socket connection from /127.0.0.1:56017 to /127.0.0.1:59141.
+17:11:43.807 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: started DaemonCommandExecution[command = Build{id=705a95a4-6875-4593-b6f7-97bd75007c56.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@79332377] after 4.0 minutes of idle
+17:11:43.807 [INFO] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Marking the daemon as busy, address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+17:11:43.807 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+17:11:43.807 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+17:11:43.808 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired.
+17:11:43.821 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+17:11:43.821 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] updating lastActivityAt to 1450361503821
+17:11:43.821 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is busy, sleeping until state changes.
+17:11:43.821 [INFO] [org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy] Daemon is about to start building Build{id=705a95a4-6875-4593-b6f7-97bd75007c56.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}. Dispatching build started information...
+17:11:43.822 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1040: dispatching class org.gradle.launcher.daemon.protocol.BuildStarted
+17:11:43.822 [DEBUG] [org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment] Configuring env variables: {PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/java/jdk1.8.0_60/bin:/usr/local/java/jdk1.8.0_60/jre/bin, LC_MEASUREMENT=om_KE.UTF-8, XAUTHORITY=/home/maureen/.Xauthority, XMODIFIERS=@im=ibus, LC_TELEPHONE=om_KE.UTF-8, XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/, GDMSESSION=ubuntu, MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path, LC_TIME=om_KE.UTF-8, TEXTDOMAINDIR=/usr/share/locale/, GTK_IM_MODULE=ibus, DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-3m3sudXJOY, DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path, XDG_CURRENT_DESKTOP=Unity, JRE_HOME=/usr/local/java/jdk1.8.0_60/jre, LD_LIBRARY_PATH=/home/maureen/android-studio/bin:, UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/1601, QT4_IM_MODULE=xim, LC_PAPER=om_KE.UTF-8, SESSION_MANAGER=local/maureen-HP-15-Notebook-PC:@/tmp/.ICE-unix/1752,unix/maureen-HP-15-Notebook-PC:/tmp/.ICE-unix/1752, LOGNAME=maureen, JOB=dbus, PWD=/home/maureen, IM_CONFIG_PHASE=1, LANGUAGE=en_US, SHELL=/bin/bash, LC_ADDRESS=om_KE.UTF-8, GIO_LAUNCHED_DESKTOP_FILE=/home/maureen/.local/share/applications/jetbrains-studio.desktop, INSTANCE=, GNOME_DESKTOP_SESSION_ID=this-is-deprecated, GTK_MODULES=overlay-scrollbar:unity-gtk-module, CLUTTER_IM_MODULE=xim, XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0, TEXTDOMAIN=im-config, COMPIZ_BIN_PATH=/usr/bin/, SESSIONTYPE=gnome-session, SHLVL=0, LC_IDENTIFICATION=om_KE.UTF-8, LC_MONETARY=om_KE.UTF-8, COMPIZ_CONFIG_PROFILE=ubuntu, QT_IM_MODULE=ibus, JAVA_HOME=/usr/local/java/jdk1.8.0_60, XFILESEARCHPATH=/usr/dt/app-defaults/%L/Dt, XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg, LANG=en_US.UTF-8, GNOME_KEYRING_CONTROL=/run/user/1000/keyring-VDBYJq, XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0, XDG_SESSION_ID=c2, SELINUX_INIT=YES, DISPLAY=:0, LC_NAME=om_KE.UTF-8, GDM_LANG=en_US, XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/maureen, GPG_AGENT_INFO=/run/user/1000/keyring-VDBYJq/gpg:0:1, DESKTOP_SESSION=ubuntu, SESSION=ubuntu, USER=maureen, XDG_MENU_PREFIX=gnome-, GIO_LAUNCHED_DESKTOP_FILE_PID=10251, LC_NUMERIC=om_KE.UTF-8, SSH_AUTH_SOCK=/run/user/1000/keyring-VDBYJq/ssh, XDG_SEAT=seat0, NLSPATH=/usr/dt/lib/nls/msg/%L/%N.cat, QT_QPA_PLATFORMTHEME=appmenu-qt5, XDG_VTNR=7, XDG_RUNTIME_DIR=/run/user/1000, HOME=/home/maureen, GNOME_KEYRING_PID=1529}
+17:11:43.823 [DEBUG] [org.gradle.launcher.daemon.server.exec.LogToClient] About to start relaying all logs to the client via the connection.
+17:11:43.823 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 10561). The daemon log file: /home/maureen/AndroidStudioProjects/Mtindo/daemon/2.8/daemon-10561.out.log
+17:11:43.823 [INFO] [org.gradle.launcher.daemon.server.health.DaemonHealthTracker] Starting 43rd build in daemon [uptime: 7 hrs 7 mins 6.01 secs, performance: 87%, memory: 42% of 954.7 MB]
+17:11:43.823 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
+17:11:43.823 [INFO] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=14711b76-a4fb-4ab0-a36c-95517117a17b,javaHome=/home/maureen/Downloads/jdk1.8.0_60,daemonRegistryDir=/home/maureen/AndroidStudioProjects/Mtindo/daemon,pid=10561,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]
+Configuration on demand is an incubating feature.
+:app:preBuild UP-TO-DATE
+:app:preDebugBuild UP-TO-DATE
+:app:checkDebugManifest
+:app:preReleaseBuild UP-TO-DATE
+:app:prepareComAndroidSupportAppcompatV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportCardviewV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportDesign2311Library UP-TO-DATE
+:app:prepareComAndroidSupportRecyclerviewV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportSupportV42311Library UP-TO-DATE
+:app:prepareComDaimajiaSliderLibrary115Library UP-TO-DATE
+:app:prepareComGithubGanfraMaterialSpinner111Library UP-TO-DATE
+:app:prepareComGithubPaolorotoloAppintro320Library UP-TO-DATE
+:app:prepareComGithubRey5137Material122Library UP-TO-DATE
+:app:prepareComGithubTraexRippleeffectLibrary13Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesAuth830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesBase830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesBasement830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesMeasurement830Library UP-TO-DATE
+:app:prepareComRengwuxianMaterialedittextLibrary214Library UP-TO-DATE
+:app:prepareComWangAviLibrary100Library UP-TO-DATE
+:app:prepareDebugDependencies
+:app:compileDebugAidl UP-TO-DATE
+:app:compileDebugRenderscript UP-TO-DATE
+:app:generateDebugBuildConfig UP-TO-DATE
+:app:generateDebugAssets UP-TO-DATE
+:app:mergeDebugAssets UP-TO-DATE
+:app:generateDebugResValues UP-TO-DATE
+:app:processDebugGoogleServices
+:app:generateDebugResources
+:app:mergeDebugResources
+:app:processDebugManifest UP-TO-DATE
+:app:processDebugResources
+:app:generateDebugSources
+:app:compileDebugJavaWithJavacNote: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+:app:compileDebugNdk UP-TO-DATE
+:app:compileDebugSources
+:app:transformClassesWithDexForDebug
+:app:mergeDebugJniLibFolders UP-TO-DATE
+:app:transformNative_libsWithMergeJniLibsForDebug UP-TO-DATE
+:app:processDebugJavaRes UP-TO-DATE
+:app:transformResourcesWithMergeJavaResForDebug UP-TO-DATE
+:app:validateDebugSigning
+:app:packageDebug
+:app:zipalignDebug
+:app:assembleDebug
+
+BUILD SUCCESSFUL
+
+Total time: 6.425 secs
+17:11:50.186 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache taskArtifacts.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/taskArtifacts.bin)
+17:11:50.186 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache fileHashes.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/fileHashes.bin)
+17:11:50.186 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache outputFileStates.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/outputFileStates.bin)
+17:11:50.186 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache fileSnapshots.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/fileSnapshots.bin)
+17:11:50.186 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on task history cache (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts).
+17:11:50.186 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_init class cache for initialization script '/tmp/asLocalRepo42.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/asLocalRepo42_6bqksjn5t7urom6qxlqsdgtgr/cp_init).
+17:11:50.186 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on init class cache for initialization script '/tmp/asLocalRepo42.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/asLocalRepo42_6bqksjn5t7urom6qxlqsdgtgr/init).
+17:11:50.186 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_settings class cache for settings file '/home/maureen/AndroidStudioProjects/Mtindo/settings.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/settings_c69f67a4sk7ddte41bxew7y32/cp_settings).
+17:11:50.186 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on settings class cache for settings file '/home/maureen/AndroidStudioProjects/Mtindo/settings.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/settings_c69f67a4sk7ddte41bxew7y32/settings).
+17:11:50.186 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_7w23j328aesr7lnx1hg7jpsgb/cp_proj).
+17:11:50.186 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_7w23j328aesr7lnx1hg7jpsgb/proj).
+17:11:50.186 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/app/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_cbndns30qslymj1belogoiewv/cp_proj).
+17:11:50.186 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/app/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_cbndns30qslymj1belogoiewv/proj).
+17:11:50.186 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache jars (/home/maureen/AndroidStudioProjects/Mtindo/caches/jars-1) was closed 0 times.
+17:11:50.187 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.CachedStoreFactory] Resolved configuration cache closed. Cache reads: 0, disk reads: 0 (avg: 0.0 secs, total: 0.0 secs)
+17:11:50.187 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.CachedStoreFactory] Resolution result cache closed. Cache reads: 0, disk reads: 8 (avg: 0.002 secs, total: 0.016 secs)
+17:11:50.187 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.ResolutionResultsStoreFactory] Deleted 2 resolution results binary files in 0.001 secs
+17:11:50.187 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.ivyresolve.memcache.InMemoryCachedRepositoryFactory] In-memory dependency metadata cache closed. Repos cached: 26, cache instances: 4, modules served from cache: 161, artifacts: 59
+17:11:50.187 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache artifact-at-repository.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/artifact-at-repository.bin)
+17:11:50.187 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache module-metadata.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/module-metadata.bin)
+17:11:50.187 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache module-artifacts.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/module-artifacts.bin)
+17:11:50.187 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on artifact cache (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2).
+17:11:50.187 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache Plugin Resolution Cache (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/plugin-resolution) was closed 0 times.
+17:11:50.187 [DEBUG] [org.gradle.api.internal.tasks.compile.daemon.CompilerDaemonManager] Stopping 0 compiler daemon(s).
+17:11:50.187 [INFO] [org.gradle.api.internal.tasks.compile.daemon.CompilerDaemonManager] Stopped 0 compiler daemon(s).
+17:11:50.187 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has finished executing the build.
+17:11:50.576 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is busy, sleeping until state changes.
+17:11:50.590 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: finished waiting for DaemonCommandExecution[command = Build{id=705a95a4-6875-4593-b6f7-97bd75007c56.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@79332377]. Result org.gradle.launcher.daemon.server.DaemonStateCoordinator@4de13482 with state Running
+17:11:50.590 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: completed DaemonCommandExecution[command = Build{id=705a95a4-6875-4593-b6f7-97bd75007c56.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@79332377]
+17:11:50.590 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] updating lastActivityAt to 1450361510590
+17:11:50.590 [INFO] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Marking the daemon as idle, address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+17:11:50.590 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking idle by address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+17:11:50.590 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+17:11:50.591 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired.
+17:11:50.592 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+17:11:50.604 [DEBUG] [org.gradle.launcher.daemon.server.exec.ReturnResult] Daemon is dispatching the build result: Success[value=org.gradle.tooling.internal.provider.BuildActionResult@79690e47]
+17:11:50.604 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is idle, sleeping until state change or idle timeout at Thu Dec 17 20:11:50 EAT 2015
+17:11:50.604 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1037: dispatching class org.gradle.launcher.daemon.protocol.Success
+17:11:50.605 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Finishing executing command: Build{id=705a95a4-6875-4593-b6f7-97bd75007c56.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}
+17:11:50.608 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1038: received class org.gradle.launcher.daemon.protocol.Finished
+17:11:50.608 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received non-IO message from client: org.gradle.launcher.daemon.protocol.Finished@5e059640
+17:11:50.609 [DEBUG] [org.gradle.messaging.remote.internal.inet.SocketConnection] Discarding EOFException: java.io.EOFException
+17:11:50.609 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1038: received null
+17:11:50.609 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received end-of-input from client.
+17:11:50.609 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received finished message: null
+17:11:50.609 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1037: stopping connection
+17:11:50.620 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1037: stopping connection
+17:25:25.676 [DEBUG] [org.gradle.messaging.remote.internal.inet.TcpIncomingConnector] Accepted connection from /127.0.0.1:59533 to /127.0.0.1:56017.
+17:25:25.696 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1066: received class org.gradle.launcher.daemon.protocol.Build
+17:25:25.696 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received non-IO message from client: Build{id=9e955767-81dd-4991-8569-a1d6e67505cc.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}
+17:25:25.696 [INFO] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received command: Build{id=9e955767-81dd-4991-8569-a1d6e67505cc.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}.
+17:25:25.697 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Starting executing command: Build{id=9e955767-81dd-4991-8569-a1d6e67505cc.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo} with connection: socket connection from /127.0.0.1:56017 to /127.0.0.1:59533.
+17:25:25.697 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: started DaemonCommandExecution[command = Build{id=9e955767-81dd-4991-8569-a1d6e67505cc.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@6e0d06] after 13.0 minutes of idle
+17:25:25.697 [INFO] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Marking the daemon as busy, address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+17:25:25.697 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+17:25:25.697 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+17:25:25.697 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired.
+17:25:25.703 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+17:25:25.704 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] updating lastActivityAt to 1450362325704
+17:25:25.704 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is busy, sleeping until state changes.
+17:25:25.705 [INFO] [org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy] Daemon is about to start building Build{id=9e955767-81dd-4991-8569-a1d6e67505cc.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}. Dispatching build started information...
+17:25:25.705 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1068: dispatching class org.gradle.launcher.daemon.protocol.BuildStarted
+17:25:25.706 [DEBUG] [org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment] Configuring env variables: {PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/java/jdk1.8.0_60/bin:/usr/local/java/jdk1.8.0_60/jre/bin, LC_MEASUREMENT=om_KE.UTF-8, XAUTHORITY=/home/maureen/.Xauthority, XMODIFIERS=@im=ibus, LC_TELEPHONE=om_KE.UTF-8, XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/, GDMSESSION=ubuntu, MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path, LC_TIME=om_KE.UTF-8, TEXTDOMAINDIR=/usr/share/locale/, GTK_IM_MODULE=ibus, DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-3m3sudXJOY, DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path, XDG_CURRENT_DESKTOP=Unity, JRE_HOME=/usr/local/java/jdk1.8.0_60/jre, LD_LIBRARY_PATH=/home/maureen/android-studio/bin:, UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/1601, QT4_IM_MODULE=xim, LC_PAPER=om_KE.UTF-8, SESSION_MANAGER=local/maureen-HP-15-Notebook-PC:@/tmp/.ICE-unix/1752,unix/maureen-HP-15-Notebook-PC:/tmp/.ICE-unix/1752, LOGNAME=maureen, JOB=dbus, PWD=/home/maureen, IM_CONFIG_PHASE=1, LANGUAGE=en_US, SHELL=/bin/bash, LC_ADDRESS=om_KE.UTF-8, GIO_LAUNCHED_DESKTOP_FILE=/home/maureen/.local/share/applications/jetbrains-studio.desktop, INSTANCE=, GNOME_DESKTOP_SESSION_ID=this-is-deprecated, GTK_MODULES=overlay-scrollbar:unity-gtk-module, CLUTTER_IM_MODULE=xim, XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0, TEXTDOMAIN=im-config, COMPIZ_BIN_PATH=/usr/bin/, SESSIONTYPE=gnome-session, SHLVL=0, LC_IDENTIFICATION=om_KE.UTF-8, LC_MONETARY=om_KE.UTF-8, COMPIZ_CONFIG_PROFILE=ubuntu, QT_IM_MODULE=ibus, JAVA_HOME=/usr/local/java/jdk1.8.0_60, XFILESEARCHPATH=/usr/dt/app-defaults/%L/Dt, XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg, LANG=en_US.UTF-8, GNOME_KEYRING_CONTROL=/run/user/1000/keyring-VDBYJq, XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0, XDG_SESSION_ID=c2, SELINUX_INIT=YES, DISPLAY=:0, LC_NAME=om_KE.UTF-8, GDM_LANG=en_US, XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/maureen, GPG_AGENT_INFO=/run/user/1000/keyring-VDBYJq/gpg:0:1, DESKTOP_SESSION=ubuntu, SESSION=ubuntu, USER=maureen, XDG_MENU_PREFIX=gnome-, GIO_LAUNCHED_DESKTOP_FILE_PID=10251, LC_NUMERIC=om_KE.UTF-8, SSH_AUTH_SOCK=/run/user/1000/keyring-VDBYJq/ssh, XDG_SEAT=seat0, NLSPATH=/usr/dt/lib/nls/msg/%L/%N.cat, QT_QPA_PLATFORMTHEME=appmenu-qt5, XDG_VTNR=7, XDG_RUNTIME_DIR=/run/user/1000, HOME=/home/maureen, GNOME_KEYRING_PID=1529}
+17:25:25.706 [DEBUG] [org.gradle.launcher.daemon.server.exec.LogToClient] About to start relaying all logs to the client via the connection.
+17:25:25.706 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 10561). The daemon log file: /home/maureen/AndroidStudioProjects/Mtindo/daemon/2.8/daemon-10561.out.log
+17:25:25.707 [INFO] [org.gradle.launcher.daemon.server.health.DaemonHealthTracker] Starting 44th build in daemon [uptime: 7 hrs 20 mins 47.893 secs, performance: 87%, memory: 41% of 954.7 MB]
+17:25:25.707 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
+17:25:25.707 [INFO] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=14711b76-a4fb-4ab0-a36c-95517117a17b,javaHome=/home/maureen/Downloads/jdk1.8.0_60,daemonRegistryDir=/home/maureen/AndroidStudioProjects/Mtindo/daemon,pid=10561,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]
+Configuration on demand is an incubating feature.
+:app:preBuild UP-TO-DATE
+:app:preDebugBuild UP-TO-DATE
+:app:checkDebugManifest
+:app:preReleaseBuild UP-TO-DATE
+:app:prepareComAndroidSupportAppcompatV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportCardviewV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportDesign2311Library UP-TO-DATE
+:app:prepareComAndroidSupportRecyclerviewV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportSupportV42311Library UP-TO-DATE
+:app:prepareComDaimajiaSliderLibrary115Library UP-TO-DATE
+:app:prepareComGithubGanfraMaterialSpinner111Library UP-TO-DATE
+:app:prepareComGithubPaolorotoloAppintro320Library UP-TO-DATE
+:app:prepareComGithubRey5137Material122Library UP-TO-DATE
+:app:prepareComGithubTraexRippleeffectLibrary13Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesAuth830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesBase830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesBasement830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesMeasurement830Library UP-TO-DATE
+:app:prepareComRengwuxianMaterialedittextLibrary214Library UP-TO-DATE
+:app:prepareComWangAviLibrary100Library UP-TO-DATE
+:app:prepareDebugDependencies
+:app:compileDebugAidl UP-TO-DATE
+:app:compileDebugRenderscript UP-TO-DATE
+:app:generateDebugBuildConfig UP-TO-DATE
+:app:generateDebugAssets UP-TO-DATE
+:app:mergeDebugAssets UP-TO-DATE
+:app:generateDebugResValues UP-TO-DATE
+:app:processDebugGoogleServices
+:app:generateDebugResources
+:app:mergeDebugResources
+:app:processDebugManifest UP-TO-DATE
+:app:processDebugResourcesAGPBI: {"kind":"error","text":"No resource found that matches the given name (at \u0027android:background\u0027 with value \u0027@drawable/raised_button_background\u0027).","sources":[{"file":"/home/maureen/AndroidStudioProjects/Mtindo/app/src/main/res/values/styles.xml","position":{"startLine":39,"startColumn":4,"startOffset":1356,"endLine":41,"endColumn":12,"endOffset":1523}}],"original":"","tool":"AAPT"}
+
+ FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:processDebugResources'.
+> com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process 'command '/home/maureen/Android/Sdk/build-tools/23.0.2/aapt'' finished with non-zero exit value 1
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+BUILD FAILED
+
+Total time: 1.59 secs
+17:25:27.201 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache taskArtifacts.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/taskArtifacts.bin)
+17:25:27.201 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache fileSnapshots.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/fileSnapshots.bin)
+17:25:27.201 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache fileHashes.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/fileHashes.bin)
+17:25:27.201 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache outputFileStates.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/outputFileStates.bin)
+17:25:27.202 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on task history cache (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts).
+17:25:27.202 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_init class cache for initialization script '/tmp/asLocalRepo43.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/asLocalRepo43_7t3m3d96ur1wodys5201gjt8o/cp_init).
+17:25:27.202 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on init class cache for initialization script '/tmp/asLocalRepo43.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/asLocalRepo43_7t3m3d96ur1wodys5201gjt8o/init).
+17:25:27.202 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_settings class cache for settings file '/home/maureen/AndroidStudioProjects/Mtindo/settings.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/settings_c69f67a4sk7ddte41bxew7y32/cp_settings).
+17:25:27.202 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on settings class cache for settings file '/home/maureen/AndroidStudioProjects/Mtindo/settings.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/settings_c69f67a4sk7ddte41bxew7y32/settings).
+17:25:27.202 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_7w23j328aesr7lnx1hg7jpsgb/cp_proj).
+17:25:27.202 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_7w23j328aesr7lnx1hg7jpsgb/proj).
+17:25:27.202 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/app/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_cbndns30qslymj1belogoiewv/cp_proj).
+17:25:27.202 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/app/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_cbndns30qslymj1belogoiewv/proj).
+17:25:27.203 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.CachedStoreFactory] Resolved configuration cache closed. Cache reads: 0, disk reads: 0 (avg: 0.0 secs, total: 0.0 secs)
+17:25:27.203 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.CachedStoreFactory] Resolution result cache closed. Cache reads: 0, disk reads: 8 (avg: 0.0 secs, total: 0.0 secs)
+17:25:27.203 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.ResolutionResultsStoreFactory] Deleted 2 resolution results binary files in 0.001 secs
+17:25:27.203 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.ivyresolve.memcache.InMemoryCachedRepositoryFactory] In-memory dependency metadata cache closed. Repos cached: 26, cache instances: 4, modules served from cache: 161, artifacts: 59
+17:25:27.203 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache module-metadata.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/module-metadata.bin)
+17:25:27.203 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache artifact-at-repository.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/artifact-at-repository.bin)
+17:25:27.204 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache module-artifacts.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/module-artifacts.bin)
+17:25:27.204 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on artifact cache (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2).
+17:25:27.204 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache Plugin Resolution Cache (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/plugin-resolution) was closed 0 times.
+17:25:27.204 [DEBUG] [org.gradle.api.internal.tasks.compile.daemon.CompilerDaemonManager] Stopping 0 compiler daemon(s).
+17:25:27.204 [INFO] [org.gradle.api.internal.tasks.compile.daemon.CompilerDaemonManager] Stopped 0 compiler daemon(s).
+17:25:27.204 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has finished executing the build.
+17:25:27.593 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is busy, sleeping until state changes.
+17:25:27.613 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: finished waiting for DaemonCommandExecution[command = Build{id=9e955767-81dd-4991-8569-a1d6e67505cc.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@6e0d06]. Result org.gradle.launcher.daemon.server.DaemonStateCoordinator@4de13482 with state Running
+17:25:27.614 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: completed DaemonCommandExecution[command = Build{id=9e955767-81dd-4991-8569-a1d6e67505cc.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@6e0d06]
+17:25:27.614 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] updating lastActivityAt to 1450362327614
+17:25:27.614 [INFO] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Marking the daemon as idle, address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+17:25:27.614 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking idle by address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+17:25:27.614 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+17:25:27.614 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired.
+17:25:27.622 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+17:25:27.622 [DEBUG] [org.gradle.launcher.daemon.server.exec.ReturnResult] Daemon is dispatching the build result: Failure[value=org.gradle.initialization.ReportedException: org.gradle.internal.exceptions.LocationAwareException: Execution failed for task ':app:processDebugResources'.]
+17:25:27.622 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is idle, sleeping until state change or idle timeout at Thu Dec 17 20:25:27 EAT 2015
+17:25:27.622 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1065: dispatching class org.gradle.launcher.daemon.protocol.Failure
+17:25:27.789 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Finishing executing command: Build{id=9e955767-81dd-4991-8569-a1d6e67505cc.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}
+17:25:27.812 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1066: received class org.gradle.launcher.daemon.protocol.Finished
+17:25:27.812 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received non-IO message from client: org.gradle.launcher.daemon.protocol.Finished@ef4f22d
+17:25:27.812 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received finished message: org.gradle.launcher.daemon.protocol.Finished@ef4f22d
+17:25:27.812 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1065: stopping connection
+17:25:27.812 [DEBUG] [org.gradle.messaging.remote.internal.inet.SocketConnection] Discarding EOFException: java.io.EOFException
+17:25:27.813 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1066: received null
+17:25:27.813 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received end-of-input from client.
+17:25:27.813 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1065: stopping connection
+17:25:48.278 [DEBUG] [org.gradle.messaging.remote.internal.inet.TcpIncomingConnector] Accepted connection from /127.0.0.1:32894 to /127.0.0.1:56017.
+17:25:48.292 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1078: received class org.gradle.launcher.daemon.protocol.Build
+17:25:48.292 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received non-IO message from client: Build{id=289bf57a-2d40-4d0b-ba40-0eb5d2b6f8ce.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}
+17:25:48.292 [INFO] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received command: Build{id=289bf57a-2d40-4d0b-ba40-0eb5d2b6f8ce.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}.
+17:25:48.292 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Starting executing command: Build{id=289bf57a-2d40-4d0b-ba40-0eb5d2b6f8ce.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo} with connection: socket connection from /127.0.0.1:56017 to /127.0.0.1:32894.
+17:25:48.292 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: started DaemonCommandExecution[command = Build{id=289bf57a-2d40-4d0b-ba40-0eb5d2b6f8ce.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@f481ca6] after 0.0 minutes of idle
+17:25:48.292 [INFO] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Marking the daemon as busy, address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+17:25:48.293 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+17:25:48.293 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+17:25:48.293 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired.
+17:25:48.316 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+17:25:48.316 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] updating lastActivityAt to 1450362348316
+17:25:48.316 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is busy, sleeping until state changes.
+17:25:48.316 [INFO] [org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy] Daemon is about to start building Build{id=289bf57a-2d40-4d0b-ba40-0eb5d2b6f8ce.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}. Dispatching build started information...
+17:25:48.316 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1068: dispatching class org.gradle.launcher.daemon.protocol.BuildStarted
+17:25:48.317 [DEBUG] [org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment] Configuring env variables: {PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/java/jdk1.8.0_60/bin:/usr/local/java/jdk1.8.0_60/jre/bin, LC_MEASUREMENT=om_KE.UTF-8, XAUTHORITY=/home/maureen/.Xauthority, XMODIFIERS=@im=ibus, LC_TELEPHONE=om_KE.UTF-8, XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/, GDMSESSION=ubuntu, MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path, LC_TIME=om_KE.UTF-8, TEXTDOMAINDIR=/usr/share/locale/, GTK_IM_MODULE=ibus, DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-3m3sudXJOY, DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path, XDG_CURRENT_DESKTOP=Unity, JRE_HOME=/usr/local/java/jdk1.8.0_60/jre, LD_LIBRARY_PATH=/home/maureen/android-studio/bin:, UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/1601, QT4_IM_MODULE=xim, LC_PAPER=om_KE.UTF-8, SESSION_MANAGER=local/maureen-HP-15-Notebook-PC:@/tmp/.ICE-unix/1752,unix/maureen-HP-15-Notebook-PC:/tmp/.ICE-unix/1752, LOGNAME=maureen, JOB=dbus, PWD=/home/maureen, IM_CONFIG_PHASE=1, LANGUAGE=en_US, SHELL=/bin/bash, LC_ADDRESS=om_KE.UTF-8, GIO_LAUNCHED_DESKTOP_FILE=/home/maureen/.local/share/applications/jetbrains-studio.desktop, INSTANCE=, GNOME_DESKTOP_SESSION_ID=this-is-deprecated, GTK_MODULES=overlay-scrollbar:unity-gtk-module, CLUTTER_IM_MODULE=xim, XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0, TEXTDOMAIN=im-config, COMPIZ_BIN_PATH=/usr/bin/, SESSIONTYPE=gnome-session, SHLVL=0, LC_IDENTIFICATION=om_KE.UTF-8, LC_MONETARY=om_KE.UTF-8, COMPIZ_CONFIG_PROFILE=ubuntu, QT_IM_MODULE=ibus, JAVA_HOME=/usr/local/java/jdk1.8.0_60, XFILESEARCHPATH=/usr/dt/app-defaults/%L/Dt, XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg, LANG=en_US.UTF-8, GNOME_KEYRING_CONTROL=/run/user/1000/keyring-VDBYJq, XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0, XDG_SESSION_ID=c2, SELINUX_INIT=YES, DISPLAY=:0, LC_NAME=om_KE.UTF-8, GDM_LANG=en_US, XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/maureen, GPG_AGENT_INFO=/run/user/1000/keyring-VDBYJq/gpg:0:1, DESKTOP_SESSION=ubuntu, SESSION=ubuntu, USER=maureen, XDG_MENU_PREFIX=gnome-, GIO_LAUNCHED_DESKTOP_FILE_PID=10251, LC_NUMERIC=om_KE.UTF-8, SSH_AUTH_SOCK=/run/user/1000/keyring-VDBYJq/ssh, XDG_SEAT=seat0, NLSPATH=/usr/dt/lib/nls/msg/%L/%N.cat, QT_QPA_PLATFORMTHEME=appmenu-qt5, XDG_VTNR=7, XDG_RUNTIME_DIR=/run/user/1000, HOME=/home/maureen, GNOME_KEYRING_PID=1529}
+17:25:48.319 [DEBUG] [org.gradle.launcher.daemon.server.exec.LogToClient] About to start relaying all logs to the client via the connection.
+17:25:48.319 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 10561). The daemon log file: /home/maureen/AndroidStudioProjects/Mtindo/daemon/2.8/daemon-10561.out.log
+17:25:48.319 [INFO] [org.gradle.launcher.daemon.server.health.DaemonHealthTracker] Starting 45th build in daemon [uptime: 7 hrs 21 mins 10.506 secs, performance: 87%, memory: 37% of 954.7 MB]
+17:25:48.320 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
+17:25:48.320 [INFO] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=14711b76-a4fb-4ab0-a36c-95517117a17b,javaHome=/home/maureen/Downloads/jdk1.8.0_60,daemonRegistryDir=/home/maureen/AndroidStudioProjects/Mtindo/daemon,pid=10561,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]
+Configuration on demand is an incubating feature.
+:app:preBuild UP-TO-DATE
+:app:preDebugBuild UP-TO-DATE
+:app:checkDebugManifest
+:app:preReleaseBuild UP-TO-DATE
+:app:prepareComAndroidSupportAppcompatV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportCardviewV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportDesign2311Library UP-TO-DATE
+:app:prepareComAndroidSupportRecyclerviewV72311Library UP-TO-DATE
+:app:prepareComAndroidSupportSupportV42311Library UP-TO-DATE
+:app:prepareComDaimajiaSliderLibrary115Library UP-TO-DATE
+:app:prepareComGithubGanfraMaterialSpinner111Library UP-TO-DATE
+:app:prepareComGithubPaolorotoloAppintro320Library UP-TO-DATE
+:app:prepareComGithubRey5137Material122Library UP-TO-DATE
+:app:prepareComGithubTraexRippleeffectLibrary13Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesAuth830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesBase830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesBasement830Library UP-TO-DATE
+:app:prepareComGoogleAndroidGmsPlayServicesMeasurement830Library UP-TO-DATE
+:app:prepareComRengwuxianMaterialedittextLibrary214Library UP-TO-DATE
+:app:prepareComWangAviLibrary100Library UP-TO-DATE
+:app:prepareDebugDependencies
+:app:compileDebugAidl UP-TO-DATE
+:app:compileDebugRenderscript UP-TO-DATE
+:app:generateDebugBuildConfig UP-TO-DATE
+:app:generateDebugAssets UP-TO-DATE
+:app:mergeDebugAssets UP-TO-DATE
+:app:generateDebugResValues UP-TO-DATE
+:app:processDebugGoogleServices
+:app:generateDebugResources
+:app:mergeDebugResources
+:app:processDebugManifest UP-TO-DATE
+:app:processDebugResources
+:app:generateDebugSources
+:app:compileDebugJavaWithJavacNote: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+:app:compileDebugNdk UP-TO-DATE
+:app:compileDebugSources
+:app:transformClassesWithDexForDebug
+:app:mergeDebugJniLibFolders UP-TO-DATE
+:app:transformNative_libsWithMergeJniLibsForDebug UP-TO-DATE
+:app:processDebugJavaRes UP-TO-DATE
+:app:transformResourcesWithMergeJavaResForDebug UP-TO-DATE
+:app:validateDebugSigning
+:app:packageDebug
+:app:zipalignDebug
+:app:assembleDebug
+
+BUILD SUCCESSFUL
+
+Total time: 8.064 secs
+17:25:56.336 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache outputFileStates.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/outputFileStates.bin)
+17:25:56.336 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache fileSnapshots.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/fileSnapshots.bin)
+17:25:56.336 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache fileHashes.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/fileHashes.bin)
+17:25:56.336 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache taskArtifacts.bin (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts/taskArtifacts.bin)
+17:25:56.336 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on task history cache (/home/maureen/AndroidStudioProjects/Mtindo/.gradle/2.8/taskArtifacts).
+17:25:56.336 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_init class cache for initialization script '/tmp/asLocalRepo44.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/asLocalRepo44_11qxq85txeopexbqj1oxzs09b/cp_init).
+17:25:56.336 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on init class cache for initialization script '/tmp/asLocalRepo44.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/asLocalRepo44_11qxq85txeopexbqj1oxzs09b/init).
+17:25:56.337 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_settings class cache for settings file '/home/maureen/AndroidStudioProjects/Mtindo/settings.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/settings_c69f67a4sk7ddte41bxew7y32/cp_settings).
+17:25:56.337 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on settings class cache for settings file '/home/maureen/AndroidStudioProjects/Mtindo/settings.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/settings_c69f67a4sk7ddte41bxew7y32/settings).
+17:25:56.337 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_7w23j328aesr7lnx1hg7jpsgb/cp_proj).
+17:25:56.337 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_7w23j328aesr7lnx1hg7jpsgb/proj).
+17:25:56.337 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/app/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_cbndns30qslymj1belogoiewv/cp_proj).
+17:25:56.337 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on proj class cache for build file '/home/maureen/AndroidStudioProjects/Mtindo/app/build.gradle' (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/scripts/build_cbndns30qslymj1belogoiewv/proj).
+17:25:56.337 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache jars (/home/maureen/AndroidStudioProjects/Mtindo/caches/jars-1) was closed 0 times.
+17:25:56.337 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.CachedStoreFactory] Resolved configuration cache closed. Cache reads: 0, disk reads: 0 (avg: 0.0 secs, total: 0.0 secs)
+17:25:56.337 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.CachedStoreFactory] Resolution result cache closed. Cache reads: 0, disk reads: 8 (avg: 0.0 secs, total: 0.003 secs)
+17:25:56.337 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.ResolutionResultsStoreFactory] Deleted 2 resolution results binary files in 0.0 secs
+17:25:56.337 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.ivyresolve.memcache.InMemoryCachedRepositoryFactory] In-memory dependency metadata cache closed. Repos cached: 26, cache instances: 4, modules served from cache: 161, artifacts: 59
+17:25:56.337 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache module-metadata.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/module-metadata.bin)
+17:25:56.337 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache module-artifacts.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/module-artifacts.bin)
+17:25:56.337 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache artifact-at-repository.bin (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2/metadata-2.16/artifact-at-repository.bin)
+17:25:56.338 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on artifact cache (/home/maureen/AndroidStudioProjects/Mtindo/caches/modules-2).
+17:25:56.338 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache Plugin Resolution Cache (/home/maureen/AndroidStudioProjects/Mtindo/caches/2.8/plugin-resolution) was closed 0 times.
+17:25:56.338 [DEBUG] [org.gradle.api.internal.tasks.compile.daemon.CompilerDaemonManager] Stopping 0 compiler daemon(s).
+17:25:56.338 [INFO] [org.gradle.api.internal.tasks.compile.daemon.CompilerDaemonManager] Stopped 0 compiler daemon(s).
+17:25:56.338 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has finished executing the build.
+17:25:56.339 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: finished waiting for DaemonCommandExecution[command = Build{id=289bf57a-2d40-4d0b-ba40-0eb5d2b6f8ce.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@f481ca6]. Result org.gradle.launcher.daemon.server.DaemonStateCoordinator@4de13482 with state Running
+17:25:56.339 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: completed DaemonCommandExecution[command = Build{id=289bf57a-2d40-4d0b-ba40-0eb5d2b6f8ce.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@f481ca6]
+17:25:56.339 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] updating lastActivityAt to 1450362356339
+17:25:56.339 [INFO] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Marking the daemon as idle, address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+17:25:56.339 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking idle by address: [be6b04ad-eb96-4d98-bd7c-345104bd33f3 port:56017, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+17:25:56.339 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+17:25:56.339 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired.
+17:25:56.340 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+17:25:56.341 [DEBUG] [org.gradle.launcher.daemon.server.exec.ReturnResult] Daemon is dispatching the build result: Success[value=org.gradle.tooling.internal.provider.BuildActionResult@5053f90]
+17:25:56.341 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is idle, sleeping until state change or idle timeout at Thu Dec 17 20:25:56 EAT 2015
+17:25:56.341 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1065: dispatching class org.gradle.launcher.daemon.protocol.Success
+17:25:56.341 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Finishing executing command: Build{id=289bf57a-2d40-4d0b-ba40-0eb5d2b6f8ce.1, currentDir=/home/maureen/AndroidStudioProjects/Mtindo}
+17:25:56.345 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1078: received class org.gradle.launcher.daemon.protocol.Finished
+17:25:56.345 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received non-IO message from client: org.gradle.launcher.daemon.protocol.Finished@6b08ea78
+17:25:56.345 [DEBUG] [org.gradle.messaging.remote.internal.inet.SocketConnection] Discarding EOFException: java.io.EOFException
+17:25:56.345 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1078: received null
+17:25:56.345 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received end-of-input from client.
+17:25:56.346 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received finished message: null
+17:25:56.346 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1065: stopping connection
+17:25:56.346 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 1065: stopping connection

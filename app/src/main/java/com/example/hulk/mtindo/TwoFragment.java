@@ -37,7 +37,7 @@ public class TwoFragment extends Fragment /*implements View.OnClickListener*/{
         //Intent onclick button form join community to create store
 
         rootView = inflater.inflate(R.layout.fragment_two, container, false);
-        Button createButton = (Button) rootView.findViewById(R.id.button1);
+        Button createButton = (Button) rootView.findViewById(R.id.buttonif);
         createButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -47,11 +47,6 @@ public class TwoFragment extends Fragment /*implements View.OnClickListener*/{
 
             }
         });
-
-
-
-
-
 
 
         return rootView;

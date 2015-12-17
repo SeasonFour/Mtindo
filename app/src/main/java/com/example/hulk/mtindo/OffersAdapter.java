@@ -21,28 +21,26 @@ public class OffersAdapter extends RecyclerView.Adapter<OffersAdapter.ViewHolder
         super();
         mItems = new ArrayList<OffersInfo>();
         OffersInfo nature = new OffersInfo();
-        nature.setName("The Great Barrier Reef");
-        nature.setDes("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt" +
-                "ut labore et dolore magna aliqua. Ut enim ad minim veniam.");
+        nature.setName("ICON SALON");
+        nature.setDes("Weave sew on ksh.500");
         nature.setThumbnail(R.drawable.irene);
         mItems.add(nature);
 
         nature = new OffersInfo();
-        nature.setName("Grand Canyon");
-        nature.setDes("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt" +
-                "ut labore et dolore magna aliqua.");
+        nature.setName("ASHLEYS SALON");
+        nature.setDes("Five people manicure discount of 50% off");
         nature.setThumbnail(R.drawable.irene);
         mItems.add(nature);
 
         nature = new OffersInfo();
-        nature.setName("Baltoro Glacier");
+        nature.setName("BEAUTY AND THE BEAST PARLOR");
         nature.setDes("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt" +
                 "ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.");
         nature.setThumbnail(R.drawable.irene);
         mItems.add(nature);
 
         nature = new OffersInfo();
-        nature.setName("Iguazu Falls");
+        nature.setName("WA-NJERI ENTERPRISE  ");
         nature.setDes("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt" +
                 "ut labore et dolore magna aliqua. Ut enim ad minim veniam.");
         nature.setThumbnail(R.drawable.irene);
@@ -50,7 +48,7 @@ public class OffersAdapter extends RecyclerView.Adapter<OffersAdapter.ViewHolder
 
 
         nature = new OffersInfo();
-        nature.setName("Aurora Borealis");
+        nature.setName("MAMA ODUR KIBANDA");
         nature.setDes("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt" +
                 "ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.");
         nature.setThumbnail(R.drawable.irene);
