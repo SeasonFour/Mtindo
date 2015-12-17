@@ -36,25 +36,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
+
         </activity>
-        <activity android:name=".Login" />
-        <activity android:name=".Post_update"></activity>
-        <activity android:name=".Createstore">
-        </activity>
-        <activity android:name=".Maint"></activity>
-        <activity android:name=".Beauty"></activity>
-        <activity android:name=".Update_manager"></activity>
-        <activity
-            android:name=".Signin"
-            android:label="@string/title_activity_signin"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <!--
-             ATTENTION: This was auto-generated to add Google Play services to your project for
-             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
-        -->
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
         <activity android:name=".Post_update" />
         <activity
             android:name=".Login"
@@ -62,7 +45,7 @@
         <activity
             android:name=".Createstore"
             android:theme="@style/MyMaterialTheme" />
-        <activity android:name=".Hair" >
+        <activity android:name=".Hair" ></activity>
 
         <activity
             android:name=".Beauty_pros"
