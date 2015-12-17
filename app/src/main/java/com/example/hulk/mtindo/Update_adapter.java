@@ -22,7 +22,9 @@ public class Update_adapter extends FirebaseRecyclerViewAdapter<Update,ViewHolde
         mSnapshots = new FirebaseArray(ref);
     }
 
-   @Override
+
+
+    @Override
     public void populateViewHolder(ViewHolder viewHolder, Update update) {
        viewHolder.Name.setText(update.getTheName());
        viewHolder.Description.setText(update.getDescription());

@@ -7,13 +7,13 @@ import com.firebase.ui.FirebaseRecyclerViewAdapter;
  * Created by hulk on 12/16/15.
  */
 public class Store_Adapter extends FirebaseRecyclerViewAdapter<Store , ViewHolder> {
-    Class<Update> mModelClass;
-    protected int mModelLayout;
+    Class<Store> mModelClass2;
+    protected int mModelLayout2;
     Class<ViewHolder> mViewHolderClass;
     FirebaseArray mSnapshots;
     public Store_Adapter(Class modelClass, int modelLayout, Class viewHolderClass, Query ref) {
         super(modelClass, modelLayout, viewHolderClass, ref);
-        mModelClass = modelClass;
+        mModelClass2 = modelClass;
         mModelLayout = modelLayout;
         mViewHolderClass = viewHolderClass;
         mSnapshots = new FirebaseArray(ref);

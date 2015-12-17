@@ -4,12 +4,13 @@ package com.example.hulk.mtindo;
  * Created by hulk on 12/10/15.
  */
 public class Store {
-    String UserName,Telephone,StoreName,Description;
-    public Store(String UserName, String Telephone, String StoreName, String Description, String theinputimage){
+    String UserName,Telephone,StoreName,Description,imageEncoded;
+    public Store(String UserName, String Telephone, String StoreName, String Description, String imageEncoded){
         this.UserName = UserName;
         this.Telephone = Telephone;
         this.StoreName = StoreName;
         this.Description = Description;
+        this.imageEncoded  = imageEncoded;
 
     }
    public String getUserName(){
@@ -23,6 +24,9 @@ public class Store {
     }
     public String getDescription(){
         return Description;
+    }
+    public String getImageEncoded(){
+        return imageEncoded;
     }
 
     public Store(){

@@ -12,6 +12,7 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
@@ -40,7 +41,9 @@ public class Createstore extends AppCompatActivity {
     private static final int SELECT_PICTURE = 1;
     private String selectedImagePath;
     private ImageView image;
+    private Bitmap bitmapImage;
     final Createstore context = this;
+    private static final String TAG = "Createstore";
 
 
     private EditText inputName, /*inputEmail*/
@@ -114,21 +117,24 @@ public class Createstore extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 submitForm();
+
+
+
 //                Capturing user data from textfields
                 String theinputname = inputName.getText().toString();
                 String theinputStorename = inputStorename.getText().toString();
                 String theinputDescription = inputDescription.getText().toString();
                 String theinputTelephone = inputTelephone.getText().toString();
-                String theinputimage = image.toString();
+
 //                Connect to constructor class
-                Store store = new Store(theinputname, theinputStorename, theinputDescription, theinputTelephone, theinputimage);
+                Store store = new Store(theinputname, theinputStorename, theinputDescription, theinputTelephone,encodeToBase64(bitmapImage));
                 thestores.push().setValue(store, new Firebase.CompletionListener() {
                     @Override
                     public void onComplete(FirebaseError firebaseError, Firebase firebase) {
                         if (firebaseError != null) {
-                            Toast.makeText(context, "Contact not saved! Check Connection", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "Store Created Successfully", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(context, "Contact saved Successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "Store not created succefully", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -218,14 +224,17 @@ public class Createstore extends AppCompatActivity {
         if (resultCode == RESULT_OK) {
             if (requestCode == SELECT_PICTURE) {
                 Uri selectedImageUri = data.getData();
+                Log.i(TAG, "Image Uri : " + selectedImageUri);
                 selectedImagePath = getPath(selectedImageUri);
-                System.out.println("Image Path : " + selectedImagePath);
+                Log.i(TAG, "Image Path : " + selectedImagePath);
                 image.setImageURI(selectedImageUri);
-                BitmapFactory.Options options = new BitmapFactory.Options();
-                options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-                Bitmap bitmap = BitmapFactory.decodeFile(selectedImagePath, options);
-                image.setImageBitmap(bitmap);
 
+                try {
+
+               image.setImageBitmap(MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImageUri));
+                     } catch (IOException e) {
+                   e.printStackTrace();
+                 }
             }
         }
     }
@@ -239,11 +248,6 @@ public class Createstore extends AppCompatActivity {
 
 
     }
-
-
-
-
-
     /**
      * Validating form
      */
@@ -431,9 +435,9 @@ public class Createstore extends AppCompatActivity {
     }
 
     //    Method to convert image to base64
-    public static String encodeToBase64(Bitmap image) {
+    public static String encodeToBase64(Bitmap bitmap) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        image.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
         byte[] b = baos.toByteArray();
         String imageEncoded = com.firebase.client.utilities.Base64.encodeBytes(b);
         return imageEncoded;
