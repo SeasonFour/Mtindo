@@ -30,16 +30,16 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/MyMaterialTheme">
-        </activity>
-        <activity android:name=".Login" />
-        <activity android:name=".Post_update"></activity>
-        <activity android:name=".Createstore">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
+        </activity>
+        <activity android:name=".Login" />
+        <activity android:name=".Post_update"></activity>
+        <activity android:name=".Createstore">
         </activity>
         <activity android:name=".Maint"></activity>
         <activity android:name=".Beauty"></activity>
