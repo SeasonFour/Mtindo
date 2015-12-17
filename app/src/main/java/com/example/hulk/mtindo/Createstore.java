@@ -41,7 +41,7 @@ public class Createstore extends AppCompatActivity {
     private static final int SELECT_PICTURE = 1;
     private String selectedImagePath;
     private ImageView image;
-    private Bitmap bitmapImage;
+    public Bitmap bitmapImage;
     final Createstore context = this;
     private static final String TAG = "Createstore";
 
@@ -117,6 +117,7 @@ public class Createstore extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 submitForm();
+                bitmapImage = new Bitmap(image.findViewById(R.id.imageview1);
 
 
 
@@ -230,8 +231,8 @@ public class Createstore extends AppCompatActivity {
                 image.setImageURI(selectedImageUri);
 
                 try {
+                     image.setImageBitmap(MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImageUri));
 
-               image.setImageBitmap(MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImageUri));
                      } catch (IOException e) {
                    e.printStackTrace();
                  }
@@ -435,18 +436,19 @@ public class Createstore extends AppCompatActivity {
     }
 
     //    Method to convert image to base64
-    public static String encodeToBase64(Bitmap bitmap) {
+    public static String encodeToBase64(Bitmap image) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        image.compress(Bitmap.CompressFormat.PNG, 100, baos);
         byte[] b = baos.toByteArray();
         String imageEncoded = com.firebase.client.utilities.Base64.encodeBytes(b);
+
         return imageEncoded;
     }
-
-    public static Bitmap decodeFromBase64(String input) throws IOException, IOException {
+    public static Bitmap decodeFromBase64(String input) throws IOException {
         byte[] decodedByte = com.firebase.client.utilities.Base64.decode(input);
         return BitmapFactory.decodeByteArray(decodedByte, 0, decodedByte.length);
     }
+
 
 }
 
