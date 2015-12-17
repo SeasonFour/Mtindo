@@ -64,8 +64,8 @@ public class Mtindo extends Fragment {
         {
             switch (position){
                 case 0 : return new OneFragment();
-                case 1 : return new TwoFragment();
-                case 2 : return new OffersSlider();
+                case 1 : return new OffersSlider();
+                case 2 : return new TwoFragment();
             }
             return null;
         }
@@ -88,9 +88,9 @@ public class Mtindo extends Fragment {
                 case 0 :
                     return "Explore";
                 case 1 :
-                    return "Join Community";
-                case 2 :
                     return "Offers";
+                case 2 :
+                    return  "Join Community";
             }
             return null;
         }

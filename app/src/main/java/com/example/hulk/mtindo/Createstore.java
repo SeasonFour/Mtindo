@@ -34,8 +34,8 @@ public class Createstore extends AppCompatActivity {
 
 
     //spinner variables
-    private static final String ERROR_MSG = "Very very very long error message to get scrolling or multiline animation when the error button is clicked";
-    private static final String[] ITEMS = {"Mtindo", "Beauty", "Makeup"};
+    private static final String ERROR_MSG = "Error";
+    private static final String[] ITEMS = {"Hair", "Beauty", "Makeup"};
 
     //Declare adapter
     private ArrayAdapter<String> adapter;
@@ -44,7 +44,7 @@ public class Createstore extends AppCompatActivity {
     private boolean shown = false;
 
     //Createstore activity button
-    private Button btnpostUp;
+    private Button btncreate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,11 +81,11 @@ public class Createstore extends AppCompatActivity {
         /*inputEmail.addTextChangedListener(new MyTextWatcher(inputEmail));*/
 
         //Create store button
-        btnpostUp = (Button) findViewById(R.id.btn_createstore);
+        btncreate = (Button) findViewById(R.id.btn_createstore);
 
 
         // create store button on clicklistener
-        btnpostUp.setOnClickListener(new View.OnClickListener() {
+        btncreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 submitForm();
@@ -213,9 +213,15 @@ public class Createstore extends AppCompatActivity {
         /*if (!validateEmail()) {
             return;
         }*/
+        if (!shown) {
+            spinner1.setError(ERROR_MSG);
+
+        }
 
         Toast.makeText(getApplicationContext(), "Store created!", Toast.LENGTH_SHORT).show();
     }
+
+    //VALIDATIONS
 
     //Validate name edit text
     private boolean validateName() {
