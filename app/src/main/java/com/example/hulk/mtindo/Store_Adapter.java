@@ -22,10 +22,10 @@ public class Store_Adapter extends FirebaseRecyclerViewAdapter<Store , ViewHolde
 
     @Override
     public void populateViewHolder(ViewHolder viewHolder,Store store) {
-        viewHolder.StoreName.setText(store.getStoreName());
-        viewHolder.UserName.setText(store.getUserName());
-        viewHolder.Telephone.setText(store.getTelephone());
-        viewHolder.Description1.setText(store.getDescription());
+        viewHolder.storeName.setText(store.getStoreName());
+        viewHolder.userName.setText(store.getuserName());
+        viewHolder.telephone.setText(store.getTelephone());
+        viewHolder.description1.setText(store.getDescription());
 
     }
 }

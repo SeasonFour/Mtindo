@@ -4,30 +4,28 @@ package com.example.hulk.mtindo;
  * Created by hulk on 12/10/15.
  */
 public class Store {
-    String UserName,Telephone,StoreName,Description,imageEncoded;
-    public Store(String UserName, String Telephone, String StoreName, String Description, String imageEncoded){
-        this.UserName = UserName;
-        this.Telephone = Telephone;
-        this.StoreName = StoreName;
-        this.Description = Description;
-        this.imageEncoded  = imageEncoded;
+    String userName,telephone,storeName,description;
+    public Store(String UserName, String Telephone, String StoreName, String Description){
+        this.userName = UserName;
+        this.telephone = Telephone;
+        this.storeName = StoreName;
+        this.description = Description;
+
 
     }
-   public String getUserName(){
-       return UserName;
+   public String getuserName(){
+       return userName;
    }
     public String getTelephone(){
-        return Telephone;
+        return telephone;
     }
     public String getStoreName(){
-        return StoreName;
+        return storeName;
     }
     public String getDescription(){
-        return Description;
+        return description;
     }
-    public String getImageEncoded(){
-        return imageEncoded;
-    }
+   
 
     public Store(){
 

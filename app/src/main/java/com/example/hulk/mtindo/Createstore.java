@@ -127,7 +127,7 @@ public class Createstore extends AppCompatActivity {
                 String theinputTelephone = inputTelephone.getText().toString();
 
 //                Connect to constructor class
-                Store store = new Store(theinputname, theinputStorename, theinputDescription, theinputTelephone,encodeToBase64(bitmapImage));
+                Store store = new Store(theinputname, theinputStorename, theinputDescription, theinputTelephone);
                 thestores.push().setValue(store, new Firebase.CompletionListener() {
                     @Override
                     public void onComplete(FirebaseError firebaseError, Firebase firebase) {

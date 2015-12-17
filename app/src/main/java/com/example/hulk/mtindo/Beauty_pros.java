@@ -38,13 +38,6 @@ public class Beauty_pros extends AppCompatActivity {
 //        Link the Adapter
         Store_Adapter store_adapter = new Store_Adapter(Store.class, R.layout.store_card,ViewHolder.class,rootref2);
         mRecyclerView1.setAdapter(store_adapter);
-
-
-
-
-
-
-
     }
 
 }
