@@ -120,6 +120,8 @@ public class Createstore extends AppCompatActivity {
 
 
 
+
+
 //                Capturing user data from textfields
                 String theinputname = inputName.getText().toString();
                 String theinputStorename = inputStorename.getText().toString();
@@ -141,6 +143,10 @@ public class Createstore extends AppCompatActivity {
                     }
                 });
 
+
+
+                Intent i = new Intent(Createstore.this, Beauty_pros.class);
+                startActivity(i);
 
             }
         });
