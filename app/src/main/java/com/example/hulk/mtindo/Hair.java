@@ -83,7 +83,7 @@ public class Hair extends AppCompatActivity {
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(edtSeach.getWindowToken(), 0);
 
-            //add the search icon in the action bar
+            //add the search icon in the action bart
             mSearchAction.setIcon(getResources().getDrawable(R.drawable.icsearchwhite));
 
             isSearchOpened = false;
