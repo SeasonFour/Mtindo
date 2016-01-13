@@ -84,30 +84,7 @@ public class OneFragment extends Fragment {
             }
         });
 
-        view = inflater.inflate(R.layout.fragment_one, container, false);
-        Button butt2 = (Button) view.findViewById(R.id.button2);
-        butt2.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                Intent j = new Intent(getActivity(), Hair.class);
-                getActivity().startActivity(j);
-
-            }
-        });
-
-
-    view = inflater.inflate(R.layout.fragment_one, container, false);
-    Button butt3 = (Button) view.findViewById(R.id.button3);
-    butt3.setOnClickListener(new View.OnClickListener() {
-
-        @Override
-        public void onClick(View v) {
-            Intent k = new Intent(getActivity(), Makeup.class);
-            getActivity().startActivity(k);
-
-        }
-    });
     // Inflate the layout for this fragment
     return view;
 }

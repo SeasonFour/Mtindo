@@ -12,6 +12,7 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
@@ -40,7 +41,9 @@ public class Createstore extends AppCompatActivity {
     private static final int SELECT_PICTURE = 1;
     private String selectedImagePath;
     private ImageView image;
+    public Bitmap bitmapImage;
     final Createstore context = this;
+    private static final String TAG = "Createstore";
 
 
     private EditText inputName, /*inputEmail*/
@@ -54,7 +57,9 @@ public class Createstore extends AppCompatActivity {
 
     //spinner variables
     private static final String ERROR_MSG = "Very very very long error message to get scrolling or multiline animation when the error button is clicked";
+
     private static final String[] ITEMS = {"Hair", "Beauty", "Makeup"};
+
 
 
     private ArrayAdapter<String> adapter;
@@ -114,21 +119,27 @@ public class Createstore extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 submitForm();
+                onPressed();
+
+
+
 //                Capturing user data from textfields
                 String theinputname = inputName.getText().toString();
                 String theinputStorename = inputStorename.getText().toString();
                 String theinputDescription = inputDescription.getText().toString();
                 String theinputTelephone = inputTelephone.getText().toString();
-                String theinputimage = image.toString();
+
+                String theinputImage =  encodeToBase64(bitmapImage);
+
 //                Connect to constructor class
-                Store store = new Store(theinputname, theinputStorename, theinputDescription, theinputTelephone, theinputimage);
+                Store store = new Store(theinputname, theinputStorename, theinputDescription, theinputTelephone,theinputImage);
                 thestores.push().setValue(store, new Firebase.CompletionListener() {
                     @Override
                     public void onComplete(FirebaseError firebaseError, Firebase firebase) {
                         if (firebaseError != null) {
-                            Toast.makeText(context, "Contact not saved! Check Connection", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "Store Created Successfully", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(context, "Contact saved Successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "Store not created succefully", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -141,22 +152,19 @@ public class Createstore extends AppCompatActivity {
 //load image onclick intent
      /*   Button buttonLoadImage = (Button) findViewById(R.id.buttonLoadPicture);
         buttonLoadImage.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View arg0) {
-
                 Intent i = new Intent(
                         Intent.ACTION_PICK,
                         android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-
                 startActivityForResult(i, RESULT_LOAD_IMAGE);
             }
         });*/
 
-        // Gallery selector
+        // Select image from Gallery
         image = (ImageView) findViewById(ImageView01);
         //Intent onclick add profile image button
-        ((Button) findViewById(R.id.Button01))
+        ((ImageView) findViewById(R.id.ImageView02))
                 .setOnClickListener(new View.OnClickListener() {
                     public void onClick(View arg0) {
                         Intent intent = new Intent();
@@ -193,38 +201,36 @@ public class Createstore extends AppCompatActivity {
     /*@Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
             Uri selectedImage = data.getData();
             String[] filePathColumn = {MediaStore.Images.Media.DATA};
-
             Cursor cursor = getContentResolver().query(selectedImage,
                     filePathColumn, null, null, null);
             cursor.moveToFirst();
-
             int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
             String picturePath = cursor.getString(columnIndex);
             cursor.close();
-
             ImageView imageView = (ImageView) findViewById(R.id.imgView);
-
             imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
-
-
         }
     }*/
+//    Handles image once uploaded
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
             if (requestCode == SELECT_PICTURE) {
                 Uri selectedImageUri = data.getData();
+                Log.i(TAG, "Image Uri : " + selectedImageUri);
                 selectedImagePath = getPath(selectedImageUri);
-                System.out.println("Image Path : " + selectedImagePath);
+                Log.i(TAG, "Image Path : " + selectedImagePath);
                 image.setImageURI(selectedImageUri);
-                BitmapFactory.Options options = new BitmapFactory.Options();
-                options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-                Bitmap bitmap = BitmapFactory.decodeFile(selectedImagePath, options);
-                image.setImageBitmap(bitmap);
 
+                try {
+                    bitmapImage = MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImageUri);
+                    image.setImageBitmap(bitmapImage);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
@@ -238,11 +244,6 @@ public class Createstore extends AppCompatActivity {
 
 
     }
-
-
-
-
-
     /**
      * Validating form
      */
@@ -298,7 +299,6 @@ public class Createstore extends AppCompatActivity {
 
 /*    private boolean validateEmail() {
         String email = inputEmail.getText().toString().trim();
-
         if (email.isEmpty() || !isValidEmail(email)) {
             inputLayoutEmail.setError(getString(R.string.err_msg_email));
             requestFocus(inputEmail);
@@ -306,7 +306,6 @@ public class Createstore extends AppCompatActivity {
         } else {
             inputLayoutEmail.setErrorEnabled(false);
         }
-
         return true;
     }*/
 
@@ -437,12 +436,15 @@ public class Createstore extends AppCompatActivity {
         String imageEncoded = com.firebase.client.utilities.Base64.encodeBytes(b);
         return imageEncoded;
     }
-
-    public static Bitmap decodeFromBase64(String input) throws IOException, IOException {
+    public static Bitmap decodeFromBase64(String input) throws IOException {
         byte[] decodedByte = com.firebase.client.utilities.Base64.decode(input);
         return BitmapFactory.decodeByteArray(decodedByte, 0, decodedByte.length);
     }
 
+
+    public void onPressed() {
+        // Do something when users tap on Skip button.
+        Intent skip = new Intent(this, Beauty_pros.class);
+        startActivity(skip);
+    }
 }
-
-

@@ -15,7 +15,7 @@ public class Mtindo extends Fragment {
 
     public static TabLayout tabLayout;
     public static ViewPager viewPager;
-    public static int int_items = 3 ;
+    public static int int_items = 2 ;
 
     @Nullable
     @Override
@@ -63,9 +63,9 @@ public class Mtindo extends Fragment {
         public Fragment getItem(int position)
         {
             switch (position){
-                case 0 : return new OneFragment();
-                case 1 : return new OffersSlider();
-                case 2 : return new TwoFragment();
+                case 0 : return new OffersSlider();
+                case 1 : return new OneFragment();
+                /*case 2 : return new TwoFragment();*/
             }
             return null;
         }
@@ -86,11 +86,11 @@ public class Mtindo extends Fragment {
 
             switch (position){
                 case 0 :
-                    return "Explore";
+                    return "Recommended";
                 case 1 :
-                    return "Offers";
-                case 2 :
-                    return  "Join Community";
+                    return "Beauty pros";
+                /*case 2 :
+                    return  "Join Community";*/
             }
             return null;
         }

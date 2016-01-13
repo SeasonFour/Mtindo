@@ -23,6 +23,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/DescriptionU"
                 android:layout_marginTop="60dp"
+
                 android:layout_marginLeft="150dp" />
 
             <TextView
