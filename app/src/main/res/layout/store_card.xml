@@ -61,7 +61,7 @@
                 android:alpha="0.7"
                 android:textColor="#fff"
                 android:textSize="20sp"
-                android:text="Description : "
+                android:text="@string/Description"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_above="@+id/UserName" />

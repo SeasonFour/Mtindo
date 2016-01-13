@@ -7,7 +7,7 @@
     <string name="hint_description">Enter brief description of your store</string>
     <string name="btn_createstore">createstore</string>
     <string name="Name">Full name</string>
-    <string name="Description">Description</string>
+
     <string name="Price">Price</string>
     <string name="Tag">Tag</string>
     <string name="Cancel">Cancel</string>
@@ -19,6 +19,7 @@
     <string name="signed_in_fmt" />
     <string name="description">Description</string>
     <string name="contact">Contact</string>
+    <string name="Description">Description : </string>
 
 
     <!--Navigation Drawer material design-->
