@@ -7,6 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+
+import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
+import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
 
 /**
  * Created by maureen on 12/10/15.
@@ -85,8 +89,95 @@ public class OneFragment extends Fragment {
         });
 
 
+
+
+
+
+
+
+        //creating the circular button
+        final com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton mymenu =
+                new com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton.Builder(getActivity())
+                        .build();
+
+        SubActionButton.Builder rLSubBuilder = new SubActionButton.Builder(getActivity());
+
+        //Setting icons to the buttons
+        ImageView helpIcon = new ImageView(getActivity());
+        ImageView checkoutIcon = new ImageView(getActivity());
+        ImageView makeUp = new ImageView(getActivity());
+        ImageView homeIcon = new ImageView(getActivity());
+        ImageView profileIcon = new ImageView(getActivity());
+
+        //setting icons for the buttons
+        checkoutIcon.setImageDrawable(getResources().getDrawable(R.drawable.iccamera));
+        makeUp.setImageDrawable(getResources().getDrawable(R.drawable.iccamera));
+        homeIcon.setImageDrawable(getResources().getDrawable(R.drawable.iccamera));
+        profileIcon.setImageDrawable(getResources().getDrawable(R.drawable.iccamera));
+
+
+
+
+
+
+
+        //creating the floating action menu subButtons being created dynamically
+        final FloatingActionMenu myFloatingMenu = new FloatingActionMenu.Builder(getActivity())
+                .addSubActionView(rLSubBuilder.setContentView(homeIcon).build())
+                .addSubActionView(rLSubBuilder.setContentView(profileIcon).build())
+                .addSubActionView(rLSubBuilder.setContentView(checkoutIcon).build())
+                .addSubActionView(rLSubBuilder.setContentView(makeUp).build())
+
+
+                .attachTo(mymenu)
+                .build();
+
+        //Should be linked to the catalogue class
+        checkoutIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i3 = new Intent(getActivity(), Createstore.class);
+                startActivity(i3);
+            }
+        });
+        makeUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i4 = new Intent(getActivity(), MainActivity.class);
+                startActivity(i4);
+            }
+        });
+
+        homeIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i5 = new Intent(getActivity(), Beauty_pros.class);
+                startActivity(i5);
+            }
+        });
+        profileIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i6 = new Intent(getActivity(), OffersSlider.class);
+                startActivity(i6);
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
     // Inflate the layout for this fragment
     return view;
 }
+
+
 
 }

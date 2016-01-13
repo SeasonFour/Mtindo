@@ -145,6 +145,10 @@ public class Createstore extends AppCompatActivity {
                 });
 
 
+                Intent i = new Intent(Createstore.this, Beauty_pros.class);
+                startActivity(i);
+
+
             }
         });
 

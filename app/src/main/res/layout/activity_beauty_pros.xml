@@ -21,7 +21,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-  <!--  <include layout="@layout/content_beauty_pros" />-->
+    <include layout="@layout/content_beauty_pros" />
 
 
 </android.support.design.widget.CoordinatorLayout>
