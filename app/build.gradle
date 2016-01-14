@@ -78,4 +78,7 @@ dependencies {
     //circular floating action menu
     compile 'com.oguzdev:CircularFloatingActionMenu:1.0.2'
 
+    //circular image
+    compile 'com.pkmmte.view:circularimageview:1.1'
+
 }

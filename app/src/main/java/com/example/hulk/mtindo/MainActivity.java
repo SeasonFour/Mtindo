@@ -54,6 +54,8 @@ public class MainActivity extends ActionBarActivity implements OneFragmentDrawer
         drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
         drawerFragment.setDrawerListener(this);
 
+      
+
         // display the first navigation drawer view on app launch
         displayView(0);
 
@@ -65,6 +67,11 @@ public class MainActivity extends ActionBarActivity implements OneFragmentDrawer
         mFragmentManager = getSupportFragmentManager();
         mFragmentTransaction = mFragmentManager.beginTransaction();
      /*   mFragmentTransaction.replace(R.id.containerView,new Mtindo()).commit();*/
+
+
+
+
+
 
     }
 
